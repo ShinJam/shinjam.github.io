@@ -1,8 +1,8 @@
 ---
   layout: post
   title: 면접 이란?
-  tags: 
-  categories: 
+  tags: fastcampus
+  categories: job
 ---
 
 # 면접 개념
