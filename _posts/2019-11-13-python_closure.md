@@ -30,6 +30,8 @@
 
 # 어떻게 사용 할까?
 ### - _How_ to use closure?
+> 고객에게 인사를 하는 함수 + 고객이 사용하는 언어로 응대 
+
 ```python
 # print_name.py
 def your_name(name):
