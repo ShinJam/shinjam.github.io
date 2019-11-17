@@ -1,8 +1,8 @@
 ---
   layout: post
   title: 큐(Queue)
-  tags: 
-  categories: 
+  tags: queue
+  categories: 'Data Structure'
 ---
 
 # 큐 구조
