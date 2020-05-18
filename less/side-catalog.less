@@ -1,23 +1,23 @@
 // Directory Section
 
-.catalog-container{
+.catalog-container {
     padding: 0px;
 }
 
 .side-catalog {
-    &.fixed{
+    &.fixed {
         position: fixed;
         top: -21px;
     }
-    &.fold{
-        .catalog-toggle::before{
+    &.fold {
+        .catalog-toggle::before {
             content: "+";
         }
-        .catalog-body{
+        .catalog-body {
             display: none;
         }
     }
-    .catalog-toggle::before{
+    .catalog-toggle::before {
         content: "−";
         position: relative;
         margin-right: 5px;
@@ -28,7 +28,7 @@
     height: 100%;
     padding-bottom: 40px;
     width: 195px;
-    .catalog-body{
+    .catalog-body {
         position: relative;
         list-style: none;
         height: auto;
@@ -36,10 +36,10 @@
         padding-left: 0px;
         padding-right: 5px;
         text-indent: 0;
-        li{
+        li {
             position: relative;
             list-style: none;
-            a{
+            a {
                 padding-left: 10px;
                 max-width: 180px;
                 display: inline-block;
@@ -52,30 +52,34 @@
                 text-overflow: ellipsis;
             }
         }
-        .h1_nav,.h2_nav,.h3_nav{
+        .h1_nav,
+        .h2_nav,
+        .h3_nav {
             margin-left: 0;
             font-size: 13px;
             font-weight: bold;
         }
-        .h4_nav,.h5_nav,.h6_nav{
+        .h4_nav,
+        .h5_nav,
+        .h6_nav {
             margin-left: 10px;
             font-size: 12px;
-            a{
+            a {
                 max-width: 170px;
             }
         }
-        .active{
-            a{
-                color: #0085a1!important;
+        .active {
+            a {
+                color: #8565fc !important;
             }
             border-radius: 4px;
-            background-color: #F5F5F5;
+            background-color: #f5f5f5;
         }
     }
 }
 
-@media (max-width: 1200px){
-    .side-catalog{
+@media (max-width: 1200px) {
+    .side-catalog {
         display: none;
     }
 }
