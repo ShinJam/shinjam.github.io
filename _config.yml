@@ -49,9 +49,6 @@ kramdown:
 # Disqus settings
 disqus_username: shinjam
 
-# Netease settings
-netease_comment: false
-
 # Google Analytics
 ga_track_id: "UA-49627206-1" # Format: UA-xxxxxx-xx
 ga_domain: shinjam.me
@@ -59,7 +56,7 @@ ga_domain: shinjam.me
 # Sidebar settings
 sidebar: true # whether or not using Sidebar.
 sidebar-about-description: "Backend Developer<br>Shinjam<br><br>South Korea"
-sidebar-avatar: /img/avatar-hux-ny.jpg # use absolute URL, seeing it's used in both `/` and `/about/`
+sidebar-avatar: /img/avatar-gemini-man.png # use absolute URL, seeing it's used in both `/` and `/about/`
 
 # Featured Tags
 featured-tags: true # whether or not using Feature-Tags
