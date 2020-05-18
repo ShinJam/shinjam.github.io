@@ -1391,7 +1391,7 @@ img::-moz-selection {
 .tags .tag:active {
     color: #fff;
     border-color: #fff;
-    background-color: rgba(255, 255, 255, 0.4);
+    background-color: rgba(133, 101, 252, 0.4);
     text-decoration: none;
 }
 @media only screen and (min-width: 768px) {
