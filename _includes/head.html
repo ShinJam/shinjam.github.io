@@ -3,7 +3,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta
         name="google-site-verification"
-        content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI"
+        content="dIeNy_pouCzT2HcDVVoaMnDKw8k5VDQ7p0LCAFB6ZOc"
     />
     <meta
         name="viewport"
@@ -12,6 +12,25 @@
     <meta name="description" content="{{ site.description }}" />
     <meta name="keywords" content="{{ site.keyword }}" />
     <meta name="theme-color" content="{{ site.chrome-tab-theme-color }}" />
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    {% if site.ga_track_id %}
+    <script
+        async
+        src="https://www.googletagmanager.com/gtag/js?id=UA-166873913-1"
+    ></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag("js", new Date());
+
+        var _gaID = "{{ site.ga_track_id }}";
+
+        gtag("config", _gaID);
+    </script>
+    {% endif %}
 
     <!-- Open Graph -->
     <meta

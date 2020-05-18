@@ -50,7 +50,7 @@ kramdown:
 disqus_username: shinjam
 
 # Google Analytics
-ga_track_id: "UA-166992586-1" # Format: UA-xxxxxx-xx
+ga_track_id: "UA-166873913-1" # Format: UA-xxxxxx-xx
 ga_domain: shinjam.me
 
 # Sidebar settings
