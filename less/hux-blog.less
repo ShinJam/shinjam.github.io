@@ -153,7 +153,7 @@ samp {
     a {
         // display: inline-block;
         // safari has bugs on word-break on inline elements.
-        color: #337ab7;
+        color: @brand-primary;
         // different to @brand-primary
         &:hover,
         &:focus {
@@ -374,7 +374,7 @@ samp {
         height: 56px;
         line-height: 25px;
         &:hover {
-            color: rgba(255, 255, 255, 0.8);
+            color: rgba(133, 101, 252, 0.8);
         }
     }
     .nav {
@@ -404,7 +404,7 @@ samp {
             line-height: 20px;
             &:hover,
             &:focus {
-                color: @white-faded;
+                color: @brand-primary;
             }
         }
         .nav {
@@ -414,7 +414,7 @@ samp {
                     padding: 20px;
                     &:hover,
                     &:focus {
-                        color: @white-faded;
+                        color: @brand-primary;
                     }
                     &:active {
                         background: none;
@@ -921,10 +921,10 @@ img::-moz-selection {
     a,
     .tag {
         display: inline-block;
-        border: 1px solid rgba(255, 255, 255, 0.8);
+        border: 1px solid rgba(133, 101, 252, 0.8);
         border-radius: 999em;
         padding: 0 10px 0 10px;
-        color: rgba(255, 255, 255, 1);
+        color: rgba(133, 101, 252, 1);
         line-height: 24px;
         font-size: 12px;
         text-decoration: none;
@@ -939,7 +939,7 @@ img::-moz-selection {
         &:active {
             color: white;
             border-color: white;
-            background-color: rgba(255, 255, 255, 0.4);
+            background-color: rgba(133, 101, 252, 0.2);
             text-decoration: none;
         }
         @media only screen and (min-width: 768px) {
@@ -971,7 +971,7 @@ img::-moz-selection {
         &:hover,
         &:active,
         &.focus {
-            background-color: #8565fc !important;
+            background-color: @brand-primary !important;
         }
         &.focus {
             box-shadow: rgba(0, 0, 0, 0.117647) 0 1px 6px,
@@ -979,7 +979,7 @@ img::-moz-selection {
         }
         &.tag-button--all {
             font-weight: 700;
-            color: #8565fc !important;
+            color: @brand-primary !important;
             &:hover,
             &:active,
             &.focus {
@@ -1009,7 +1009,7 @@ img::-moz-selection {
     }
 }
 .listing-seperator {
-    color: #8565fc;
+    color: @brand-primary;
     font-size: 21px !important;
     &::before {
         margin-right: 5px;
