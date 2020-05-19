@@ -1,43 +1,53 @@
 # Site settings
-author: Shinjam
-title: Shinjam DevLog
-SEOTitle: Shinjam DevLog | Shinjam Dev Blog
-header-img: img/home-bg.jpg
-email: nevvjann@gmail.com
-description: "Development Study Blog | Backend developer | Django, python and JavaScript"
-keyword: "shinjam, @shinjam, blog, devlog, Backend, django, python, web, javascript"
-url: "https://shinjam.me" # your host, for absolute URL
-baseurl: "" # for example, '/blog' if your blog hosted on 'host/blog'
+author                          : Shinjam
+title                           : Shinjam DevLog
+SEOTitle                        : Shinjam DevLog | Shinjam Dev Blog
+header-img                      : img/home-bg.jpg
+email                           : nevvjann@gmail.com
+description                     : "Development Study Blog | Backend developer | Django, python and JavaScript"
+keyword                         : "shinjam, @shinjam, blog, devlog, Backend, django, python, web, javascript"
+url                             : "https://shinjam.me" # your host, for absolute URL
+baseurl                         : "" # for example, '/blog' if your blog hosted on 'host/blog'
+title_separator                 : "-"
+
+# SEO Related
+google_site_verification : "dIeNy_pouCzT2HcDVVoaMnDKw8k5VDQ7p0LCAFB6ZOc"
+# bing_site_verification   :
+naver_site_verification  : "cb70d55fba5714701fe871fe83851ce9"
 
 # Publish posts or collection documents with a future date.
-future: false
+future                          : false
 
 # SNS settings
-RSS: false
-github_username: shinjam
+RSS                             : true
+github_username                 : shinjam
 #facebook_username:  huxpro
-linkedin_username: firstname-lastname-idxxxx
+linkedin_username               : shin-jam-3145891aa
 
 # Build settings
 # from 2016, 'pygments' is unsupported on GitHub Pages. Use 'rouge' for highlighting instead.
-highlighter: rouge
-permalink: /:categories/:title:output_ext
+highlighter                     : rouge
+permalink                       : /:categories/:title:output_ext
 
-paginate: 10
-exclude: ["less", "node_modules", "Gruntfile.js", "package.json", "README.md"]
-anchorjs: true # if you want to customize anchor. check out line:139 of `post.html`
+paginate                        : 10
+exclude                         : ["less", "node_modules", "Gruntfile.js", "package.json", "README.md"]
+anchorjs                        : true # if you want to customize anchor. check out line:139 of `post.html`
 
 # Gems
 # from PR#40, to support local preview for Jekyll 3.0
 # make sure you have this gem installed
 # `$ gem install jekyll-paginate`
-plugins: [jekyll-paginate, jekyll-sitemap]
+plugins:
+    - jekyll-paginate
+    - jekyll-sitemap
+    - jekyll-feed
+    - jekyll-include-cache
 
 # Markdown settings
 # replace redcarpet to kramdown,
 # although redcarpet can auto highlight code, the lack of header-id make the catalog impossible, so I switch to kramdown
 # document: http://jekyllrb.com/docs/configuration/#kramdown
-markdown: kramdown
+markdown                        : kramdown
 kramdown:
     input: GFM # use Github Flavored Markdown !important
     syntax_highlighter_opts:
@@ -48,27 +58,27 @@ kramdown:
             start_line: 1
 
 # Disqus settings
-disqus_username: shinjam
+disqus_username                 : shinjam
 
 # Google Analytics
-ga_track_id: "UA-166873913-1" # Format: UA-xxxxxx-xx
-ga_domain: shinjam.me
+ga_track_id                     : "UA-166873913-1" # Format: UA-xxxxxx-xx
+ga_domain                       : shinjam.me
 
 # Sidebar settings
-sidebar: true # whether or not using Sidebar.
-sidebar-about-description: "Backend Developer<br>Shinjam<br><br>South Korea"
-sidebar-avatar: /img/avatar-gemini-man.png # use absolute URL, seeing it's used in both `/` and `/about/`
+sidebar                         : true # whether or not using Sidebar.
+sidebar-about-description       : "Backend Developer<br>Shinjam<br><br>South Korea"
+sidebar-avatar                  : /img/avatar-gemini-man.png # use absolute URL, seeing it's used in both `/` and `/about/`
 
 # Featured Tags
-featured-tags: true # whether or not using Feature-Tags
-featured-condition-size: 0 # A tag will be featured if the size of it is more than this condition value
+featured-tags                   : true # whether or not using Feature-Tags
+featured-condition-size         : 0 # A tag will be featured if the size of it is more than this condition value
 
 # Progressive Web Apps
-chrome-tab-theme-color: "#000000"
-service-worker: true
+chrome-tab-theme-color          : "#000000"
+service-worker                  : true
 
 # MathJax rendering for layout:page (e.g. post preview)
-page-mathjax: false
+page-mathjax                    : false
 # # Friends
 # friends: [
 #     { title: "DHong Say", href: "http://dhong.co" },

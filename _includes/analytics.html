@@ -1,0 +1,17 @@
+{% if site.ga_track_id %}
+<script
+    async
+    src="https://www.googletagmanager.com/gtag/js?id=UA-166873913-1"
+></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+        dataLayer.push(arguments);
+    }
+    gtag("js", new Date());
+
+    var _gaID = "{{ site.ga_track_id }}";
+
+    gtag("config", _gaID);
+</script>
+{% endif %}
