@@ -30,7 +30,7 @@ highlighter                     : rouge
 permalink                       : /:categories/:title:output_ext
 
 paginate                        : 10
-exclude                         : ["less", "node_modules", "Gruntfile.js", "package.json", "README.md"]
+exclude                         : ["less", "node_modules", "Gruntfile.js", "package.json", "README.md", "_algolia_api_key"]
 anchorjs                        : true # if you want to customize anchor. check out line:139 of `post.html`
 
 # Gems
@@ -83,3 +83,8 @@ page-mathjax                    : false
 # friends: [
 #     { title: "DHong Say", href: "http://dhong.co" },
 #     ]
+
+# Search engine
+algolia:
+    application_id              : 1YLEN0QM8Z
+    index_name                  : dev_shinjam 
