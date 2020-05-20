@@ -1,14 +1,11 @@
 {
-    "name": "hux-blog",
-    "title": "Hux Blog",
-    "author": "Hux <huxpro@gmail.com>",
-    "version": "1.8.2",
-    "homepage": "http://huxpro.github.io",
-    "repository": {
-        "type": "git",
-        "url": "https://github.com/Huxpro/huxpro.github.io"
+    "name": "shinjam-blog",
+    "author": "shinjam <nevvjann@gmail.com>",
+    "version": "1.0.0",
+    "description": "Shinjam DevLog",
+    "dependencies": {
+        "instantsearch.js": "^4.5.0"
     },
-    "bugs": "https://github.com/Huxpro/huxpro.github.io/issues",
     "devDependencies": {
         "grunt": "^1.1.0",
         "grunt-banner": "~0.2.3",
@@ -18,8 +15,15 @@
     },
     "scripts": {
         "start": "jekyll serve -w -l --host 0.0.0.0 --port 4000",
-        "dev": "grunt watch & npm run start",
-        "boil": "git push boilerplate boilerplate:master",
-        "push": "git push origin master --tag"
-    }
+        "dev": "grunt watch & npm run start"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/ShinJam/shinjam.github.io.git"
+    },
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/ShinJam/shinjam.github.io/issues"
+    },
+    "homepage": "https://github.com/ShinJam/shinjam.github.io#readme"
 }
