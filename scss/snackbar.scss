@@ -77,26 +77,26 @@
 
 /* Variables */
 
-@blue: #4285f4;
-@white: #fff;
-@black: #000;
-@gray: #ccc;
-@button-width: 160px;
+$blue: #4285f4;
+$white: #fff;
+$black: #000;
+$gray: #ccc;
+$button-width: 160px;
 
-@top: 1000;
+$top: 1000;
 
 /* Buttons */
 .paper-button {
     position: relative;
     padding: 4px 0;
     margin: 1em;
-    width: @button-width;
+    width: $button-width;
     overflow: hidden;
     user-select: none;
-    color: @black;
+    color: $black;
     text-transform: uppercase;
     border-radius: 3px;
-    outline-color: @gray;
+    outline-color: $gray;
 
     &:hover {
         cursor: pointer;
@@ -105,14 +105,14 @@
     // we don't leverage ripple
     // .ripple {
     //     position: absolute;
-    //     width: @button-width * 2;
-    //     height: @button-width * 2;
-    //     //background-color: rgba(@gray, 0.5);
+    //     width: $button-width * 2;
+    //     height: $button-width * 2;
+    //     //background-color: rgba($gray, 0.5);
     //     left: 0;
     //     top: 0;
     //     border-radius: 50%;
-    //     margin-left: - @button-width;
-    //     margin-top: - @button-width;
+    //     margin-left: - $button-width;
+    //     margin-top: - $button-width;
     //     transform: scaleX(0) scaleY(0);
     //     z-index: 9000;
     // }
@@ -127,29 +127,29 @@
     height: 100%;
     /*font-family: 'Roboto';*/
     font-size: 1em;
-    color: @black;
+    color: $black;
     text-transform: uppercase;
 }
 
 .paper-button.colored,
 .paper-button.colored button {
-    color: @blue;
+    color: $blue;
 }
 
 // .paper-button .ripple {
-//   background-color: rgba(@gray, 0.5);
+//   background-color: rgba($gray, 0.5);
 // }
 
 // .paper-button.raised-button.colored .ripple {
-//   background-color: rgba(@white, 0.5);
+//   background-color: rgba($white, 0.5);
 // }
 
 // .paper-button.raised-button .ripple {
-//   background-color: rgba(@gray, 0.5);
+//   background-color: rgba($gray, 0.5);
 // }
 
 .paper-button.raised-button.colored {
-    background-color: @blue;
+    background-color: $blue;
 }
 
 .paper-button .raised-button {
@@ -179,15 +179,15 @@ button.paper-button {
     /*font-family: RobotoDraft, 'Helvetica Neue', Helvetica, Arial;*/
     font-size: 1em;
     line-height: 25px;
-    background-color: @white;
+    background-color: $white;
 }
 
 .paper-button input[type="submit"] {
-    outline-color: @gray;
+    outline-color: $gray;
 }
 
 .paper-button.colored.raised-button input[type="submit"] {
-    color: @white;
+    color: $white;
 }
 
 /** Shadows **/

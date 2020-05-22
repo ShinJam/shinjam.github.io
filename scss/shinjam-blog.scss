@@ -8,10 +8,10 @@
 // Global Components
 
 body {
-    .sans-serif;
+    @include sans-serif;
     font-size: 16px;
     // Hux mpdify to 16px (Mobile First), and increase to 20px while 768+ width
-    color: @gray-dark;
+    color: $gray-dark;
     //-webkit-user-select:text; //对于 Blog 还是先不开启这句。
     overflow-x: hidden;
 
@@ -37,7 +37,7 @@ h3,
 h4,
 h5,
 h6 {
-    .sans-serif;
+    @include sans-serif;
     line-height: 1.1;
     font-weight: bold;
 }
@@ -45,10 +45,10 @@ h4 {
     font-size: 21px;
 }
 a {
-    color: @gray-dark;
+    color: $gray-dark;
     &:hover,
     &:focus {
-        color: @brand-primary;
+        color: $brand-primary;
     }
 }
 
@@ -153,11 +153,11 @@ samp {
     a {
         // display: inline-block;
         // safari has bugs on word-break on inline elements.
-        color: @brand-primary;
-        // different to @brand-primary
+        color: $brand-primary;
+        // different to $brand-primary
         &:hover,
         &:focus {
-            color: @brand-primary;
+            color: $brand-primary;
         }
     }
     h1,
@@ -262,7 +262,7 @@ samp {
         > a {
             width: 100%;
             > span {
-                color: @gray;
+                color: $gray;
                 font-weight: normal;
                 letter-spacing: 0.5px;
             }
@@ -366,7 +366,7 @@ samp {
     left: 0;
     width: 100%;
     z-index: 3;
-    .sans-serif;
+    @include sans-serif;
     .navbar-brand {
         font-weight: 800;
         // materialize
@@ -404,7 +404,7 @@ samp {
             line-height: 20px;
             &:hover,
             &:focus {
-                color: @brand-primary;
+                color: $brand-primary;
             }
         }
         .nav {
@@ -414,7 +414,7 @@ samp {
                     padding: 20px;
                     &:hover,
                     &:focus {
-                        color: @brand-primary;
+                        color: $brand-primary;
                     }
                     &:active {
                         background: none;
@@ -429,23 +429,23 @@ samp {
                 background-color: rgba(0, 0, 0, 0.05);
             }
             .icon-bar {
-                background-color: @gray-dark;
+                background-color: $gray-dark;
             }
         }
         .navbar-brand {
-            color: @gray-dark;
+            color: $gray-dark;
             &:hover,
             &:focus {
-                color: @brand-primary;
+                color: $brand-primary;
             }
         }
         .nav {
             li {
                 a {
-                    color: @gray-dark;
+                    color: $gray-dark;
                     &:hover,
                     &:focus {
-                        color: @brand-primary;
+                        color: $brand-primary;
                     }
                 }
             }
@@ -473,19 +473,19 @@ samp {
             -moz-transition: -moz-transform 0.3s;
             transition: transform 0.3s;
             .navbar-brand {
-                color: @gray-dark;
+                color: $gray-dark;
                 &:hover,
                 &:focus {
-                    color: @brand-primary;
+                    color: $brand-primary;
                 }
             }
             .nav {
                 li {
                     a {
-                        color: @gray-dark;
+                        color: $gray-dark;
                         &:hover,
                         &:focus {
-                            color: @brand-primary;
+                            color: $brand-primary;
                         }
                     }
                 }
@@ -511,7 +511,7 @@ samp {
         .post-heading,
         .page-heading {
             padding: 85px 0 20px;
-            color: @gray-dark;
+            color: $gray-dark;
             .subheading {
                 margin-bottom: 15px;
             }
@@ -519,8 +519,8 @@ samp {
         .tags {
             a,
             .tag {
-                border-color: @gray-dark;
-                color: @gray-dark;
+                border-color: $gray-dark;
+                color: $gray-dark;
                 &:hover,
                 &:active {
                     background-color: rgba(0, 0, 0, 0.05);
@@ -529,9 +529,9 @@ samp {
         }
     }
     background: no-repeat center center;
-    background-color: @gray;
+    background-color: $gray;
     background-attachment: scroll;
-    .background-cover;
+    @include background-cover;
     // NOTE: Background images are set within the HTML using inline CSS!
     margin-bottom: 0px; /* 0 on mobile, modify by Hux */
     @media only screen and (min-width: 768px) {
@@ -561,7 +561,7 @@ samp {
             font-size: 50px;
         }
         .subheading {
-            .sans-serif;
+            @include sans-serif;
             font-size: 18px;
             line-height: 1.1;
             display: block;
@@ -585,7 +585,7 @@ samp {
             display: block;
         }
         .subheading {
-            .sans-serif;
+            @include sans-serif;
             font-size: 17px;
             line-height: 1.4;
             font-weight: normal;
@@ -593,7 +593,7 @@ samp {
             margin-top: -5px;
         }
         .meta {
-            .serif;
+            @include serif;
             font-style: italic;
             font-weight: 300;
             font-size: 16px;
@@ -638,11 +638,11 @@ samp {
 
 .post-preview {
     > a {
-        color: @gray-dark;
+        color: $gray-dark;
         &:hover,
         &:focus {
             text-decoration: none;
-            color: @brand-primary;
+            color: $brand-primary;
         }
         > .post-title {
             font-size: 21px;
@@ -659,17 +659,17 @@ samp {
         }
     }
     > .post-meta {
-        .serif;
-        color: @gray;
+        @include serif;
+        color: $gray;
         font-size: 16px;
         font-style: italic;
         margin-top: 0;
         > a {
             text-decoration: none;
-            color: @gray-dark;
+            color: $gray-dark;
             &:hover,
             &:focus {
-                color: @brand-primary;
+                color: $brand-primary;
                 text-decoration: underline;
             }
         }
@@ -697,7 +697,7 @@ samp {
     font-style: italic;
     color: #a3a3a3;
     &:hover {
-        color: @brand-primary;
+        color: $brand-primary;
     }
     @media only screen and (min-width: 768px) {
         font-size: 14px;
@@ -736,10 +736,10 @@ footer {
         margin-bottom: 0;
         a {
             color: #337ab7;
-            // different to @brand-primary
+            // different to $brand-primary
             &:hover,
             &:focus {
-                color: @brand-primary;
+                color: $brand-primary;
             }
         }
     }
@@ -752,7 +752,7 @@ footer {
     position: relative;
     margin-bottom: 0;
     padding-bottom: 0.5em;
-    border-bottom: 1px solid @gray-light;
+    border-bottom: 1px solid $gray-light;
     input,
     textarea {
         z-index: 1;
@@ -774,8 +774,6 @@ footer {
         margin: 0;
         font-size: 0.85em;
         line-height: 1.764705882em;
-        vertical-align: middle;
-        vertical-align: baseline;
         opacity: 0;
         -webkit-transition: top 0.3s ease, opacity 0.3s ease;
         -moz-transition: top 0.3s ease, opacity 0.3s ease;
@@ -784,7 +782,7 @@ footer {
     }
     &::not(:first-child) {
         padding-left: 14px;
-        border-left: 1px solid @gray-light;
+        border-left: 1px solid $gray-light;
     }
 }
 
@@ -797,18 +795,18 @@ footer {
 
 .floating-label-form-group-with-focus {
     label {
-        color: @brand-primary;
+        color: $brand-primary;
     }
 }
 
 form .row:first-child .floating-label-form-group {
-    border-top: 1px solid @gray-light;
+    border-top: 1px solid $gray-light;
 }
 
 // Button Styles
 
 .btn {
-    .sans-serif;
+    @include sans-serif;
     text-transform: uppercase;
     font-size: 14px;
     font-weight: 800;
@@ -825,8 +823,8 @@ form .row:first-child .floating-label-form-group {
 .btn-default {
     &:hover,
     &:focus {
-        background-color: @brand-primary;
-        border: 1px solid @brand-primary;
+        background-color: $brand-primary;
+        border: 1px solid $brand-primary;
         color: white;
     }
 }
@@ -840,7 +838,7 @@ form .row:first-child .floating-label-form-group {
     li {
         > a,
         > span {
-            .sans-serif;
+            @include sans-serif;
             text-transform: uppercase;
             font-size: 13px;
             font-weight: 800;
@@ -855,13 +853,13 @@ form .row:first-child .floating-label-form-group {
         }
 
         > a {
-            color: @gray-dark;
+            color: $gray-dark;
         }
         > a:hover,
         > a:focus {
             color: white;
-            background-color: @brand-primary;
-            border: 1px solid @brand-primary;
+            background-color: $brand-primary;
+            border: 1px solid $brand-primary;
 
             // V1.6 display title
             > span {
@@ -875,8 +873,8 @@ form .row:first-child .floating-label-form-group {
         > a:hover,
         > a:focus,
         > span {
-            color: @gray;
-            background-color: @gray-dark;
+            color: $gray;
+            background-color: $gray-dark;
             cursor: not-allowed;
         }
     }
@@ -887,13 +885,13 @@ form .row:first-child .floating-label-form-group {
 ::-moz-selection {
     color: white;
     text-shadow: none;
-    background: @brand-primary;
+    background: $brand-primary;
 }
 
 ::selection {
     color: white;
     text-shadow: none;
-    background: @brand-primary;
+    background: $brand-primary;
 }
 
 img::selection {
@@ -971,7 +969,7 @@ img::-moz-selection {
         &:hover,
         &:active,
         &.focus {
-            background-color: @brand-primary !important;
+            background-color: $brand-primary !important;
         }
         &.focus {
             box-shadow: rgba(0, 0, 0, 0.117647) 0 1px 6px,
@@ -979,7 +977,7 @@ img::-moz-selection {
         }
         &.tag-button--all {
             font-weight: 700;
-            color: @brand-primary !important;
+            color: $brand-primary !important;
             &:hover,
             &:active,
             &.focus {
@@ -1004,12 +1002,9 @@ img::-moz-selection {
     &:first-child {
         margin-top: 0px;
     }
-    hr:last-of-type {
-        //display: none;
-    }
 }
 .listing-seperator {
-    color: @brand-primary;
+    color: $brand-primary;
     font-size: 21px !important;
     &::before {
         margin-right: 5px;
@@ -1025,7 +1020,7 @@ img::-moz-selection {
     margin: 20px 0 15px 0;
     .tag-text {
         font-weight: 200;
-        .sans-serif;
+        @include sans-serif;
     }
     .post-preview {
         position: relative;
@@ -1118,8 +1113,6 @@ img::-moz-selection {
                 box-shadow: none;
                 text-shadow: none;
             }
-            a.ds-thread-liked {
-            }
             li.ds-tab a.ds-current {
                 border: 1px solid #ddd;
                 border-radius: 0px;
@@ -1145,7 +1138,7 @@ img::-moz-selection {
                 background: white;
                 box-shadow: none;
                 &:hover {
-                    background: @gray-light;
+                    background: $gray-light;
                 }
             }
         }

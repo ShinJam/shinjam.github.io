@@ -1,23 +1,23 @@
 // Mixins
 
-.transition-all() {
+@mixin transition-all(){
     -webkit-transition: all 0.5s;
     -moz-transition: all 0.5s;
     transition: all 0.5s;
 }
 
-.background-cover() {
+@mixin background-cover(){
     -webkit-background-size: cover;
     -moz-background-size: cover;
     background-size: cover;
     -o-background-size: cover;
 }
 
-.serif() {
+@mixin serif(){
 	font-family: 'Lora', 'Times New Roman', serif;
 }
 
-.sans-serif () {
+@mixin sans-serif(){
 	/* Hux learn from
      *     TypeIsBeautiful,
      *     [This Post](http://zhuanlan.zhihu.com/ibuick/20186806) etc.
