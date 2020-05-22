@@ -4,7 +4,10 @@
     "version": "1.0.0",
     "description": "Shinjam DevLog",
     "dependencies": {
-        "instantsearch.js": "^4.5.0"
+        "@types/js-yaml": "^3.12.4",
+        "fs": "0.0.1-security",
+        "instantsearch.js": "^4.5.0",
+        "js-yaml": "^3.13.1"
     },
     "devDependencies": {
         "grunt": "^1.1.0",
