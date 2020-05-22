@@ -6,15 +6,21 @@
     "dependencies": {
         "@types/js-yaml": "^3.12.4",
         "fs": "0.0.1-security",
+        "gulp": "^4.0.2",
+        "gulp-uglify": "^3.0.2",
         "instantsearch.js": "^4.5.0",
         "js-yaml": "^3.13.1"
     },
     "devDependencies": {
+        "@babel/core": "^7.9.6",
+        "@babel/preset-env": "^7.9.6",
         "grunt": "^1.1.0",
         "grunt-banner": "~0.2.3",
+        "grunt-contrib-cssmin": "^3.0.0",
         "grunt-contrib-less": "^2.0.0",
         "grunt-contrib-uglify": "^4.0.1",
-        "grunt-contrib-watch": "^1.1.0"
+        "grunt-contrib-watch": "^1.1.0",
+        "gulp-babel": "^8.0.0"
     },
     "scripts": {
         "start": "jekyll serve -w -l --host 0.0.0.0 --port 4000",
