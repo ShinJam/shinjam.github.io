@@ -32,8 +32,8 @@
         "webpack-stream": "^5.2.1"
     },
     "scripts": {
-        "start": "jekyll serve -w -l --host 0.0.0.0 --port 3000",
-        "dev": "grunt watch"
+        "start": "gulp && jekyll serve -w -l --host 0.0.0.0 --port 3000",
+        "dev": "gulp watch"
     },
     "repository": {
         "type": "git",
