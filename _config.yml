@@ -99,3 +99,5 @@ algolia:
     index_name: "dev_shinjam"
     extensions_to_index:
         - md
+
+
