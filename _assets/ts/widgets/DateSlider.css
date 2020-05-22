@@ -1,0 +1,16 @@
+.ais-RangeSlider .rheostat-tooltip::before {
+  color: #e2a400;
+  content: '\f274';
+  font-family: FontAwesome;
+  font-size: 0.6;
+  margin-right: 4px;
+}
+
+@media (max-width: 899px) {
+  .ais-RangeSlider .rheostat-handle {
+    height: 1.5rem;
+    top: -12px;
+    width: 1.5rem;
+  }
+}
+

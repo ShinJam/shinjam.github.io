@@ -3,28 +3,37 @@
     "author": "shinjam <nevvjann@gmail.com>",
     "version": "1.0.0",
     "description": "Shinjam DevLog",
-    "dependencies": {
+    "devDependencies": {
         "@types/js-yaml": "^3.12.4",
         "fs": "0.0.1-security",
         "gulp": "^4.0.2",
+        "gulp-rename": "^2.0.0",
         "gulp-uglify": "^3.0.2",
-        "instantsearch.js": "^4.5.0",
-        "js-yaml": "^3.13.1"
-    },
-    "devDependencies": {
+        "js-yaml": "^3.13.1",
         "@babel/core": "^7.9.6",
         "@babel/preset-env": "^7.9.6",
-        "grunt": "^1.1.0",
-        "grunt-banner": "~0.2.3",
-        "grunt-contrib-cssmin": "^3.0.0",
-        "grunt-contrib-less": "^2.0.0",
-        "grunt-contrib-uglify": "^4.0.1",
-        "grunt-contrib-watch": "^1.1.0",
-        "gulp-babel": "^8.0.0"
+        "algoliasearch": "^4.2.0",
+        "autoprefixer": "^9.8.0",
+        "browser-sync": "^2.26.7",
+        "child_process": "^1.0.2",
+        "cssnano": "^4.1.10",
+        "del": "^5.1.0",
+        "gulp-babel": "^8.0.0",
+        "gulp-imagemin": "^7.1.0",
+        "gulp-newer": "^1.4.0",
+        "gulp-plumber": "^1.2.1",
+        "gulp-postcss": "^8.0.0",
+        "gulp-sass": "^4.1.0",
+        "instantsearch.js": "^4.5.0",
+        "path": "^0.12.7",
+        "ts-loader": "^7.0.4",
+        "typescript": "^3.9.3",
+        "webpack": "^4.43.0",
+        "webpack-stream": "^5.2.1"
     },
     "scripts": {
-        "start": "jekyll serve -w -l --host 0.0.0.0 --port 4000",
-        "dev": "grunt watch & npm run start"
+        "start": "jekyll serve -w -l --host 0.0.0.0 --port 3000",
+        "dev": "grunt watch"
     },
     "repository": {
         "type": "git",
