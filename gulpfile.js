@@ -80,7 +80,8 @@ function javascript() {
         .src("./_assets/js/**/*.js", { sourcemaps: true })
         .pipe(
             babel({
-                presets: ["@babel/env"],
+                presets: ["@babel/env", { sourceType: "script" }],
+                plugins: ["transform-remove-strict-mode"],
             })
         )
         .pipe(uglify())
