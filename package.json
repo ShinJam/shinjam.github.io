@@ -33,7 +33,7 @@
     },
     "scripts": {
         "start": "gulp && jekyll serve -w -l --host 0.0.0.0 --port 3000",
-        "dev": "gulp watch"
+        "dev": "gulp && gulp watch"
     },
     "repository": {
         "type": "git",

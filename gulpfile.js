@@ -35,14 +35,14 @@ function browserSyncReload(done) {
 
 // Clean assets
 function clean() {
-    return del(["assets/"]);
+    return del(["./assets/"]);
 }
 
 // Optimize Images
 function images() {
     return gulp
-        .src("_assets/img/**/*")
-        .pipe(newer("assets/img"))
+        .src("./_assets/img/**/*")
+        .pipe(newer("./assets/img"))
         .pipe(
             imagemin([
                 imagemin.gifsicle({ interlaced: true }),
@@ -65,11 +65,11 @@ function images() {
 function typescript() {
     return (
         gulp
-            .src(["_assets/ts/**/*"])
+            .src(["./_assets/ts/**/*"])
             .pipe(plumber())
             .pipe(webpackstream(webpackconfig, webpack))
             // folder only, filename is specified in webpack config
-            .pipe(gulp.dest("assets/js/"))
+            .pipe(gulp.dest("./assets/js/"))
             .pipe(browsersync.stream())
     );
 }
@@ -77,7 +77,7 @@ function typescript() {
 // Javascript to minifiy
 function javascript() {
     return gulp
-        .src("_assets/js/**/*.js", { sourcemaps: true })
+        .src("./_assets/js/**/*.js", { sourcemaps: true })
         .pipe(
             babel({
                 presets: ["@babel/env"],
@@ -85,20 +85,20 @@ function javascript() {
         )
         .pipe(uglify())
         .pipe(rename({ suffix: ".min" }))
-        .pipe(gulp.dest("assets/js"))
+        .pipe(gulp.dest("./assets/js"))
         .pipe(browsersync.stream());
 }
 
 // css
 function css() {
     return gulp
-        .src("_assets/scss/**/*.scss")
+        .src("./_assets/scss/**/*.scss")
         .pipe(plumber())
         .pipe(sass({ outputStyle: "compressed" }))
-        .pipe(gulp.dest("assets/css/"))
+        .pipe(gulp.dest("./assets/css/"))
         .pipe(rename({ suffix: ".min" }))
         .pipe(postcss([autoprefixer(), cssnano()]))
-        .pipe(gulp.dest("assets/css/"))
+        .pipe(gulp.dest("./assets/css/"))
         .pipe(browsersync.stream());
 }
 
@@ -110,9 +110,9 @@ function jekyll() {
 }
 // Watch files
 function watchFiles() {
-    gulp.watch("_assets/scss/**/*", css);
-    gulp.watch("_assets/js/**/*", javascript);
-    gulp.watch("_assets/ts/**/*", typescript);
+    gulp.watch("./_assets/scss/**/*", css);
+    gulp.watch("./_assets/js/**/*", javascript);
+    gulp.watch("./_assets/ts/**/*", typescript);
     gulp.watch(
         [
             "./_includes/**/*",
@@ -123,13 +123,14 @@ function watchFiles() {
         ],
         gulp.series(jekyll, browserSyncReload)
     );
-    gulp.watch("_assets/img/**/*", images);
+    gulp.watch("./_assets/img/**/*", images);
 }
 
 // define complex tasks
 const build = gulp.series(
     clean,
-    gulp.parallel(css, images, jekyll, javascript, typescript)
+    gulp.parallel(css, images, javascript, typescript),
+    jekyll
 );
 const watch = gulp.parallel(watchFiles, browserSync);
 
