@@ -5,12 +5,11 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
 
 <!-- Custom Theme JavaScript -->
-<script src="{{ "/assets/js/shinjam-blog.min.js " | prepend: site.baseurl }}"></script>
+<script src="/public/shinjam-blog.js"></script>
 
 <!-- Service Worker -->
 {% if site.service-worker %}
-<script src="{{ "/assets/js/snackbar.min.js " | prepend: site.baseurl }}"></script>
-<script src="{{ "/assets/js/sw-registration.min.js " | prepend: site.baseurl }}"></script>
+<script src="/pwa/sw-registration.js"></script>
 {% endif %}
 
 
@@ -54,7 +53,7 @@
 {% if page.title == 'Archive' %}
 <!-- jquery.tagcloud.js -->
 <script>
-    async('{{ "/assets/js/jquery.tagcloud.min.js" | prepend: site.baseurl }}', function () {
+    async("/public/jquery.tagcloud.js", function () {
         $.fn.tagcloud.defaults = {
             //size: {start: 1, end: 1, unit: 'em'},
             color: { start: '#bbbbee', end: '#2f93b4' },
@@ -62,7 +61,7 @@
         $('#tag_cloud a').tagcloud();
     })
 </script>
-<script src='{{ "/assets/js/archive.min.js " | prepend: site.baseurl }}'></script>
+<script src="/public/archive.js"></script>
 {% endif %}
 
 <!--fastClick.js -->
@@ -118,7 +117,7 @@
      * Doc: https://github.com/davist11/jQuery-One-Page-Nav
      * Fork by Hux to support padding
      */
-    async("{{ '/assets/js/jquery.nav.min.js' | prepend: site.baseurl }}", function () {
+    async("/public/jquery.nav.js", function () {
         $('.catalog-body').onePageNav({
             currentClass: "active",
             changeHash: !1,

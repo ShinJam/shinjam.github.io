@@ -14,15 +14,14 @@ const CACHE_NAMESPACE = "main-";
 const CACHE = CACHE_NAMESPACE + "precache-then-runtime";
 const PRECACHE_LIST = [
     "./",
-    "./offline.html",
+    "./pages/offline.html",
     "//code.jquery.com/jquery-3.4.1.slim.min.js",
     "//stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js",
-    "./assets/js/shinjam-blog.min.js",
-    "./assets/js/snackbar.min.js",
-    "./assets/img/avatar-gemini-man.png",
-    "./assets/img/home-bg.jpg",
-    "./assets/img/404-bg.jpg",
-    "./assets/css/shinjam-blog.min.css",
+    "./public/shinjam-blog.js",
+    "./public/static/images/avatar-gemini-man.png",
+    "./public/static/images/home-bg.jpg",
+    "./public/static/images/404-bg.jpg",
+    "./assets/main.css",
     "//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css",
     // "//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css",
     // "//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/fonts/fontawesome-webfont.woff2?v=4.6.3",
@@ -30,8 +29,7 @@ const PRECACHE_LIST = [
 ];
 const HOSTNAME_WHITELIST = [
     self.location.hostname,
-    "huangxuan.me",
-    "yanshuo.io",
+    "shinjam.me",
     "cdnjs.cloudflare.com",
 ];
 const DEPRECATED_CACHES = [

@@ -1,0 +1,22 @@
+// .babelrc
+{
+	"presets": [
+		[
+			"@babel/env",
+			{
+				"useBuiltIns": "usage", // or "entry"
+ 				"corejs": 3,
+				"sourceType": "script"
+			}
+		]
+	],
+	"plugins": [
+		[
+			"@babel/transform-runtime",
+			{
+				"corejs": 3
+			}
+		],
+		"transform-remove-strict-mode"
+	]
+}
