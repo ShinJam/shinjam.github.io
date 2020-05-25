@@ -60,8 +60,8 @@ https://github.com/kitian616/jekyll-TeXt-theme
 			{%- if _currentdate != _date -%}
 				{%- unless forloop.first -%}</section>{%- endunless -%}
 				<section>
-				<span class="fa listing-seperator">
-					<span class="tag-text">{{ _currentdate }}</span>
+				<span class="listing-seperator">
+					<i class="fas fa-filter fa-sm"></i><span class="tag-text">{{ _currentdate }}</span>
 				</span>
 				{%- assign _date = _currentdate -%}
 			{%- endif -%}

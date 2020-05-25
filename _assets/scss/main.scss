@@ -1019,6 +1019,7 @@ img::-moz-selection {
 .mini-post-list {
     margin: 20px 0 15px 0;
     .tag-text {
+        margin-left: 5px;
         font-weight: 200;
         @include sans-serif;
     }
