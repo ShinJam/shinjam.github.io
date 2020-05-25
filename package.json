@@ -27,16 +27,16 @@
         "typescript": "^3.9.3"
     },
     "scripts": {
-        "run": "npm run jekyll:build %% jekyll serve",
+        "jekyll": "npm run jekyll:build && jekyll serve",
         "start": "npm run build && jekyll serve",
         "build": "rimraf .cache && rimraf .jekyll-cache && npm run bundle && npm run jekyll:build",
         "jekyll:build": "bundle exec jekyll build",
-        "bundle": "rimraf public && npm run img & npm run css & npm run scripts",
+        "bundle": "rimraf public && npm run img & npm run scss & npm run scripts",
         "img": "node imagemin.js",
-        "css": "parcel build _assets/scss/main.scss --public-url ./ --out-dir public --no-source-maps",
+        "scss": "parcel build _assets/scss/main.scss --public-url ./ --out-dir public --no-source-maps",
         "scripts": "npm run scripts:js & npm run scripts:ts",
         "scripts:js": "parcel build _assets/js/*.js --out-dir public --public-url ./ --no-source-maps",
-        "scripts:ts": " parcel build _assets/ts/app.ts --out-dir public --public-url ./ --no-source-maps"
+        "scripts:ts": "parcel build _assets/ts/app.ts -o search.js --out-dir public --public-url ./ --no-source-maps"
     },
     "repository": {
         "type": "git",
