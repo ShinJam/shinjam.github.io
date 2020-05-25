@@ -27,6 +27,7 @@
         "typescript": "^3.9.3"
     },
     "scripts": {
+        "run": "npm run jekyll:build %% jekyll serve",
         "start": "npm run build && jekyll serve",
         "build": "rimraf .cache && rimraf .jekyll-cache && npm run bundle && npm run jekyll:build",
         "jekyll:build": "bundle exec jekyll build",
@@ -45,10 +46,5 @@
     "bugs": {
         "url": "https://github.com/ShinJam/shinjam.github.io/issues"
     },
-    "homepage": "https://github.com/ShinJam/shinjam.github.io#readme",
-    "dependencies": {
-        "babel-plugin-transform-remove-strict-mode": "0.0.2",
-        "imagemin-jpegtran": "^6.0.0",
-        "imagemin-pngquant": "^8.0.0"
-    }
+    "homepage": "https://github.com/ShinJam/shinjam.github.io#readme"
 }
