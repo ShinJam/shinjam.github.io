@@ -95,7 +95,7 @@ page-mathjax: false
 # Search engine
 algolia:
     application_id: "1YLEN0QM8Z"
-    search_only_api_key: "9b6553e7658d9ff15e97dad1e7370ab5"
+    search_key: "9b6553e7658d9ff15e97dad1e7370ab5"
     index_name: "dev_shinjam"
     extensions_to_index:
         - md
