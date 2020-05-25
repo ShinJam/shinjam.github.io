@@ -14,14 +14,14 @@ const CACHE_NAMESPACE = "main-";
 const CACHE = CACHE_NAMESPACE + "precache-then-runtime";
 const PRECACHE_LIST = [
     "./",
-    "./pages/offline.html",
+    "/offline/",
     "//code.jquery.com/jquery-3.4.1.slim.min.js",
     "//stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js",
     "./public/shinjam-blog.js",
     "./public/static/images/avatar-gemini-man.png",
     "./public/static/images/home-bg.jpg",
     "./public/static/images/404-bg.jpg",
-    "./assets/main.css",
+    "./public/main.css",
     "//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css",
     // "//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css",
     // "//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/fonts/fontawesome-webfont.woff2?v=4.6.3",
