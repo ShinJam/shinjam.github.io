@@ -99,3 +99,19 @@ algolia:
     index_name: "dev_shinjam"
     extensions_to_index:
         - md
+    settings:
+        searchableAttributes:
+            - title
+            - headings
+            - unordered(content)
+            - unordered(categories)
+            - unordered(tags)
+        attributesForFaceting:
+            - categories
+            - searchable(categories.lvl1)
+            - searchable(collection)
+            - hierarchicalCategories.lvl0
+            - hierarchicalCategories.lvl1
+            - searchable(tags)
+            - searchable(title)
+            - type

@@ -6,7 +6,7 @@ excerpt: How to use alogria with jekyll
 categories:
     - Computer
     - OS
-hierarchicalCategories: { "lvl0": "Computers", "lvl1": "Computer > OS" }
+hierarchicalCategories: { "lvl0": "Computer", "lvl1": "Computer > OS" }
 tags:
     - algoria
 ---
