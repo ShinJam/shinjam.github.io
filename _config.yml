@@ -107,7 +107,7 @@ algolia:
             - unordered(categories)
             - unordered(tags)
         attributesForFaceting:
-            - categories
+            - searchable(categories)
             - searchable(categories.lvl1)
             - searchable(collection)
             - hierarchicalCategories.lvl0
