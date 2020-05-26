@@ -7,9 +7,11 @@
     - Computer
     - OS
   hierarchicalCategories: {
-    "lv1": "Computer",
-    "lv2": "Computer > OS"
-  }
+    "lvl0": "Cameras & Camcorders",
+    "lvl1": "Cameras & Camcorders > Digital Cameras",
+    "lvl2": "Cameras & Camcorders > Digital Cameras > Point & Shoot Cameras",
+    "lvl3": "Cameras & Camcorders > Digital Cameras > Point & Shoot Cameras > 360 & Panoramic Cameras"
+  },
   tags: 
     - algoria
 ---
