@@ -17,8 +17,13 @@ import {
     sortBy,
 } from "./widgets";
 import getRouting from "./routing";
-import credential from "./credential";
-
+// import credential from "./credential";
+const credential = {
+    'application_id': '1YLEN0QM8Z',
+    'search_key': '9b6553e7658d9ff15e97dad1e7370ab5',
+    'index_name': 'dev_shinjam'
+  }
+  
 const searchClient = algoliasearch(
     credential.application_id,
     credential.search_key
