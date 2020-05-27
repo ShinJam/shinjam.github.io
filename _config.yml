@@ -10,6 +10,16 @@ url: "https://shinjam.me" # your host, for absolute URL
 baseurl: "" # for example, '/blog' if your blog hosted on 'host/blog'
 title_separator: "-"
 
+defaults:
+    -
+      scope:
+        path: "_posts"
+        type: "posts"
+      values:
+        layout: "post"
+        is_post: true
+
+
 # SEO Related
 google_site_verification: "dIeNy_pouCzT2HcDVVoaMnDKw8k5VDQ7p0LCAFB6ZOc"
 # bing_site_verification   :
@@ -39,7 +49,6 @@ exclude:
         "README.md",
         "_algolia_api_key",
     ]
-anchorjs: true # if you want to customize anchor. check out line:139 of `post.html`
 
 # Gems
 # from PR#40, to support local preview for Jekyll 3.0
@@ -115,3 +124,4 @@ algolia:
             - searchable(tags)
             - searchable(title)
             - type
+
