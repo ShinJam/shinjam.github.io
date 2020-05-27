@@ -13,15 +13,8 @@
 <!-- Custom Theme JavaScript -->
 <script src="/public/shinjam-blog.js"></script>
 
-<!-- instantsearch reset -->
-{% if page.title == 'Search'%}
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/instantsearch.css@7.3.1/themes/reset-min.css" />
-{% endif  %}
-
 <!-- Service Worker -->
-{% if site.service-worker %}
 <script src="/pwa/sw-registration.js"></script>
-{% endif %}
 
 <!-- Global site tag (gtag.js) - Google Analytics -->
 {% include_cached analytics.html %}
@@ -46,25 +39,6 @@
         s.parentNode.insertBefore(o, s);
     }
 </script>
-
-{% if page.plchart %}
-<script>
-    // https://stackoverflow.com/questions/9975810/make-iframe-automatically-adjust-height-according-to-the-contents-without-using
-    function resizeIframe(obj) {
-        obj.style.height = obj.contentWindow.document.body.scrollHeight + "px";
-    }
-
-    $(document).ready(function () {
-        var $chart = document.querySelector("#chart");
-        $chart.onload = function () {
-            resizeIframe($chart);
-        };
-        window.addEventListener("resize", () => {
-            resizeIframe($chart);
-        });
-    });
-</script>
-{% endif %}
 
 {% if page.title == 'Archive' %}
 <!-- jquery.tagcloud.js -->

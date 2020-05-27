@@ -47,13 +47,11 @@ layout: default
                 </ul>
                 <hr style="visibility: hidden;" />
 
-                {% if site.disqus_username %}
                 <!-- disqus box start -->
                 <div class="comment">
                     <div id="disqus_thread" class="disqus-thread"></div>
                 </div>
                 <!-- disqus box end -->
-                {% endif %}
             </div>
 
             <!-- Side Catalog Container -->
@@ -86,28 +84,27 @@ layout: default
 </article>
 
 <!-- add support for mathjax by voleking-->
-{% if page.mathjax %} {% include mathjax_support.html %} {% endif %} {% if
-site.disqus_username %}
-<!-- disqus start  -->
-<script type="text/javascript">
-    /* * * CONFIGURATION VARIABLES * * */
-    var disqus_shortname = "{{site.disqus_username}}";
-    var disqus_identifier = "{{page.id}}";
-    var disqus_url = "{{site.url}}{{page.url}}";
+{% if page.mathjax %} 
+{% include mathjax_support.html %} 
+{% endif %} 
 
-    (function () {
-        var dsq = document.createElement("script");
-        dsq.type = "text/javascript";
-        dsq.async = true;
-        dsq.src = "//" + disqus_shortname + ".disqus.com/embed.js";
-        (
-            document.getElementsByTagName("head")[0] ||
-            document.getElementsByTagName("body")[0]
-        ).appendChild(dsq);
-    })();
+<!-- disqus start  -->
+<script>
+var disqus_config = function () {
+this.page.url = "{{site.url}}";
+this.page.identifier = "{{page.id}}";;
+};
+(function() { // DON'T EDIT BELOW THIS LINE
+var d = document, s = d.createElement('script');
+s.async = true;
+s.src = 'https://{{site.disqus_username}}.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
 </script>
 <!-- disqus end -->
-{% endif %} {% if site.anchorjs %}
+
+ {% if site.anchorjs %}
 <!-- async load function -->
 <script>
     function async(u, c) {

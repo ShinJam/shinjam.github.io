@@ -1,22 +1,26 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <!-- SEO -->
-    {% include seo.html %} 
-    {% include_cached head.html %}
-  </head>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<!-- SEO -->
+{% include seo.html %} 
+{% include_cached head.html %}
+<!-- instantSearch reset -->
+{% if page.title == 'Search' %}
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/instantsearch.css@7.3.1/themes/reset-min.css" /> 
+{% endif %}
+</head>
 
-  <!-- hack iOS CSS :active style -->
-  <body ontouchstart="">
-    {% include nav.html %} 
-    {{ content }}
+<!-- hack iOS CSS :active style -->
+<body ontouchstart="">
+{% include nav.html %} 
+{{ content }}
 
-    <!-- Footer -->
-    <footer>
-      {% include_cached footer.html %}
-    </footer>
+<!-- Footer -->
+<footer>
+    {% include_cached footer.html %}
+</footer>
 
-    {% include scripts.html %}
-  </body>
+{% include scripts.html %}
+</body>
 </html>
