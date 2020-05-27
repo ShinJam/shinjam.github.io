@@ -79,17 +79,6 @@
 <script src="/public/archive.js"></script>
 {% endif %}
 
-<!--fastClick.js -->
-<script>
-    async(
-        "//cdnjs.cloudflare.com/ajax/libs/fastclick/1.0.6/fastclick.min.js",
-        function () {
-            var $nav = document.querySelector("nav");
-            if ($nav) FastClick.attach($nav);
-        }
-    );
-</script>
-
 <!-- Side Catalog -->
 {% if page.catalog != false or page.catalog %}
 <script type="text/javascript">

@@ -1,24 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8" />
-        <!-- SEO -->
-        {% include seo.html %} {% include_cached head.html %}
-    </head>
+  <head>
+    <meta charset="utf-8" />
+    <!-- SEO -->
+    {% include seo.html %} 
+    {% include_cached head.html %}
+  </head>
 
-    <!-- hack iOS CSS :active style -->
-    <body ontouchstart="">
-        {% include_cached browser-upgrade.html %} 
+  <!-- hack iOS CSS :active style -->
+  <body ontouchstart="">
+    {% include nav.html %} 
+    {{ content }}
 
-        {% include nav.html %} 
+    <!-- Footer -->
+    <footer>
+      {% include_cached footer.html %}
+    </footer>
 
-        {{ content }}
-
-        <!-- Footer -->
-        <footer>
-            {% include_cached footer.html %}
-        </footer>
-
-        {% include scripts.html %}
-    </body>
+    {% include scripts.html %}
+  </body>
 </html>
