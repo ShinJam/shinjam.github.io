@@ -1,50 +1,31 @@
 {
-    "name": "shinjam-blog",
-    "author": "shinjam <nevvjann@gmail.com>",
-    "version": "1.0.0",
-    "description": "Shinjam DevLog",
-    "devDependencies": {
-        "@babel/core": "^7.9.6",
-        "@babel/plugin-transform-runtime": "^7.9.6",
-        "@babel/preset-env": "^7.9.6",
-        "@babel/runtime-corejs3": "^7.9.6",
-        "algoliasearch": "^3.35.1",
-        "autoprefixer": "^9.8.0",
-        "fs": "0.0.1-security",
-        "imagemin": "^7.0.1",
-        "imagemin-keep-folder": "^5.3.2",
-        "imagemin-mozjpeg": "^8.0.0",
-        "imagemin-optipng": "^7.1.0",
-        "instantsearch.js": "^4.5.0",
-        "js-yaml": "^3.13.1",
-        "lodash.escaperegexp": "^4.1.2",
-        "parcel-bundler": "1.12.4",
-        "path": "^0.12.7",
-        "postcss-modules": "^2.0.0",
-        "prettier": "1.19.1",
-        "replace-in-file": "^6.0.0",
-        "sass": "^1.26.5",
-        "typescript": "^3.9.3"
-    },
-    "scripts": {
-        "jekyll": "npm run jekyll:build && jekyll serve",
-        "start": "npm run build && jekyll serve",
-        "build": "rimraf .cache && rimraf .jekyll-cache && npm run bundle && npm run jekyll:build",
-        "jekyll:build": "bundle exec jekyll build",
-        "bundle": "rimraf public && npm run img & npm run scss & npm run scripts",
-        "img": "node imagemin.js",
-        "scss": "parcel build _assets/scss/main.scss --public-url ./ --out-dir public --no-source-maps",
-        "scripts": "npm run scripts:js & npm run scripts:ts",
-        "scripts:js": "parcel build _assets/js/*.js --out-dir public --public-url ./ --no-source-maps",
-        "scripts:ts": "parcel build _assets/ts/app.ts -o search.js --out-dir public --public-url ./ --no-source-maps"
-    },
-    "repository": {
-        "type": "git",
-        "url": "git+https://github.com/ShinJam/shinjam.github.io.git"
-    },
-    "license": "ISC",
-    "bugs": {
-        "url": "https://github.com/ShinJam/shinjam.github.io/issues"
-    },
-    "homepage": "https://github.com/ShinJam/shinjam.github.io#readme"
+  "name": "gatsby-starter-hello-world",
+  "private": true,
+  "description": "A simplified bare-bones starter for Gatsby",
+  "version": "0.1.0",
+  "license": "MIT",
+  "scripts": {
+    "build": "gatsby build",
+    "develop": "gatsby develop",
+    "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
+    "start": "npm run develop",
+    "serve": "gatsby serve",
+    "clean": "gatsby clean",
+    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
+  },
+  "dependencies": {
+    "gatsby": "^2.21.37",
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0"
+  },
+  "devDependencies": {
+    "prettier": "2.0.5"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/gatsbyjs/gatsby-starter-hello-world"
+  },
+  "bugs": {
+    "url": "https://github.com/gatsbyjs/gatsby/issues"
+  }
 }
