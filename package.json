@@ -75,9 +75,9 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/margueriteroth/gatsby-prismic-starter-prist"
+    "url": "https://github.com/shinjam/shinjam.github.io"
   },
   "bugs": {
-    "url": "https://github.com/gatsbyjs/gatsby/issues"
+    "url": "https://github.com/shinjam/shinjam.github.io/issues"
   }
 }
