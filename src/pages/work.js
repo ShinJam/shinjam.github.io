@@ -3,35 +3,18 @@ import PropTypes from "prop-types";
 import Helmet from "react-helmet";
 import { graphql } from "gatsby";
 import styled from "@emotion/styled";
-import dimensions from "styles/dimensions";
 import Layout from "components/Layout";
-import PostCard from "components/PostCard";
+import ProjectCard from "components/ProjectCard";
 
-const BlogTitle = styled("h1")`
+const WorkTitle = styled("h1")`
     margin-bottom: 1em;
 `
 
-const BlogGrid = styled("div")`
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-gap: 2.5em;
-
-    @media(max-width: 1050px) {
-        grid-template-columns: repeat(2, 1fr);
-        grid-gap: 1.5em;
-    }
-
-    @media(max-width: ${dimensions.maxwidthMobile}px) {
-        grid-template-columns: 1fr;
-        grid-gap: 2.5em;
-    }
-`
-
-const Blog = ({ posts, meta }) => (
+const Work = ({ projects, meta }) => (
     <>
         <Helmet
-            title={`Blog | Prist, Gatsby & Prismic Starter`}
-            titleTemplate={`%s | Blog | Prist, Gatsby & Prismic Starter`}
+            title={`Work | Prist, Gatsby & Prismic Starter`}
+            titleTemplate={`%s | Work | Prist, Gatsby & Prismic Starter`}
             meta={[
                 {
                     name: `description`,
@@ -39,7 +22,7 @@ const Blog = ({ posts, meta }) => (
                 },
                 {
                     property: `og:title`,
-                    content: `Blog | Prist, Gatsby & Prismic Starter`,
+                    content: `Work | Prist, Gatsby & Prismic Starter`,
                 },
                 {
                     property: `og:description`,
@@ -68,53 +51,50 @@ const Blog = ({ posts, meta }) => (
             ].concat(meta)}
         />
         <Layout>
-            <BlogTitle>
-                Blog
-            </BlogTitle>
-            <BlogGrid>
-                {posts.map((post, i) => (
-                    <PostCard
+            <WorkTitle>
+                Work
+            </WorkTitle>
+            <>
+                {projects.map((project, i) => (
+                    <ProjectCard
                         key={i}
-                        author={post.node.post_author}
-                        category={post.node.post_category}
-                        title={post.node.post_title}
-                        date={post.node.post_date}
-                        description={post.node.post_preview_description}
-                        uid={post.node._meta.uid}
+                        category={project.node.project_category}
+                        title={project.node.project_title}
+                        description={project.node.project_preview_description}
+                        thumbnail={project.node.project_preview_thumbnail}
+                        uid={project.node._meta.uid}
                     />
                 ))}
-            </BlogGrid>
+            </>
         </Layout>
     </>
 );
 
 export default ({ data }) => {
-    const posts = data.prismic.allPosts.edges;
+    const projects = data.prismic.allProjects.edges;
     const meta = data.site.siteMetadata;
-    if (!posts) return null;
+    if (!projects) return null;
 
     return (
-        <Blog posts={posts} meta={meta}/>
+        <Work projects={projects} meta={meta}/>
     )
 }
 
-Blog.propTypes = {
-    posts: PropTypes.array.isRequired,
-    meta: PropTypes.object.isRequired,
+Work.propTypes = {
+    projects: PropTypes.array.isRequired,
 };
-
 
 export const query = graphql`
     {
         prismic {
-            allPosts(sortBy: post_date_DESC) {
+            allProjects {
                 edges {
                     node {
-                        post_title
-                        post_date
-                        post_category
-                        post_preview_description
-                        post_author
+                        project_title
+                        project_preview_description
+                        project_preview_thumbnail
+                        project_category
+                        project_post_date
                         _meta {
                             uid
                         }
