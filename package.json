@@ -29,7 +29,6 @@
     "gatsby-remark-relative-images": "^0.3.0",
     "gatsby-remark-responsive-iframe": "^2.4.3",
     "gatsby-source-filesystem": "^2.1.26",
-    "gatsby-source-prismic-graphql": "3.4.0-beta.1",
     "gatsby-transformer-remark": "^2.8.13",
     "gatsby-transformer-sharp": "^2.2.16",
     "node-sass": "^4.12.0",
@@ -59,7 +58,6 @@
   },
   "keywords": [
     "gatsby",
-    "prismic",
     "blog",
     "portfolio"
   ],
