@@ -4,10 +4,6 @@ const config = require("./data/SiteConfig");
 module.exports = {
   pathPrefix: config.pathPrefix === "" ? "/" : config.pathPrefix,
   siteMetadata: {
-    siteUrl: urljoin(config.siteUrl, config.pathPrefix),
-    title: config.siteTitle,
-    author: config.userName,
-    description: config.siteDescription,
     rssMetadata: {
       site_url: urljoin(config.siteUrl, config.pathPrefix),
       feed_url: urljoin(config.siteUrl, config.pathPrefix, config.siteRss),
@@ -105,16 +101,16 @@ module.exports = {
       }
     },
     "gatsby-plugin-offline",
-    // {
-    //   resolve: "gatsby-plugin-netlify-cms",
-    //   options: {
-    //     modulePath: path.resolve("src/netlifycms/index.js"), // default: undefined
-    //     enableIdentityWidget: true,
-    //     publicPath: "admin",
-    //     htmlTitle: "Content Manager",
-    //     includeRobots: false
-    //   }
-    // },
+    {
+      resolve: "gatsby-plugin-netlify-cms",
+      options: {
+        modulePath: `${__dirname}/src/netlifycms/index.js`,
+        enableIdentityWidget: true,
+        publicPath: "admin",
+        htmlTitle: "Content Manager",
+        includeRobots: false
+      }
+    },
     {
       resolve: "gatsby-plugin-feed",
       options: {
