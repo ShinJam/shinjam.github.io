@@ -2,6 +2,7 @@
 title: "The Great Gatsby Bootcamp"
 date: "2019-04-04"
 cover: "./grass.png"
+coverAnnotation: "photo by unsplash"
 ---
 
 I just launched a new bootcamp!

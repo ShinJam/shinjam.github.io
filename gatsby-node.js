@@ -13,18 +13,18 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
       Object.prototype.hasOwnProperty.call(node, "frontmatter") &&
       Object.prototype.hasOwnProperty.call(node.frontmatter, "title")
     ) {
-      slug = `/${_.kebabCase(node.frontmatter.title)}`;
+      slug = `${_.kebabCase(node.frontmatter.title)}`;
     } else if (parsedFilePath.name !== "index" && parsedFilePath.dir !== "") {
-      slug = `/${parsedFilePath.dir}/${parsedFilePath.name}/`;
+      slug = `${parsedFilePath.dir}/${parsedFilePath.name}/`;
     } else if (parsedFilePath.dir === "") {
-      slug = `/${parsedFilePath.name}/`;
+      slug = `${parsedFilePath.name}/`;
     } else {
-      slug = `/${parsedFilePath.dir}/`;
+      slug = `${parsedFilePath.dir}/`;
     }
 
     if (Object.prototype.hasOwnProperty.call(node, "frontmatter")) {
         if (Object.prototype.hasOwnProperty.call(node.frontmatter, "slug"))
-          slug = `/${_.kebabCase(node.frontmatter.slug)}`;
+          slug = `${_.kebabCase(node.frontmatter.slug)}`;
         if (Object.prototype.hasOwnProperty.call(node.frontmatter, "date")) {
           const date = moment(node.frontmatter.date, siteConfig.dateFromFormat);
           if (!date.isValid())
@@ -66,8 +66,8 @@ exports.createPages = async ({ graphql, actions }) => {
     postsList.forEach(edge => {
         createPage({
             type: 'Post',
-            match: '/blog:slug',
-            path: `/blog${edge.node.fields.slug}`,
+            match: '/blog/:slug',
+            path: `/blog/${edge.node.fields.slug}`,
             component: postTemplate,
             context: {
                 slug: edge.node.fields.slug,
