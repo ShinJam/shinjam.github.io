@@ -104,7 +104,7 @@ module.exports = {
     {
       resolve: "gatsby-plugin-netlify-cms",
       options: {
-        modulePath: `${__dirname}/netlifycms/index.js`,
+        modulePath: path.resolve("src/netlifycms/index.js"), // default: undefined
         enableIdentityWidget: true,
         publicPath: "admin",
         htmlTitle: "Content Manager",
