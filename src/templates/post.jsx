@@ -139,9 +139,10 @@ const Post = ({ post, meta }) => {
     )
 }
 
-export default ({ data }) => {
+export default ({ data, pageContext, location }) => {
     const postContent = data.markdownRemark
     const meta = data.site.siteMetadata
+
     return <Post post={postContent} meta={meta} />
 }
 

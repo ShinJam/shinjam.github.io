@@ -1,3 +1,5 @@
+/* eslint "no-console": "off" */
+
 const path = require("path")
 const _ = require("lodash")
 const moment = require("moment")
@@ -72,10 +74,18 @@ exports.createPages = async ({ graphql, actions }) => {
         }
     `)
 
+    if (blogResult.errors) {
+        console.error(blogResult.errors);
+        throw blogResult.errors;
+    }
+
     const postsList = blogResult.data.allMarkdownRemark.edges
     const postTemplate = require.resolve("./src/templates/post.jsx")
 
-    postsList.forEach((edge) => {
+    postsList.forEach((edge, index) => {
+        const previous = index === 0 ? null : postsList[index - 1].node  
+        const next = index === postsList.length - 1 ? null : postsList[index + 1].node
+
         createPage({
             type: "Post",
             match: "/blog/:slug",
@@ -83,7 +93,15 @@ exports.createPages = async ({ graphql, actions }) => {
             component: postTemplate,
             context: {
                 slug: edge.node.fields.slug,
+                previous,
+                next,
             },
         })
     })
 }
+
+exports.onCreateWebpackConfig = ({ actions }) => {
+    actions.setWebpackConfig({
+      devtool: 'eval-source-map',
+    })
+  }

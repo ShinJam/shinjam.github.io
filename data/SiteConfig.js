@@ -13,7 +13,7 @@ const config = {
     disqusShortname: "shinjam-devlog", // Disqus shortname.
     dateFromFormat: "YYYY-MM-DD", // Date format used in the frontmatter.
     dateFormat: "MMM Do, YYYY", // Date format for display.
-    postsPerPage: 5, // Amount of posts displayed per listing page.
+    //postsPerPage: 5, // Amount of posts displayed per listing page.
     userName: "shinjam", // Username to display in the author segment.
     userEmail: "nevvjann@gmail.com", // Email used for RSS feed's author segment
     userLocation: "North Pole, Earth", // User location to display in the author segment.

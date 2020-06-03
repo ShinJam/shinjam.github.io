@@ -86,11 +86,12 @@ const Blog = ({ posts, meta }) => (
   </>
 )
 
-export default ({ data }) => {
+export default ({ data  }) => {
     const posts = data.allMarkdownRemark.edges
     const meta = data.site.siteMetadata
-    if (!posts) return null
 
+    if (!posts) return null
+    
     return <Blog posts={posts} meta={meta} />
 }
 
