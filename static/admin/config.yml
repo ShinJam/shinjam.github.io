@@ -11,7 +11,7 @@ collections:
     label: Posts
     label_singular: 'Post'
     folder: content
-    path: '{{slug}}/index'
+    path: '{{year}}-{{month}}-{{day}}-{{slug}}/index'
     media_folder: ''
     public_folder: ''
     create: true
