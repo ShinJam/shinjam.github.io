@@ -12,7 +12,7 @@ const config = {
   googleAnalyticsID: "UA-166873913-1", // GA tracking ID.
   disqusShortname: "shinjam-devlog", // Disqus shortname.
   dateFromFormat: "YYYY-MM-DD", // Date format used in the frontmatter.
-  dateFormat: "DD/MM/YYYY", // Date format for display.
+  dateFormat: "MMM Do, YYYY", // Date format for display.
   postsPerPage: 5, // Amount of posts displayed per listing page.
   userName: "shinjam", // Username to display in the author segment.
   userEmail: "nevvjann@gmail.com", // Email used for RSS feed's author segment

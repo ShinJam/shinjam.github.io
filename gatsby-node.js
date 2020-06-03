@@ -23,16 +23,16 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
     }
 
     if (Object.prototype.hasOwnProperty.call(node, "frontmatter")) {
-      if (Object.prototype.hasOwnProperty.call(node.frontmatter, "slug"))
-        slug = `/${_.kebabCase(node.frontmatter.slug)}`;
-      if (Object.prototype.hasOwnProperty.call(node.frontmatter, "date")) {
-        const date = moment(node.frontmatter.date, siteConfig.dateFromFormat);
-        if (!date.isValid)
-          console.warn(`WARNING: Invalid date.`, node.frontmatter);
-
-        createNodeField({ node, name: "date", value: date.toISOString() });
+        if (Object.prototype.hasOwnProperty.call(node.frontmatter, "slug"))
+          slug = `/${_.kebabCase(node.frontmatter.slug)}`;
+        if (Object.prototype.hasOwnProperty.call(node.frontmatter, "date")) {
+          const date = moment(node.frontmatter.date, siteConfig.dateFromFormat);
+          if (!date.isValid())
+            console.warn(`WARNING: Invalid date.`, node.frontmatter);
+  
+          createNodeField({ node, name: "date", value: date.format(siteConfig.dateFormat) });
+        }
       }
-    }
     createNodeField({ node, name: "slug", value: slug });
   }
 };
