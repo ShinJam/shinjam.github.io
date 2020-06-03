@@ -32,6 +32,7 @@
     "gatsby-source-filesystem": "^2.3.10",
     "gatsby-transformer-remark": "^2.8.14",
     "gatsby-transformer-sharp": "^2.5.4",
+    "gatsby-plugin-remove-trailing-slashes": "^2.3.4",
     "lodash": "^4.17.15",
     "moment": "^2.26.0",
     "netlify-cms-app": "^2.12.14",
@@ -54,8 +55,13 @@
   },
   "devDependencies": {
     "env-cmd": "^10.1.0",
-    "gatsby-plugin-remove-trailing-slashes": "^2.3.4",
-    "prettier": "^2.0.5"
+    "prettier": "^2.0.5",
+    "eslint": "^7.1.0",
+    "eslint-config-airbnb": "^18.1.0",
+    "eslint-config-prettier": "^6.11.0",
+    "eslint-plugin-import": "^2.20.2",
+    "eslint-plugin-jsx-a11y": "^6.2.1",
+    "eslint-plugin-react": "^7.20.0"
   },
   "keywords": [
     "gatsby",
@@ -64,12 +70,16 @@
   ],
   "license": "MIT",
   "scripts": {
-    "build": "gatsby build",
-    "develop": "env-cmd -f .env.development gatsby develop",
-    "format": "prettier --write src/**/*.{js,jsx}",
+    "clean": "rm -rf public && rm -rf .cache",
     "start": "npm run develop",
     "serve": "gatsby serve",
-    "clean": "rm -rf public && rm -rf .cache",
+    "prebuild": "npm run clean",
+    "build": "gatsby build",
+    "develop": "env-cmd -f .env.development gatsby develop",
+    "format": "npm run format:js & npm run format:styles",
+    "format:js": "prettier **/*.{js,jsx} --write",
+    "format:styles": "prettier **/*.{css,scss} --write",
+    "lint:js": "eslint --fix --ext .js,.jsx .",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\""
   },
   "repository": {

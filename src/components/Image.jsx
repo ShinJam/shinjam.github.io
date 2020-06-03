@@ -8,5 +8,5 @@ const Image = ({ data }) => <Img />
 export default Image
 
 Image.propTypes = {
-  data: PropTypes.object.isRequired,
+    data: PropTypes.object.isRequired,
 }
