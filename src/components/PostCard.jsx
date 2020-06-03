@@ -6,7 +6,7 @@ import PropTypes from "prop-types"
 
 const PostCardContainer = styled(Link)`
   border: 1px solid ${colors.grey200};
-  padding: 3em 2.5em 2.25em 2.5em;
+  padding: 2em 1.5em 1.25em 1.5em;
   border-radius: 3px;
   text-decoration: none;
   color: currentColor;
@@ -61,8 +61,8 @@ const PostDate = styled("div")`
 `
 
 const PostDescription = styled("div")`
-  margin-top: 2em;
-  margin-bottom: 4em;
+  margin-top: 1em;
+  margin-bottom: 2em;
 
   p:last-of-type {
     margin: 0;
