@@ -70,11 +70,11 @@ const Hero = styled("div")`
 `
 
 const RenderBody = ({ meta }) => (
-  <>
-    <Helmet
-      title={meta.title}
-      titleTemplate={`%s | ${meta.title}`}
-      meta={[
+    <>
+        <Helmet
+            title={meta.title}
+            titleTemplate={`%s | ${meta.title}`}
+            meta={[
                 {
                     name: `description`,
                     content: meta.description,
@@ -108,41 +108,32 @@ const RenderBody = ({ meta }) => (
                     content: meta.description,
                 },
             ].concat(meta)}
-    />
-    <Hero>
-      <>
-        <h1>
-          I’m your new Gatsby starter. 
-          {' '}
-          <br />
-          I’m here to help you showcase your
-          {" "}
-          <Link to="/blog">thoughts</Link>
-          , and anything else!
-          <br />
-          I’m hooked up to 
-          {' '}
-          <Link to="/">Prismic</Link>
-          {' '}
-          and deployed
-          with
-          <Link to="/">Netlify</Link>
-          .
-        </h1>
-      </>
-    </Hero>
-  </>
+        />
+        <Hero>
+            <>
+                <h1>
+                    I’m your new Gatsby starter. <br />
+                    I’m here to help you showcase your{" "}
+                    <Link to="/blog">thoughts</Link>
+                    , and anything else!
+                    <br />
+                    I’m hooked up to <Link to="/">Prismic</Link> and deployed
+                    with
+                    <Link to="/">Netlify</Link>.
+                </h1>
+            </>
+        </Hero>
+    </>
 )
-
 
 export default ({ data }) => {
     // Required check for no data being returned
     const meta = data.site.siteMetadata
 
     return (
-      <Layout>
-        <RenderBody meta={meta} />
-      </Layout>
+        <Layout>
+            <RenderBody meta={meta} />
+        </Layout>
     )
 }
 

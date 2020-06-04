@@ -28,11 +28,11 @@ const BlogGrid = styled("div")`
 `
 
 const Blog = ({ posts, meta }) => (
-  <>
-    <Helmet
-      title="Blog | Prist, Gatsby & Prismic Starter"
-      titleTemplate="%s | Blog | Prist, Gatsby & Prismic Starter"
-      meta={[
+    <>
+        <Helmet
+            title="Blog | Prist, Gatsby & Prismic Starter"
+            titleTemplate="%s | Blog | Prist, Gatsby & Prismic Starter"
+            meta={[
                 {
                     name: `description`,
                     content: meta.description,
@@ -66,32 +66,32 @@ const Blog = ({ posts, meta }) => (
                     content: meta.description,
                 },
             ].concat(meta)}
-    />
-    <Layout>
-      <BlogTitle>Blog</BlogTitle>
-      <BlogGrid>
-        {posts.map((post, i) => (
-          <PostCard
-            key={i}
-            author={meta.author}
-            category={post.node.frontmatter.category}
-            title={post.node.frontmatter.title}
-            date={post.node.fields.date}
-            description={post.node.excerpt}
-            slug={post.node.fields.slug}
-          />
+        />
+        <Layout>
+            <BlogTitle>Blog</BlogTitle>
+            <BlogGrid>
+                {posts.map((post, i) => (
+                    <PostCard
+                        key={i}
+                        author={meta.author}
+                        category={post.node.frontmatter.category}
+                        title={post.node.frontmatter.title}
+                        date={post.node.fields.date}
+                        description={post.node.excerpt}
+                        slug={post.node.fields.slug}
+                    />
                 ))}
-      </BlogGrid>
-    </Layout>
-  </>
+            </BlogGrid>
+        </Layout>
+    </>
 )
 
-export default ({ data  }) => {
+export default ({ data }) => {
     const posts = data.allMarkdownRemark.edges
     const meta = data.site.siteMetadata
 
     if (!posts) return null
-    
+
     return <Blog posts={posts} meta={meta} />
 }
 

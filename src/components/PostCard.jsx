@@ -84,20 +84,18 @@ const PostCardAction = styled("div")`
 `
 
 const PostCard = ({ author, category, date, title, description, slug }) => (
-  <PostCardContainer className="BlogPostCard" to={`/blog/${slug}`}>
-    <PostCategory>{category}</PostCategory>
-    <PostTitle>{title}</PostTitle>
-    <PostDescription>{description}</PostDescription>
-    <PostCardAction className="PostCardAction">
-      Read more 
-      {' '}
-      <span>&#8594;</span>
-    </PostCardAction>
-    <PostMetas>
-      <PostAuthor>{author}</PostAuthor>
-      <PostDate>{date}</PostDate>
-    </PostMetas>
-  </PostCardContainer>
+    <PostCardContainer className="BlogPostCard" to={`/blog/${slug}`}>
+        <PostCategory>{category}</PostCategory>
+        <PostTitle>{title}</PostTitle>
+        <PostDescription>{description}</PostDescription>
+        <PostCardAction className="PostCardAction">
+            Read more <span>&#8594;</span>
+        </PostCardAction>
+        <PostMetas>
+            <PostAuthor>{author}</PostAuthor>
+            <PostDate>{date}</PostDate>
+        </PostMetas>
+    </PostCardContainer>
 )
 
 export default PostCard

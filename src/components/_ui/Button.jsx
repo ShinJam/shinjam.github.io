@@ -62,9 +62,9 @@ class Button extends Component {
     render() {
         const { children, ...props } = this.props
         return (
-          <ButtonContainer onClick={this.props.onClick} {...props}>
-            {this.props.children}
-          </ButtonContainer>
+            <ButtonContainer onClick={this.props.onClick} {...props}>
+                {this.props.children}
+            </ButtonContainer>
         )
     }
 }

@@ -89,11 +89,11 @@ const PostDate = styled("div")`
 
 const Post = ({ post, pageContext, meta }) => {
     return (
-      <>
-        <Helmet
-          title={`${post.frontmatter.title} | Prist, Gatsby & Prismic Starter`}
-          titleTemplate={`%s | ${meta.title}`}
-          meta={[
+        <>
+            <Helmet
+                title={`${post.frontmatter.title} | Prist, Gatsby & Prismic Starter`}
+                titleTemplate={`%s | ${meta.title}`}
+                meta={[
                     {
                         name: `description`,
                         content: meta.description,
@@ -111,33 +111,31 @@ const Post = ({ post, pageContext, meta }) => {
                         content: `website`,
                     },
                 ].concat(meta)}
-        />
-        <Layout>
-          <PostCategory>{post.frontmatter.category}</PostCategory>
-          <PostTitle>{post.frontmatter.title}</PostTitle>
-          <PostMetas>
-            <PostAuthor>{meta.author}</PostAuthor>
-            <PostDate>{post.fields.date}</PostDate>
-          </PostMetas>
-          {post.frontmatter.cover && (
-            <PostHeroContainer>
-              <Img
-                fluid={post.frontmatter.cover.childImageSharp.fluid}
-                className="img"
-              />
-              {post.frontmatter.coverAnnotation && (
-              <PostHeroAnnotation>
-                {post.frontmatter.coverAnnotation}
-              </PostHeroAnnotation>
+            />
+            <Layout>
+                <PostCategory>{post.frontmatter.category}</PostCategory>
+                <PostTitle>{post.frontmatter.title}</PostTitle>
+                <PostMetas>
+                    <PostAuthor>{meta.author}</PostAuthor>
+                    <PostDate>{post.fields.date}</PostDate>
+                </PostMetas>
+                {post.frontmatter.cover && (
+                    <PostHeroContainer>
+                        <Img
+                            fluid={post.frontmatter.cover.childImageSharp.fluid}
+                            className="img"
+                        />
+                        {post.frontmatter.coverAnnotation && (
+                            <PostHeroAnnotation>
+                                {post.frontmatter.coverAnnotation}
+                            </PostHeroAnnotation>
                         )}
-            </PostHeroContainer>
+                    </PostHeroContainer>
                 )}
-          <PostBody
-            dangerouslySetInnerHTML={{ __html: post.html }}
-          />
-          <PostNavigator pageContext={pageContext} />
-        </Layout>
-      </>
+                <PostBody dangerouslySetInnerHTML={{ __html: post.html }} />
+                <PostNavigator pageContext={pageContext} />
+            </Layout>
+        </>
     )
 }
 

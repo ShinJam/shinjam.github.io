@@ -75,16 +75,17 @@ exports.createPages = async ({ graphql, actions }) => {
     `)
 
     if (blogResult.errors) {
-        console.error(blogResult.errors);
-        throw blogResult.errors;
+        console.error(blogResult.errors)
+        throw blogResult.errors
     }
 
     const postsList = blogResult.data.allMarkdownRemark.edges
     const postTemplate = require.resolve("./src/templates/post.jsx")
 
     postsList.forEach((edge, index) => {
-        const previous = index === 0 ? null : postsList[index - 1].node  
-        const next = index === postsList.length - 1 ? null : postsList[index + 1].node
+        const previous = index === 0 ? null : postsList[index - 1].node
+        const next =
+            index === postsList.length - 1 ? null : postsList[index + 1].node
 
         createPage({
             type: "Post",
@@ -102,6 +103,6 @@ exports.createPages = async ({ graphql, actions }) => {
 
 exports.onCreateWebpackConfig = ({ actions }) => {
     actions.setWebpackConfig({
-      devtool: 'eval-source-map',
+        devtool: "eval-source-map",
     })
-  }
+}

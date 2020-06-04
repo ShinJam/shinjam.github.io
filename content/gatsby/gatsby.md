@@ -1,7 +1,7 @@
 ---
 title: "The Great Gatsby Bootcamp"
 date: "2019-04-04"
-cateory: "gatsby"
+category: "gatsby"
 cover: "./grass.png"
 coverAnnotation: "photo by unsplash"
 ---

@@ -32,7 +32,7 @@ const globalStyles = css`
                 color: white;
             }
         }
-        
+
         text-shadow: 0 0 0.1px rgba(0, 0, 0, 0.3);
         -webkit-text-size-adjust: antialiased;
         -moz-osx-font-smoothing: grayscale;
