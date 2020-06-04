@@ -94,7 +94,13 @@ module.exports = {
                 background_color: config.backgroundColor,
                 theme_color: config.themeColor,
                 display: "minimal-ui",
+                icon: config.siteLogo,
                 icons: [
+                    {
+                        src: "logos/logo-48.png",
+                        sizes: "48x48",
+                        type: "image/png",
+                    },
                     {
                         src: "logos/logo-192.png",
                         sizes: "192x192",
