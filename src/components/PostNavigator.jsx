@@ -7,24 +7,20 @@ const PostNavigatorBox = styled("div")`
     max-width: 680px;
     margin: 40px auto 12px auto;
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     grid-gap: 1em 5em;
     justify-content: space-between;
     list-style: none;
     padding: 0;
 
     a {
-        min-height: 60px;
         display: flex;
-        flex: 1 1;
-        justify-content: center;
         align-items: center;
-        padding: 1em;
+        justify-content: center;
+        min-height: 60px;
         border: 1px solid #1464f9;
         transition: all 0.25s ease;
         text-decoration: none;
-        border-radius: 4px;
-
         padding: 7px 16px 8px 16px;
         border-radius: 6px;
         font-size: 1em;
@@ -41,13 +37,13 @@ const PostNavigator = ({ previous, next }) => (
     <>
         <PostNavigatorBox>
             {previous && (
-                <Link to={previous.fields.slug} rel="prev">
+                <Link to={`../${previous.fields.slug}`} rel="prev">
                     ← {previous.frontmatter.title}
                 </Link>
             )}
 
             {next && (
-                <Link to={next.fields.slug} rel="next">
+                <Link to={`../${next.fields.slug}`} rel="next">
                     {next.frontmatter.title} →
                 </Link>
             )}
@@ -63,5 +59,6 @@ export default ({ pageContext }) => {
 }
 
 PostNavigator.propTypes = {
-    pageContext: PropTypes.object.isRequired,
+    previous: PropTypes.object.isRequired,
+    next: PropTypes.object.isRequired,
 }

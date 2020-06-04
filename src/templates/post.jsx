@@ -9,6 +9,7 @@ import Img from "gatsby-image"
 import PostNavigator from "components/PostNavigator"
 
 const PostHeroContainer = styled.div`
+    max-weight: 680px;
     max-height: 500px;
     overflow: hidden;
     display: flex;
@@ -87,7 +88,7 @@ const PostDate = styled("div")`
     margin: 0;
 `
 
-const Post = ({ post, pageContext, meta }) => {
+const Post = ({ post, pageContext, location, meta }) => {
     return (
         <>
             <Helmet
@@ -133,17 +134,17 @@ const Post = ({ post, pageContext, meta }) => {
                     </PostHeroContainer>
                 )}
                 <PostBody dangerouslySetInnerHTML={{ __html: post.html }} />
-                <PostNavigator pageContext={pageContext} />
+                <PostNavigator pageContext={pageContext} location={location} />
             </Layout>
         </>
     )
 }
 
-export default ({ data, pageContext }) => {
+export default ({ data, pageContext, location }) => {
     const postContent = data.markdownRemark
     const meta = data.site.siteMetadata
 
-    return <Post post={postContent} pageContext={pageContext} meta={meta} />
+    return <Post post={postContent} pageContext={pageContext} location={location} meta={meta} />
 }
 
 Post.propTypes = {
