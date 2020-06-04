@@ -134,6 +134,7 @@ const RenderBody = ({ meta }) => (
   </>
 )
 
+
 export default ({ data }) => {
     // Required check for no data being returned
     const meta = data.site.siteMetadata

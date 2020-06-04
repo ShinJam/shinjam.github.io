@@ -6,6 +6,7 @@ import styled from "@emotion/styled"
 import colors from "styles/colors"
 import Layout from "components/Layout"
 import Img from "gatsby-image"
+import PostNavigator from "components/PostNavigator"
 
 const PostHeroContainer = styled.div`
     max-height: 500px;
@@ -86,7 +87,7 @@ const PostDate = styled("div")`
     margin: 0;
 `
 
-const Post = ({ post, meta }) => {
+const Post = ({ post, pageContext, meta }) => {
     return (
       <>
         <Helmet
@@ -134,16 +135,17 @@ const Post = ({ post, meta }) => {
           <PostBody
             dangerouslySetInnerHTML={{ __html: post.html }}
           />
+          <PostNavigator pageContext={pageContext} />
         </Layout>
       </>
     )
 }
 
-export default ({ data, pageContext, location }) => {
+export default ({ data, pageContext }) => {
     const postContent = data.markdownRemark
     const meta = data.site.siteMetadata
 
-    return <Post post={postContent} meta={meta} />
+    return <Post post={postContent} pageContext={pageContext} meta={meta} />
 }
 
 Post.propTypes = {
