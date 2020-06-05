@@ -17,7 +17,7 @@ I just launched a new bootcamp!
 3. React
 
 
-```javascript{numberLines: true}
+```js
 // In your gatsby-config.js
 plugins: [
   {

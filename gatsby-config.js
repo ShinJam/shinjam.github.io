@@ -50,8 +50,12 @@ module.exports = {
             resolve: "gatsby-transformer-remark",
             options: {
                 plugins: [
-                    "gatsby-remark-prismjs",
-                    "gatsby-remark-autolink-headers",
+                    {
+                        resolve: `gatsby-remark-prismjs`,
+                        options: {
+                          aliases:{sh: "bash", js:"javascript"},
+                        }
+                    },                    
                     {
                         resolve: `gatsby-remark-relative-images`,
                     },
@@ -64,6 +68,7 @@ module.exports = {
                     {
                         resolve: "gatsby-remark-responsive-iframe",
                     },
+                    "gatsby-remark-autolink-headers",
                 ],
             },
         },

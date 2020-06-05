@@ -4,9 +4,11 @@ import { Helmet } from "react-helmet"
 import { graphql } from "gatsby"
 import styled from "@emotion/styled"
 import colors from "styles/colors"
+import codeStyles from "styles/codes"
 import Layout from "components/Layout"
 import Img from "gatsby-image"
 import PostNavigator from "components/PostNavigator"
+
 
 const PostHeroContainer = styled.div`
     max-weight: 680px;
@@ -66,6 +68,8 @@ const PostBody = styled("div")`
             width: 100%;
         }
     }
+
+    ${codeStyles}
 `
 
 const PostMetas = styled("div")`
