@@ -6,7 +6,7 @@ const MainLogo = styled("img")`
 `
 
 const Logo = () => (
-    <MainLogo src="logos/logo-main.png"/> 
+    <MainLogo src="/logos/logo-main.png"/> 
 )
 
 export default Logo

@@ -59,6 +59,6 @@ export default ({ pageContext }) => {
 }
 
 PostNavigator.propTypes = {
-    previous: PropTypes.object.isRequired,
-    next: PropTypes.object.isRequired,
+    previous: PropTypes.object,
+    next: PropTypes.object,
 }
