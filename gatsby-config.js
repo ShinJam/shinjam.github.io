@@ -1,5 +1,6 @@
 const urljoin = require("url-join")
 const config = require("./data/SiteConfig")
+const isProd = process.env.NODE_ENV === 'production'
 
 module.exports = {
     pathPrefix: config.pathPrefix === "" ? "/" : config.pathPrefix,
