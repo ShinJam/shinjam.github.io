@@ -15,3 +15,16 @@ I just launched a new bootcamp!
 1. Gatsby
 2. GraphQL
 3. React
+
+
+```javascript{numberLines: true}
+// In your gatsby-config.js
+plugins: [
+  {
+    resolve: `gatsby-transformer-remark`,
+    options: {
+      plugins: [`gatsby-remark-prismjs`],
+    },
+  },
+]
+```

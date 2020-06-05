@@ -49,10 +49,9 @@ const PostTitle = styled("div")`
     max-width: 680px;
     margin: 0 auto;
     text-align: center;
-
-    h1 {
-        margin-top: 0;
-    }
+    font-size: 2.5em;
+    line-height: 1.45;
+    font-weight: 800;
 `
 
 const PostBody = styled("div")`
@@ -144,7 +143,14 @@ export default ({ data, pageContext, location }) => {
     const postContent = data.markdownRemark
     const meta = data.site.siteMetadata
 
-    return <Post post={postContent} pageContext={pageContext} location={location} meta={meta} />
+    return (
+        <Post
+            post={postContent}
+            pageContext={pageContext}
+            location={location}
+            meta={meta}
+        />
+    )
 }
 
 Post.propTypes = {

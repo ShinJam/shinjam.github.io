@@ -20,6 +20,7 @@ const HeaderLinks = styled("div")`
     grid-template-columns: repeat(2, auto);
     grid-gap: 7em;
     justify-content: flex-end;
+    align-content: end;
     width: 100%;
     max-width: 200px;
 
@@ -38,7 +39,7 @@ const HeaderLinks = styled("div")`
         font-weight: 600;
         font-size: 0.95em;
         height: 100%;
-        padding-bottom: 1.25em;
+        padding-bottom: 1em;
         padding-top: 0.25em;
         display: block;
         position: relative;
@@ -71,13 +72,17 @@ const HeaderLinks = styled("div")`
         }
     }
 `
+const StyledLink = styled(props => <Link {...props} />)`
+    display: flex;
+`
+
 
 const Header = () => (
     <HeaderContainer>
         <HeaderContent>
-            <Link to="/">
+            <StyledLink to="/">
                 <Logo />
-            </Link>
+            </StyledLink>
             <HeaderLinks>
                 <Link activeClassName="Link--is-active" to="/blog">
                     Blog
