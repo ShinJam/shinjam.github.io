@@ -7,15 +7,19 @@ const codeStyles = css`
     .gatsby-highlight {
         background-color: #1d1f21;
         border-radius: 0.3em;
-        margin: 0.5em 0;
-        padding: 1em;
+        margin: 0;
         overflow: auto;
     }
     
     .gatsby-highlight pre[class*="language-"].line-numbers {
-        padding: 0;
-        padding-left: 2.8em;
-        overflow: initial;
+        padding: 0 0 0 2.8em;        
+        display: inline-block;
+        overflow: auto;
+        overflow-x: hidden;
+    }
+
+    .has-highlighted-lines {
+        padding: .5em;
     }
 
     .gatsby-highlight-code-line {
