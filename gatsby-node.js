@@ -13,16 +13,6 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
         const parsedFilePath = path.parse(fileNode.relativePath)       
 
         /*
-         * making draft field 
-         */
-        let draft = false
-
-        if (/^_draft\//.exec(parsedFilePath.dir)) {
-            draft = true
-        }
-        createNodeField({ node, name: "draft", value: draft })
-
-        /*
          * maiking slug field
          */
         let slug

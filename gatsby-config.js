@@ -44,6 +44,7 @@ module.exports = {
             options: {
                 name: "posts",
                 path: `${__dirname}/content/`,
+                ignore: isProd ? ['**/_draft'] : []
             },
         },
         {

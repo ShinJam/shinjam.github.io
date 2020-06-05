@@ -121,7 +121,6 @@ export const query = graphql`
                                 }
                             }
                         }
-                        coverAnnotation
                         category
                         date
                     }
