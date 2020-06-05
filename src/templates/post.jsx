@@ -6,6 +6,7 @@ import styled from "@emotion/styled"
 import colors from "styles/colors"
 import codeStyles from "styles/codes"
 import Layout from "components/Layout"
+import Utterances from "components/Utterances"
 import Img from "gatsby-image"
 import PostNavigator from "components/PostNavigator"
 
@@ -138,6 +139,7 @@ const Post = ({ post, pageContext, location, meta }) => {
                 )}
                 <PostBody dangerouslySetInnerHTML={{ __html: post.html }} />
                 <PostNavigator pageContext={pageContext} location={location} />
+                <Utterances />
             </Layout>
         </>
     )
