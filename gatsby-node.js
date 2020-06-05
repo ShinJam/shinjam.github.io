@@ -7,47 +7,53 @@ const siteConfig = require("./data/SiteConfig")
 
 exports.onCreateNode = ({ node, actions, getNode }) => {
     const { createNodeField } = actions
-    let slug
+    
     if (node.internal.type === "MarkdownRemark") {
         const fileNode = getNode(node.parent)
-        const parsedFilePath = path.parse(fileNode.relativePath)
-        if (
-            Object.prototype.hasOwnProperty.call(node, "frontmatter") &&
-            Object.prototype.hasOwnProperty.call(node.frontmatter, "title")
-        ) {
-            slug = `${_.kebabCase(node.frontmatter.title)}`
-        } else if (
-            parsedFilePath.name !== "index" &&
-            parsedFilePath.dir !== ""
-        ) {
-            slug = `${parsedFilePath.dir}/${parsedFilePath.name}/`
-        } else if (parsedFilePath.dir === "") {
-            slug = `${parsedFilePath.name}/`
-        } else {
-            slug = `${parsedFilePath.dir}/`
+        const parsedFilePath = path.parse(fileNode.relativePath)       
+
+        /*
+         * making draft field 
+         */
+        let draft = false
+
+        if (/^_draft\//.exec(parsedFilePath.dir)) {
+            draft = true
         }
+        createNodeField({ node, name: "draft", value: draft })
 
-        if (Object.prototype.hasOwnProperty.call(node, "frontmatter")) {
-            if (Object.prototype.hasOwnProperty.call(node.frontmatter, "slug"))
-                slug = `${_.kebabCase(node.frontmatter.slug)}`
-            if (
-                Object.prototype.hasOwnProperty.call(node.frontmatter, "date")
-            ) {
-                const date = moment(
-                    node.frontmatter.date,
-                    siteConfig.dateFromFormat
-                )
-                if (!date.isValid())
-                    console.warn(`WARNING: Invalid date.`, node.frontmatter)
+        /*
+         * maiking slug field
+         */
+        let slug
 
-                createNodeField({
-                    node,
-                    name: "date",
-                    value: date.format(siteConfig.dateFormat),
-                })
-            }
+        if (node.frontmatter.slug) { // slug를 따로 명시 할 때
+            slug = `${_.kebabCase(node.frontmatter.slug)}`
+        }
+        else if(!node.frontmatter.title) { // title이 없을 때
+            slug = `${parsedFilePath.name}`
+        } else { // title을 기본 slug
+            slug = `${_.kebabCase(node.frontmatter.title)}`
         }
         createNodeField({ node, name: "slug", value: slug })
+
+        /*
+         * making date field
+         */
+        if(node.frontmatter.date) {
+            const date = moment(
+                node.frontmatter.date,
+                siteConfig.dateFromFormat
+            )
+            if (!date.isValid())
+                console.warn(`WARNING: Invalid date.`, node.frontmatter)
+
+            createNodeField({
+                node,
+                name: "date",
+                value: date.format(siteConfig.dateFormat),
+            })
+        }       
     }
 }
 
