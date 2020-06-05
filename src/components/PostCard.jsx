@@ -12,6 +12,7 @@ const PostCardContainer = styled(Link)`
     color: currentColor;
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
     box-shadow: 0px 9px 24px rgba(0, 0, 0, 0.06);
     transition: all 150ms ease-in-out;
 
@@ -23,7 +24,7 @@ const PostCardContainer = styled(Link)`
         .PostCardAction {
             color: ${colors.blue500};
             transition: all 150ms ease-in-out;
-
+            
             span {
                 transform: translateX(0px);
                 opacity: 1;
@@ -74,7 +75,8 @@ const PostCardAction = styled("div")`
     text-decoration: none;
     color: currentColor;
     transition: all 150ms ease-in-out;
-
+    margin-top: auto;
+    
     span {
         margin-left: 1em;
         transform: translateX(-8px);
@@ -100,7 +102,7 @@ const PostCard = ({ author, category, date, title, description, slug }) => (
 
 export default PostCard
 
-PostCard.propTypes = {
+PostCard.propTypes = { 
     author: PropTypes.string.isRequired,
     category: PropTypes.string.isRequired,
     date: PropTypes.string.isRequired,
