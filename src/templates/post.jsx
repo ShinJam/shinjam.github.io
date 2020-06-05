@@ -60,6 +60,7 @@ const PostTitle = styled("div")`
 const PostBody = styled("div")`
     max-width: 680px;
     margin: 0 auto;
+    color: ##3B454E;
 
     .block-img {
         margin-top: 3.5em;
@@ -69,7 +70,8 @@ const PostBody = styled("div")`
             width: 100%;
         }
     }
-
+    
+    // prismJS custom style
     ${codeStyles}
 `
 
