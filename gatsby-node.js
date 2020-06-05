@@ -97,8 +97,24 @@ exports.createPages = async ({ graphql, actions }) => {
     })
 }
 
-exports.onCreateWebpackConfig = ({ actions }) => {
+
+exports.sourceNodes = ({ actions }) => {
+    const { createTypes } = actions
+    createTypes(`
+      type MarkdownRemarkFrontmatter {
+        cover: File
+        coverAnnotation: String
+      }
+  
+      type MarkdownRemark implements Node {
+        frontmatter: MarkdownRemarkFrontmatter
+      }
+    `)
+  }
+
+  exports.onCreateWebpackConfig = ({ actions }) => {
     actions.setWebpackConfig({
         devtool: "eval-source-map",
     })
 }
+
