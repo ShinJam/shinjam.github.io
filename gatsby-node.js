@@ -75,13 +75,35 @@ exports.createPages = async ({ graphql, actions }) => {
         throw blogResult.errors
     }
 
-    const postsList = blogResult.data.allMarkdownRemark.edges
+
+    const postsEdges = blogResult.data.allMarkdownRemark.edges
     const postTemplate = require.resolve("./src/templates/post.jsx")
 
-    postsList.forEach((edge, index) => {
-        const previous = index === 0 ? null : postsList[index - 1].node
+
+    // Sort posts
+    postsEdges.sort((postA, postB) => {
+        const dateA = moment(
+        postA.node.frontmatter.date,
+        siteConfig.dateFromFormat
+        );
+
+        const dateB = moment(
+        postB.node.frontmatter.date,
+        siteConfig.dateFromFormat
+        );
+
+        if (dateA.isBefore(dateB)) return 1;
+        if (dateB.isBefore(dateA)) return -1;
+
+        return 0;
+    });
+
+
+
+    postsEdges.forEach((edge, index) => {
+        const previous = index === 0 ? null : postsEdges[index - 1].node
         const next =
-            index === postsList.length - 1 ? null : postsList[index + 1].node
+            index === postsEdges.length - 1 ? null : postsEdges[index + 1].node
 
         createPage({
             type: "Post",
