@@ -1,10 +1,10 @@
 import React from "react"
-import { Link } from "gatsby"
 import styled from "@emotion/styled"
 import colors from "styles/colors"
-import Logo from "components/_ui/Logo"
 
 const FooterContainer = styled("div")`
+    justify-self: self-end;
+    margin-top: auto;
     padding-top: 3.75em;
     padding-bottom: 3em;
     display: flex;
@@ -24,6 +24,7 @@ const FooterAuthor = styled("a")`
     align-items: center;
     text-decoration: none;
     margin-top: 1.5em;
+    
 
     &:hover {
         color: ${colors.blue900};
@@ -55,8 +56,7 @@ const Footer = () => (
     <FooterContainer>
         <FooterAuthor href="/">
             {/* <FooterSpooch className="FooterSpooch" src="logos/logo-192.png" /> */}
-            © 2020 — Powered by Shinjam, xoxo rimim <br />
-            Combinated with prist, jbee and advanced
+            © 2020 — Powered by Shinjam, xoxo rimim            
         </FooterAuthor>
     </FooterContainer>
 )

@@ -1,15 +1,17 @@
-import css from "@emotion/css"
-import colors from "styles/colors"
-import dimensions from "styles/dimensions"
+import css from "@emotion/css";
+import colors from 'styles/colors';
+import dimensions from 'styles/dimensions';
 
-const globalStyles = css`
+const globalStyles = css`  
     html,
     body,
-    #root {
+    #___gatsby,
+    #gatsby-focus-wrapper {
         margin: 0;
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
-        min-height: 100%;
+        height: 100%;
+        min-height: 100% !important;
     }
 
     body {
@@ -20,9 +22,10 @@ const globalStyles = css`
         color: ${colors.grey900};
         -webkit-font-smoothing: antialiased;
 
-        @media (max-width: ${dimensions.maxwidthMobile}px) {
+        @media(max-width: ${dimensions.maxwidthMobile}px) {
             font-size: 14px;
         }
+
 
         * {
             box-sizing: border-box;
@@ -32,25 +35,7 @@ const globalStyles = css`
                 color: white;
             }
         }
-
-        text-shadow: 0 0 0.1px rgba(0, 0, 0, 0.3);
-        -webkit-text-size-adjust: antialiased;
-        -moz-osx-font-smoothing: grayscale;
-        -webkit-font-smoothing: antialiased;
-        -moz-font-smoothing: antialiased;
-        text-rendering: optimizelegibility;
-    }
-
-    /*
-    A workaround for forcing accessibility wrappers
-    to have a 100% height.
-    Reach Router issue here: https: //github.com/reach/router/issues/63
-    */
-    #___gatsby,
-    div[role="group"][tabindex] {
-        height: 100%;
-        min-height: 100% !important;
     }
 `
 
-export default globalStyles
+export default globalStyles;
