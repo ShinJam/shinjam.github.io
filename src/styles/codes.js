@@ -1,6 +1,5 @@
 
 import css from "@emotion/css"
-// gatsby-browser.js
 
 
 const codeStyles = css`
@@ -31,6 +30,5 @@ const codeStyles = css`
         padding-left: .75em;
         border-left: .35em solid #0687f0;
       }
-
 `
 export default codeStyles

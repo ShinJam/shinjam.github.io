@@ -1,52 +1,36 @@
 import React from "react"
-import { Link } from "gatsby"
 import PropTypes from "prop-types"
 import styled from "@emotion/styled"
+import PostNavBtn from "components/_ui/PostNavBtn"
 
 const PostNavigatorBox = styled("div")`
     max-width: 680px;
-    margin: 40px auto 12px auto;
+    width: auto;
+    margin: auto;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    grid-gap: 1em 5em;
-    justify-content: space-between;
-    list-style: none;
     padding: 0;
-
-    a {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        min-height: 60px;
-        border: 1px solid #1464f9;
-        transition: all 0.25s ease;
-        text-decoration: none;
-        padding: 7px 16px 8px 16px;
-        border-radius: 6px;
-        font-size: 1em;
-        opacity: 0.8;
-    }
-    a:hover {
-        background-color: #1464f9;
-        transition: all 0.25s ease;
-        color: #fff;
-    }
+    grid-column-gap: 1em;
+    grid-template-rows: auto;
+    grid-template-areas: "previous next";
+    grid-template-columns: 1fr 1fr;
 `
+
+
 
 const PostNavigator = ({ previous, next }) => (
     <>
         <PostNavigatorBox>
-            {previous && (
-                <Link to={`../${previous.fields.slug}`} rel="prev">
-                    ← {previous.frontmatter.title}
-                </Link>
-            )}
+            {previous &&
+                <PostNavBtn
+                    to={`../${previous.fields.slug}`}
+                    rel="prev"
+                    title={previous.frontmatter.title} />}
 
-            {next && (
-                <Link to={`../${next.fields.slug}`} rel="next">
-                    {next.frontmatter.title} →
-                </Link>
-            )}
+            {next &&
+                <PostNavBtn
+                    to={`../${next.fields.slug}`}
+                    rel="next"
+                    title={next.frontmatter.title} />}
         </PostNavigatorBox>
     </>
 )
