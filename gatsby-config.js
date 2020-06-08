@@ -51,6 +51,9 @@ module.exports = {
         {
             resolve: "gatsby-transformer-remark",
             options: {
+                frontmatter: {
+                    coverAnnotation: "hi"
+                },
                 plugins: [
                     {
                         resolve: `gatsby-remark-prismjs`,
@@ -71,6 +74,7 @@ module.exports = {
                         resolve: "gatsby-remark-responsive-iframe",
                     },
                     "gatsby-remark-autolink-headers",
+                    "gatsby-remark-copy-linked-files",
                 ],
             },
         },
