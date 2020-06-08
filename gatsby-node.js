@@ -124,7 +124,7 @@ exports.sourceNodes = ({ actions }) => {
     const { createTypes } = actions
     createTypes(`
       type MarkdownRemarkFrontmatter {
-        cover: File
+        cover: File @fileByRelativePath
         coverAnnotation: String
       }
   
