@@ -1,13 +1,12 @@
 import React from "react"
 import PropTypes from "prop-types"
 import styled from "@emotion/styled"
-import { Link } from "gatsby"
 import PostNavBtn from "components/_ui/PostNavBtn"
 
 const PostNavigatorBox = styled("div")`
     max-width: 680px;
     width: auto;
-    margin: auto;
+    margin: 2em auto;
     display: grid;
     padding: 0;
     grid-column-gap: 1em;
@@ -32,7 +31,7 @@ const PostNavigator = ({ previous, next }) => (
                     to={`../${next.fields.slug}`}
                     rel="next"
                     title={next.frontmatter.title}
-                />              
+                />
             )}
         </PostNavigatorBox>
     </>
