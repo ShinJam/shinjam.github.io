@@ -10,7 +10,6 @@ import Utterances from "components/Utterances"
 import Img from "gatsby-image"
 import PostNavigator from "components/PostNavigator"
 
-
 const PostHeroContainer = styled.div`
     max-weight: 680px;
     max-height: 500px;
@@ -60,7 +59,7 @@ const PostTitle = styled("div")`
 const PostBody = styled("div")`
     max-width: 680px;
     margin: 0 auto;
-    color: ##3B454E;
+    color: ##3b454e;
 
     .block-img {
         margin-top: 3.5em;
@@ -70,7 +69,7 @@ const PostBody = styled("div")`
             width: 100%;
         }
     }
-    
+
     // prismJS custom style
     ${codeStyles}
 `

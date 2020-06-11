@@ -5,10 +5,6 @@ const MainLogo = styled("img")`
     height: 50px;
 `
 
-const Logo = () => (
-    <MainLogo src="/logos/logo-main.png"/> 
-)
+const Logo = () => <MainLogo src="/logos/logo-main.png" />
 
 export default Logo
-
-

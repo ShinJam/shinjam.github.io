@@ -24,7 +24,6 @@ const FooterAuthor = styled("a")`
     align-items: center;
     text-decoration: none;
     margin-top: 1.5em;
-    
 
     &:hover {
         color: ${colors.blue900};
@@ -56,7 +55,7 @@ const Footer = () => (
     <FooterContainer>
         <FooterAuthor href="/">
             {/* <FooterSpooch className="FooterSpooch" src="logos/logo-192.png" /> */}
-            © 2020 — Powered by Shinjam, xoxo rimim            
+            © 2020 — Powered by Shinjam, xoxo rimim
         </FooterAuthor>
     </FooterContainer>
 )

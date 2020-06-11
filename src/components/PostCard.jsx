@@ -24,7 +24,7 @@ const PostCardContainer = styled(Link)`
         .PostCardAction {
             color: ${colors.blue500};
             transition: all 150ms ease-in-out;
-            
+
             span {
                 transform: translateX(0px);
                 opacity: 1;
@@ -76,7 +76,7 @@ const PostCardAction = styled("div")`
     color: currentColor;
     transition: all 150ms ease-in-out;
     margin-top: auto;
-    
+
     span {
         margin-left: 1em;
         transform: translateX(-8px);
@@ -102,7 +102,7 @@ const PostCard = ({ author, category, date, title, description, slug }) => (
 
 export default PostCard
 
-PostCard.propTypes = { 
+PostCard.propTypes = {
     author: PropTypes.string.isRequired,
     category: PropTypes.string.isRequired,
     date: PropTypes.string.isRequired,

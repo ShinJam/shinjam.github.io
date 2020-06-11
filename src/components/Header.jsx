@@ -72,10 +72,9 @@ const HeaderLinks = styled("div")`
         }
     }
 `
-const StyledLink = styled(props => <Link {...props} />)`
+const StyledLink = styled((props) => <Link {...props} />)`
     display: flex;
 `
-
 
 const Header = () => (
     <HeaderContainer>

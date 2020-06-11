@@ -1,6 +1,7 @@
 import React from "react"
 import PropTypes from "prop-types"
 import styled from "@emotion/styled"
+import { Link } from "gatsby"
 import PostNavBtn from "components/_ui/PostNavBtn"
 
 const PostNavigatorBox = styled("div")`
@@ -15,22 +16,24 @@ const PostNavigatorBox = styled("div")`
     grid-template-columns: 1fr 1fr;
 `
 
-
-
 const PostNavigator = ({ previous, next }) => (
     <>
         <PostNavigatorBox>
-            {previous &&
+            {previous && (
                 <PostNavBtn
                     to={`../${previous.fields.slug}`}
                     rel="prev"
-                    title={previous.frontmatter.title} />}
+                    title={previous.frontmatter.title}
+                />
+            )}
 
-            {next &&
+            {next && (
                 <PostNavBtn
                     to={`../${next.fields.slug}`}
                     rel="next"
-                    title={next.frontmatter.title} />}
+                    title={next.frontmatter.title}
+                />              
+            )}
         </PostNavigatorBox>
     </>
 )
