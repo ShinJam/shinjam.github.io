@@ -9,8 +9,8 @@ import PostCard from "components/_ui/PostCard"
 const Blog = ({ posts, meta }) => (
     <>
         <Helmet
-            title="Blog | Prist, Gatsby & Prismic Starter"
-            titleTemplate="%s | Blog | Prist, Gatsby & Prismic Starter"
+            title="Blog | Gemini Devlog"
+            titleTemplate="%s | Blog | Gemini Devlog"
             meta={[
                 {
                     name: `description`,
@@ -18,7 +18,7 @@ const Blog = ({ posts, meta }) => (
                 },
                 {
                     property: `og:title`,
-                    content: `Blog | Prist, Gatsby & Prismic Starter`,
+                    content: `Blog | Gemini Devlog`,
                 },
                 {
                     property: `og:description`,

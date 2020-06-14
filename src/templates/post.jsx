@@ -97,7 +97,7 @@ const Post = ({ post, pageContext, location, meta }) => {
     return (
         <>
             <Helmet
-                title={`${post.frontmatter.title} | Prist, Gatsby & Prismic Starter`}
+                title={`${post.frontmatter.title} | Gemini Devlog`}
                 titleTemplate={`%s | ${meta.title}`}
                 meta={[
                     {
@@ -106,7 +106,7 @@ const Post = ({ post, pageContext, location, meta }) => {
                     },
                     {
                         property: `og:title`,
-                        content: `${post.frontmatter.title} | Prist, Gatsby & Prismic Starter`,
+                        content: `${post.frontmatter.title} | Gemini Devlog`,
                     },
                     {
                         property: `og:description`,
