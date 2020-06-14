@@ -80,8 +80,10 @@ exports.createPages = async ({ graphql, actions }) => {
     const postsEdges = blogResult.data.allMarkdownRemark.edges
     const postTemplate = require.resolve("./src/templates/post.jsx")
     const tagTemplate = path.resolve("src/templates/tag.jsx");
+    const categoryTemplate = path.resolve("src/templates/category.jsx");
 
     const tagSet = new Set();
+    const categorySet = new Set();
 
     // Sort posts
     postsEdges.sort((postA, postB) => {
@@ -118,7 +120,6 @@ exports.createPages = async ({ graphql, actions }) => {
             },
         })
 
-
         // Generate a list of tags
         if (edge.node.frontmatter.tags) {
             edge.node.frontmatter.tags.forEach(tag => {
@@ -131,6 +132,19 @@ exports.createPages = async ({ graphql, actions }) => {
                 path: `/tags/${_.kebabCase(tag)}/`,
                 component: tagTemplate,
                 context: { tag }
+            });
+        });
+
+        // Generate a list of categories
+        if (edge.node.frontmatter.category) {
+            categorySet.add(edge.node.frontmatter.category);
+        }
+        // Create category pages
+        categorySet.forEach(category => {
+            createPage({
+                path: `/categories/${_.kebabCase(category)}/`,
+                component: categoryTemplate,
+                context: { category }
             });
         });
     })
