@@ -19,7 +19,7 @@ const Hero = styled("div")`
 
     h1 {
         margin-bottom: 1em;
-        font-family: 'Balsamiq Sans', 'Roboto' ,'Noto Sans KR', sans-serif;
+        font-family: "Balsamiq Sans", "Roboto", "Noto Sans KR", sans-serif;
         font-weight: 100;
 
         a {
@@ -121,8 +121,7 @@ const RenderBody = ({ meta }) => (
                     <br />
                     I’m hooked up to <Link to="/">Prismic</Link> and deployed
                     with
-                    <Link to="/">Netlify</Link>.
-                    하하하
+                    <Link to="/">Netlify</Link>. 하하하
                 </h1>
             </>
         </Hero>

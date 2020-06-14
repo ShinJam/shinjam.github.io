@@ -1,4 +1,4 @@
-import React from "react";
+import React from "react"
 import Styled from "@emotion/styled"
 import dimensions from "styles/dimensions"
 
@@ -19,11 +19,7 @@ const Container = Styled("div")`
 `
 
 const PostGrid = ({ children }) => {
-    return (
-        <Container>
-            {children}
-        </Container>
-    )
+    return <Container>{children}</Container>
 }
 
 export default PostGrid

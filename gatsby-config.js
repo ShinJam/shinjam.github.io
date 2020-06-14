@@ -1,6 +1,6 @@
 const urljoin = require("url-join")
 const config = require("./data/SiteConfig")
-const isProd = process.env.NODE_ENV === 'production'
+const isProd = process.env.NODE_ENV === "production"
 
 module.exports = {
     pathPrefix: config.pathPrefix === "" ? "/" : config.pathPrefix,
@@ -45,22 +45,22 @@ module.exports = {
             options: {
                 name: "posts",
                 path: `${__dirname}/content/`,
-                ignore: isProd ? ['**/_draft'] : []
+                ignore: isProd ? ["**/_draft"] : [],
             },
         },
         {
             resolve: "gatsby-transformer-remark",
             options: {
                 frontmatter: {
-                    coverAnnotation: "hi"
+                    coverAnnotation: "hi",
                 },
                 plugins: [
                     {
                         resolve: `gatsby-remark-prismjs`,
                         options: {
-                          aliases:{sh: "bash", js:"javascript"},
-                        }
-                    },                    
+                            aliases: { sh: "bash", js: "javascript" },
+                        },
+                    },
                     {
                         resolve: `gatsby-remark-relative-images`,
                     },

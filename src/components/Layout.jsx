@@ -34,7 +34,11 @@ const LayoutContainer = styled.div`
     }
 `
 
-const Layout = ({ children }) => (
+const PageTitle = styled("h1")`
+    margin-bottom: 1em;
+`
+
+const Layout = ({ children, pageTitle }) => (
     <StaticQuery
         query={graphql`
             query SiteTitleQuery {
@@ -49,7 +53,10 @@ const Layout = ({ children }) => (
             <LayoutContainer className="Layout">
                 <Global styles={[globalStyles, typeStyles]} />
                 <Header />
-                <main className="Layout__content">{children}</main>
+                <main className="Layout__content">
+                    {pageTitle && <PageTitle>{pageTitle}</PageTitle>}
+                    {children}
+                </main>
                 <Footer />
             </LayoutContainer>
         )}
@@ -58,6 +65,7 @@ const Layout = ({ children }) => (
 
 Layout.propTypes = {
     children: PropTypes.node.isRequired,
+    pageTitle: PropTypes.string,
 }
 
 export default Layout

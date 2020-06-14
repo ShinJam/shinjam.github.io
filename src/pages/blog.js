@@ -2,15 +2,9 @@ import React from "react"
 import PropTypes from "prop-types"
 import { Helmet } from "react-helmet"
 import { graphql } from "gatsby"
-import styled from "@emotion/styled"
 import Layout from "components/Layout"
 import PostGrid from "components/PostGrid"
 import PostCard from "components/_ui/PostCard"
-
-const BlogTitle = styled("h1")`
-    margin-bottom: 1em;
-`
-
 
 const Blog = ({ posts, meta }) => (
     <>
@@ -52,8 +46,7 @@ const Blog = ({ posts, meta }) => (
                 },
             ].concat(meta)}
         />
-        <Layout>
-            <BlogTitle>Blog</BlogTitle>
+        <Layout pageTitle="Blog">
             <PostGrid>
                 {posts.map((post, i) => (
                     <PostCard

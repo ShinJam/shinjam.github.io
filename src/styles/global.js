@@ -1,8 +1,8 @@
-import css from "@emotion/css";
-import colors from 'styles/colors';
-import dimensions from 'styles/dimensions';
+import css from "@emotion/css"
+import colors from "styles/colors"
+import dimensions from "styles/dimensions"
 
-const globalStyles = css`  
+const globalStyles = css`
     html,
     body,
     #___gatsby,
@@ -22,10 +22,9 @@ const globalStyles = css`
         color: ${colors.grey900};
         -webkit-font-smoothing: antialiased;
 
-        @media(max-width: ${dimensions.maxwidthMobile}px) {
+        @media (max-width: ${dimensions.maxwidthMobile}px) {
             font-size: 14px;
         }
-
 
         * {
             box-sizing: border-box;
@@ -38,4 +37,4 @@ const globalStyles = css`
     }
 `
 
-export default globalStyles;
+export default globalStyles
