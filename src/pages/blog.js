@@ -3,29 +3,14 @@ import PropTypes from "prop-types"
 import { Helmet } from "react-helmet"
 import { graphql } from "gatsby"
 import styled from "@emotion/styled"
-import dimensions from "styles/dimensions"
 import Layout from "components/Layout"
-import PostCard from "components/PostCard"
+import PostGrid from "components/PostGrid"
+import PostCard from "components/_ui/PostCard"
 
 const BlogTitle = styled("h1")`
     margin-bottom: 1em;
 `
 
-const BlogGrid = styled("div")`
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-gap: 2.5em;
-
-    @media (max-width: 1050px) {
-        grid-template-columns: repeat(2, 1fr);
-        grid-gap: 1.5em;
-    }
-
-    @media (max-width: ${dimensions.maxwidthMobile}px) {
-        grid-template-columns: 1fr;
-        grid-gap: 2.5em;
-    }
-`
 
 const Blog = ({ posts, meta }) => (
     <>
@@ -69,7 +54,7 @@ const Blog = ({ posts, meta }) => (
         />
         <Layout>
             <BlogTitle>Blog</BlogTitle>
-            <BlogGrid>
+            <PostGrid>
                 {posts.map((post, i) => (
                     <PostCard
                         key={i}
@@ -81,7 +66,7 @@ const Blog = ({ posts, meta }) => (
                         slug={post.node.fields.slug}
                     />
                 ))}
-            </BlogGrid>
+            </PostGrid>
         </Layout>
     </>
 )
