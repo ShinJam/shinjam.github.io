@@ -6,11 +6,11 @@ import Layout from "components/Layout"
 import PostGrid from "components/PostGrid"
 import PostCard from "components/_ui/PostCard"
 
-const Blog = ({ posts, meta }) => (
+const Tag = ({ posts, tag, meta }) => (
     <>
         <Helmet
-            title="Blog | Gemini Devlog"
-            titleTemplate="%s | Blog | Gemini Devlog"
+            title={`${tag} | Gemini Devlog`}
+            titleTemplate={`%s | ${tag}  | Gemini Devlog`}
             meta={[
                 {
                     name: `description`,
@@ -46,7 +46,7 @@ const Blog = ({ posts, meta }) => (
                 },
             ].concat(meta)}
         />
-        <Layout pageTitle="Blog">
+        <Layout pageTitle={tag}>
             <PostGrid>
                 {posts.map((post, i) => (
                     <PostCard
@@ -64,55 +64,58 @@ const Blog = ({ posts, meta }) => (
     </>
 )
 
-export default ({ data }) => {
+export default ({ data, pageContext}) => {
     const posts = data.allMarkdownRemark.edges
     const meta = data.site.siteMetadata
 
     if (!posts) return null
 
-    return <Blog posts={posts} meta={meta} />
+    return <Tag posts={posts} tag={pageContext.tag} meta={meta} />
 }
 
-Blog.propTypes = {
+Tag.propTypes = {
     posts: PropTypes.array.isRequired,
     meta: PropTypes.object.isRequired,
+    tag: PropTypes.string.isRequired
 }
 
+/* eslint no-undef: "off" */
 export const query = graphql`
-    {
-        allMarkdownRemark(
-            limit: 1000
-            sort: { fields: [frontmatter___date], order: DESC }) {
-            edges {
-                node {
-                    fields {
-                        slug
-                        date
-                    }
-                    excerpt(pruneLength: 100)
-                    timeToRead
-                    frontmatter {
-                        title
-                        tags
-                        cover {
-                            childImageSharp {
-                                fluid(maxWidth: 680) {
-                                    ...GatsbyImageSharpFluid
+    query TagQuery($tag: String) {
+            allMarkdownRemark(
+                limit: 1000
+                sort: { fields: [frontmatter___date], order: DESC }
+                filter: { frontmatter: { tags: { in: [$tag] } } } ) {
+                edges {
+                    node {
+                        fields {
+                            slug
+                            date
+                        }
+                        excerpt(pruneLength: 100)
+                        timeToRead
+                        frontmatter {
+                            title
+                            tags
+                            cover {
+                                childImageSharp {
+                                    fluid(maxWidth: 680) {
+                                        ...GatsbyImageSharpFluid
+                                    }
                                 }
                             }
+                            category
+                            date
                         }
-                        category
-                        date
                     }
                 }
             }
-        }
-        site {
-            siteMetadata {
-                title
-                description
-                author
+            site {
+                siteMetadata {
+                    title
+                    description
+                    author
+                }
             }
-        }
     }
 `

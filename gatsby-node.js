@@ -79,6 +79,9 @@ exports.createPages = async ({ graphql, actions }) => {
 
     const postsEdges = blogResult.data.allMarkdownRemark.edges
     const postTemplate = require.resolve("./src/templates/post.jsx")
+    const tagTemplate = path.resolve("src/templates/tag.jsx");
+
+    const tagSet = new Set();
 
     // Sort posts
     postsEdges.sort((postA, postB) => {
@@ -114,6 +117,22 @@ exports.createPages = async ({ graphql, actions }) => {
                 next,
             },
         })
+
+
+        // Generate a list of tags
+        if (edge.node.frontmatter.tags) {
+            edge.node.frontmatter.tags.forEach(tag => {
+                tagSet.add(tag);
+            });
+        }
+        //  Create tag pages
+        tagSet.forEach(tag => {
+            createPage({
+                path: `/tags/${_.kebabCase(tag)}/`,
+                component: tagTemplate,
+                context: { tag }
+            });
+        });
     })
 }
 

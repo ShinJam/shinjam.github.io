@@ -163,8 +163,10 @@ export default ({ data, pageContext, location }) => {
 Post.propTypes = {
     post: PropTypes.object.isRequired,
     meta: PropTypes.object.isRequired,
+    pageContext: PropTypes.object.isRequired
 }
 
+/* eslint no-undef: "off" */
 export const query = graphql`
     query PostQuery($slug: String) {
         markdownRemark(fields: { slug: { eq: $slug } }) {
