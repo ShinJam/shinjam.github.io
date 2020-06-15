@@ -9,6 +9,7 @@ import Layout from "components/Layout"
 import Utterances from "components/Utterances"
 import Img from "gatsby-image"
 import PostNavigator from "components/PostNavigator"
+import SEO from "components/SEO"
 
 const PostHeroContainer = styled.div`
     max-weight: 680px;
@@ -99,25 +100,9 @@ const Post = ({ post, pageContext, location, meta }) => {
             <Helmet
                 title={`${post.frontmatter.title} | Gemini Devlog`}
                 titleTemplate={`%s | ${meta.title}`}
-                meta={[
-                    {
-                        name: `description`,
-                        content: meta.description,
-                    },
-                    {
-                        property: `og:title`,
-                        content: `${post.frontmatter.title} | Gemini Devlog`,
-                    },
-                    {
-                        property: `og:description`,
-                        content: meta.description,
-                    },
-                    {
-                        property: `og:type`,
-                        content: `website`,
-                    },
-                ].concat(meta)}
             />
+            <SEO postNode={post} slug={pageContext.slug} />
+
             <Layout>
                 <PostCategory>{post.frontmatter.category}</PostCategory>
                 <PostTitle>{post.frontmatter.title}</PostTitle>
@@ -163,7 +148,7 @@ export default ({ data, pageContext, location }) => {
 Post.propTypes = {
     post: PropTypes.object.isRequired,
     meta: PropTypes.object.isRequired,
-    pageContext: PropTypes.object.isRequired
+    pageContext: PropTypes.object.isRequired,
 }
 
 /* eslint no-undef: "off" */

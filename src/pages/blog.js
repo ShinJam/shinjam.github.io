@@ -5,47 +5,15 @@ import { graphql } from "gatsby"
 import Layout from "components/Layout"
 import PostGrid from "components/PostGrid"
 import PostCard from "components/_ui/PostCard"
+import SEO from "components/SEO"
 
 const Blog = ({ posts, meta }) => (
     <>
         <Helmet
-            title="Blog | Gemini Devlog"
-            titleTemplate="%s | Blog | Gemini Devlog"
-            meta={[
-                {
-                    name: `description`,
-                    content: meta.description,
-                },
-                {
-                    property: `og:title`,
-                    content: `Blog | Gemini Devlog`,
-                },
-                {
-                    property: `og:description`,
-                    content: meta.description,
-                },
-                {
-                    property: `og:type`,
-                    content: `website`,
-                },
-                {
-                    name: `twitter:card`,
-                    content: `summary`,
-                },
-                {
-                    name: `twitter:creator`,
-                    content: meta.author,
-                },
-                {
-                    name: `twitter:title`,
-                    content: meta.title,
-                },
-                {
-                    name: `twitter:description`,
-                    content: meta.description,
-                },
-            ].concat(meta)}
-        />
+            title="Blog" 
+            titleTemplate={`%s | Gemini Devlog`}/>
+        <SEO />
+        
         <Layout pageTitle="Blog">
             <PostGrid>
                 {posts.map((post, i) => (

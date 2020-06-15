@@ -1,4 +1,4 @@
-const urljoin = require("url-join");
+const urljoin = require("url-join")
 
 const config = {
     title: "Shinjam's DevLog", // Site title.
@@ -10,7 +10,7 @@ const config = {
     description: "Learning development, interested in backend, python", // Website description used for RSS feeds/meta description tag.
     rss: "/rss.xml", // Path to the RSS file.
     rssTitle: "Shinjam's DevLog RSS feed", // Title of the RSS feed
-    FBAppID: "1825356251115265", // FB Application ID for using app insights
+    // FBAppID: "1825356251115265", // FB Application ID for using app insights
     googleAnalyticsID: "UA-166873913-1", // GA tracking ID.
     disqusShortname: "shinjam-devlog", // Disqus shortname.
     dateFromFormat: "YYYY-MM-DD", // Date format used in the frontmatter.
