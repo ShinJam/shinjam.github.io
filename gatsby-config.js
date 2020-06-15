@@ -1,30 +1,8 @@
-const urljoin = require("url-join")
 const config = require("./data/SiteConfig")
 const isProd = process.env.NODE_ENV === "production"
 
 module.exports = {
-    pathPrefix: config.pathPrefix === "" ? "/" : config.pathPrefix,
-    siteMetadata: {
-        siteUrl: urljoin(config.siteUrl, config.pathPrefix),
-        title: config.siteTitle,
-        author: config.userName,
-        description: config.siteDescription,
-        rssMetadata: {
-            site_url: urljoin(config.siteUrl, config.pathPrefix),
-            feed_url: urljoin(
-                config.siteUrl,
-                config.pathPrefix,
-                config.siteRss
-            ),
-            title: config.siteTitle,
-            description: config.siteDescription,
-            image_url: `${urljoin(
-                config.siteUrl,
-                config.pathPrefix
-            )}/logos/logo-512.png`,
-            copyright: config.copyright,
-        },
-    },
+    siteMetadata: config,
     plugins: [
         "gatsby-plugin-react-helmet",
         "gatsby-image",
@@ -98,7 +76,7 @@ module.exports = {
             resolve: "gatsby-plugin-manifest",
             options: {
                 name: config.siteTitle,
-                short_name: config.siteTitleShort,
+                short_name: config.titleShort,
                 description: config.siteDescription,
                 start_url: config.pathPrefix,
                 background_color: config.backgroundColor,
@@ -169,7 +147,7 @@ module.exports = {
                                         edge.node.fields.slug,
                                     custom_elements: [
                                         { "content:encoded": edge.node.html },
-                                        { author: config.userEmail },
+                                        { author: config.email },
                                     ],
                                 })
                             )
@@ -200,8 +178,8 @@ module.exports = {
               }
             }
           `,
-                        output: config.siteRss,
-                        title: config.siteRssTitle,
+                        output: config.rss,
+                        title: config.rssTitle,
                     },
                 ],
             },

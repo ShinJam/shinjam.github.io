@@ -99,7 +99,7 @@ const About = ({ bio, socialLinks }) => (
                 target="_blank"
                 rel="noopener noreferrer"
             >
-                <Button className="Button--secondary">Email me</Button>
+                <Button className="Button--secondary">email me</Button>
             </a>
         </AboutActions>
     </AboutContainer>
