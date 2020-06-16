@@ -1,34 +1,34 @@
 import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 import styled from "@emotion/styled"
-
+import _ from "lodash"
+import colors from "styles/colors"
 
 const Container = styled("ul")`
-	position: relative;
-	display: block;
+	display: flex;
+	flex-wrap: wrap;
 	margin: 0;
 	padding: 0;
 	list-style-type: none;
 	
 	li {
-		position: relative;
 		display: inline-block;
 		margin: 0 5px 5px 0;
 		
 		a {
-			position: relative;
 			display: block;
 			padding: 7px 20px;
-			background-color: #5A7D7C;
-			border-radius: 99px;
-			color: white;
-			font-size: 12px;
+			border-radius: 20px;
+			color: #a36fe6;
+			font-size: .8em;
 			font-weight: bold;
-			text-transform: uppercase;
+			border: 1px ${colors.primary} solid;
 			text-decoration: none;
+			text-transform: uppercase;
 		}
 		a:hover {
-			background-color: #719998;
+			background-color: ${colors.primary};
+			color: white;
 		}
 	}
 `
@@ -60,10 +60,10 @@ export default ({ children }) => {
 	return (
 		<Container>
 			{children}
-			{[...tags].map((tag, i) => (
+			{[...tags].map((t, i) => (
                 <li key={i}>
-					<a key={i} href={'/tags/'+tag}>
-						{tag}
+					<a key={i} href={'/tags/'+_.kebabCase(t)}>
+						{t}
 					</a>
 				</li>
 			))}

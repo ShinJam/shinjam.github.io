@@ -18,7 +18,7 @@ const HeaderContent = styled("div")`
 const HeaderLinks = styled("div")`
     display: grid;
     grid-template-columns: repeat(2, auto);
-    grid-gap: 7em;
+    grid-gap: 4em;
     justify-content: flex-end;
     align-content: end;
     width: 100%;
@@ -59,14 +59,14 @@ const HeaderLinks = styled("div")`
 
         &:hover {
             &:after {
-                background: ${colors.blue500};
+                background: ${colors.primary};
                 transition: 100ms ease-in-out background;
             }
         }
 
         &.Link--is-active {
             &:after {
-                background: ${colors.blue500};
+                background: ${colors.primary};
                 transition: 100ms ease-in-out background;
             }
         }
@@ -83,8 +83,15 @@ const Header = () => (
                 <Logo />
             </StyledLink>
             <HeaderLinks>
-                <Link activeClassName="Link--is-active" to="/blog">
+                <Link 
+                    activeClassName="Link--is-active" 
+                    to="/blog">
                     Blog
+                </Link>
+                <Link
+                    activeClassName="Link--is-active"
+                    to="/Archive">
+                    Archive
                 </Link>
             </HeaderLinks>
         </HeaderContent>

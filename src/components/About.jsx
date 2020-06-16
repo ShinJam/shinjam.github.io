@@ -1,15 +1,14 @@
 import React from "react"
-import Button from "components/_ui/Button"
+import { useStaticQuery, graphql } from "gatsby"
 import styled from "@emotion/styled"
 import dimensions from "styles/dimensions"
-import { RichText } from "prismic-reactjs"
-import PropTypes from "prop-types"
+
 
 const AboutContainer = styled("div")`
     padding-top: 1em;
     display: grid;
-    grid-template-columns: 8em 1fr 8em;
-    grid-gap: 3em;
+    grid-template-columns: 8em 1fr;
+    grid-gap: 2em;
 
     @media (max-width: ${dimensions.maxwidthTablet}px) {
         grid-template-columns: 1fr 3fr 1fr;
@@ -39,6 +38,7 @@ const AboutLink = styled("a")`
     line-height: 1.9;
     text-decoration: none;
     color: currentColor;
+    padding-left: 1em;
 
     span {
         margin-left: 1em;
@@ -59,55 +59,95 @@ const AboutLink = styled("a")`
 
 const AboutBio = styled("div")`
     padding-bottom: 3em;
-    max-width: 480px;
+
+    h3 {
+        margin: 0;
+    }
+
+    table {
+        margin-left: 0;
+        margin-right: 0;
+        margin-top: 0;
+        padding-bottom: 0;
+        padding-left: 0;
+        padding-right: 0;
+        padding-top: 0;
+        margin-bottom: 0.8125rem;
+        font-size: 1rem;
+        line-height: 1.625rem;
+        border-collapse: collapse;
+        width: 100%;
+    }
 
     @media (max-width: ${dimensions.maxwidthMobile}px) {
         grid-row: 2;
     }
 `
 
-const AboutActions = styled("div")`
-    padding-top: 1em;
-    padding-bottom: 3em;
+export default () => {
+    const data = useStaticQuery(graphql`
+		query About {
+            site {
+                siteMetadata {
+                    socialLinks {
+                        label
+                        url
+                        iconClassName
+                    }
+                }
+            }
+		}
+	`)
+    const socialLinks = data.site.siteMetadata.socialLinks
 
-    @media (max-width: ${dimensions.maxwidthMobile}px) {
-        padding: 0;
-        grid-column: 1 / -1;
-        grid-row: 1;
-    }
-`
-
-const About = ({ bio, socialLinks }) => (
-    <AboutContainer>
-        <AboutLinkContainer>
-            {socialLinks.map((social, i) => (
-                <AboutLink
-                    key={i}
-                    href={social.about_link[0].spans[0].data.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                >
-                    {social.about_link[0].text}
-                    <span>&#8594;</span>
-                </AboutLink>
-            ))}
-        </AboutLinkContainer>
-        <AboutBio>{RichText.render(bio)}</AboutBio>
-        <AboutActions>
-            <a
-                href="mailto:marguerite.roth@gmail.com"
-                target="_blank"
-                rel="noopener noreferrer"
-            >
-                <Button className="Button--secondary">email me</Button>
-            </a>
-        </AboutActions>
-    </AboutContainer>
-)
-
-export default About
-
-About.propTypes = {
-    bio: PropTypes.array.isRequired,
-    socialLinks: PropTypes.array.isRequired,
+    return (
+        <AboutContainer>
+            <AboutLinkContainer>
+                {socialLinks.map((social, i) => (
+                    <AboutLink
+                        key={i}
+                        href={social.label === 'Email'
+                            ? 'mailto:' + social.url
+                            : social.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        {social.label}
+                        <span>&#8594;</span>
+                    </AboutLink>
+                ))}
+            </AboutLinkContainer>
+            <AboutBio>
+                <h3>Shin Jae Min</h3>
+                <p>
+                    탐구하고 도전을 좋아하는 꿈나무 개발자 입니다 :)
+                    Back-end와 Python에 관심이 많습니다!
+                </p>
+                <h3>Experience</h3>
+                <h4>Hunet</h4>
+                <table>
+                    <thead>
+                        <tr>
+                            <th align="right"></th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td align="right"><strong>period</strong></td>
+                            <td>18.12 ~ 19.07</td>
+                        </tr>
+                        <tr>
+                            <td align="right"><strong>position</strong></td>
+                            <td>Front-end / 퍼블리셔</td>
+                        </tr>
+                        <tr>
+                            <td align="right"><strong>projects</strong></td>
+                            <td>Hunet Prime, News letter, B2B custom site</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </AboutBio>
+        </AboutContainer>
+    )
 }

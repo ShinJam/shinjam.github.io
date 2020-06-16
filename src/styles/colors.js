@@ -1,5 +1,7 @@
 // theme colors and tints (dark900 to normal500 to light100)
 const colors = {
+    primary: "#8564fc",
+
     blue900: "#192c4c",
     blue800: "#2a4a7f",
     blue700: "#3a67b2",

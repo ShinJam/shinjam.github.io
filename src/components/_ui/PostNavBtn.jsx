@@ -1,6 +1,7 @@
 import React from "react"
 import { Link } from "gatsby"
 import styled from "@emotion/styled"
+import colors from "styles/colors"
 
 const ArrowLeft = () => (
     <>
@@ -56,8 +57,8 @@ const StyledLink = styled((props) => <Link {...props} />)`
     text-decoration: none;
     background-color: #ffffff;
     &:hover {
-        color: rgb(4, 92, 156);
-        border-color: rgb(4, 92, 156);
+        color: ${colors.primary};
+        border-color: ${colors.primary};
     }
 `
 
@@ -72,7 +73,7 @@ const StyledArrow = styled(Arrow)`
     order: ${(props) => (props.rel === "prev" ? "0" : "1")};
 
     ${StyledLink}:hover & {
-        color: rgb(4, 92, 156);
+        color: ${colors.primary};
     }
 
     svg {
@@ -93,7 +94,7 @@ const StyledButtonInfo = styled(ButtonInfo)`
     text-align: ${(props) => (props.rel === "prev" ? "right" : "left")};
 
     ${StyledLink}:hover & span:nth-of-type(2) {
-        color: rgb(4, 92, 156);
+        color: ${colors.primary};
     }
 `
 

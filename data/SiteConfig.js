@@ -22,19 +22,19 @@ const config = {
     // userAvatar: "https://api.adorable.io/avatars/150/test.png", // User avatar to display in the author segment.
     userDescription: "Wanna be a great developer!", // User description to display in the author segment.
     // Links to social profiles/projects you want to display in the author segment/navigation bar.
-    userLinks: [
+    socialLinks: [
         {
             label: "GitHub",
             url: "https://github.com/shinjam",
             iconClassName: "fa fa-github",
         },
         {
-            label: "Linkedin",
+            label: "LinkedIn",
             url: "https://www.linkedin.com/in/shin-jam-3145891aa",
             iconClassName: "fa fa-linkedin",
         },
         {
-            label: "email",
+            label: "Email",
             url: "nevvjann@gmail.com",
             iconClassName: "fa fa-envelope",
         },
