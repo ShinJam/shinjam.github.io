@@ -23,9 +23,10 @@ const Hero = styled("div")`
         font-family: "Balsamiq Sans", "Roboto", "Noto Sans KR", sans-serif;
         font-weight: 100;
 
-        a {
+        span {
             text-decoration: none;
             transition: all 100ms ease-in-out;
+            cursor: pointer;
 
             &:nth-of-type(1) {
                 color: ${colors.blue500};
@@ -80,16 +81,15 @@ const RenderBody = ({ meta }) => (
         <SEO />
 
         <Hero>
-                <h1>
-                    I’m your new Gatsby starter. <br />
-                    I’m here to help you showcase your{" "}
-                    <Link to="/blog">thoughts</Link>
-                    , and anything else!
-                    <br />
-                    I’m hooked up to <Link to="/">Prismic</Link> and deployed
-                    with
-                    <Link to="/">Netlify</Link>. 하하하
-                </h1>
+            <h1>
+                Hello 👋 This is <span>Gemini</span> Dev Blog 
+                <br />
+                To showcase my <span>Studies</span> and anything else!
+                <br />
+                안녕하세요 Shinjam 입니다.
+                <br />
+                공부한 내용 정리하는 공간 입니다. 많은 의견 감사합니다 🙏
+            </h1>
         </Hero>
     </>
 )
