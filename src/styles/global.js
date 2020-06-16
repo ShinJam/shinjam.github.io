@@ -35,6 +35,11 @@ const globalStyles = css`
             }
         }
     }
+
+    .font-balsamiq {
+        font-family: "Balsamiq Sans", "Roboto", "Noto Sans KR", sans-serif;
+        font-weight: 100;
+    }
 `
 
 export default globalStyles

@@ -28,6 +28,7 @@ const Blog = ({ posts, meta }) => (
                     />
                 ))}
             </PostGrid>
+
         </Layout>
     </>
 )

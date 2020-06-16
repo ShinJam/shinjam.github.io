@@ -78,12 +78,6 @@ exports.createPages = async ({ graphql, actions }) => {
     }
 
     const postsEdges = blogResult.data.allMarkdownRemark.edges
-    const postTemplate = require.resolve("./src/templates/post.jsx")
-    const tagTemplate = path.resolve("src/templates/tag.jsx");
-    const categoryTemplate = path.resolve("src/templates/category.jsx");
-
-    const tagSet = new Set();
-    const categorySet = new Set();
 
     // Sort posts
     postsEdges.sort((postA, postB) => {
@@ -103,23 +97,14 @@ exports.createPages = async ({ graphql, actions }) => {
         return 0
     })
 
+    const tagSet = new Set();
+    const categorySet = new Set();
+
+    const postTemplate = require.resolve("./src/templates/post.jsx")
+    const tagTemplate = path.resolve("src/templates/tag.jsx");
+    const categoryTemplate = path.resolve("src/templates/category.jsx");
+
     postsEdges.forEach((edge, index) => {
-        const previous = index === 0 ? null : postsEdges[index - 1].node
-        const next =
-            index === postsEdges.length - 1 ? null : postsEdges[index + 1].node
-
-        createPage({
-            type: "Post",
-            match: "/blog/:slug",
-            path: `/blog/${edge.node.fields.slug}`,
-            component: postTemplate,
-            context: {
-                slug: edge.node.fields.slug,
-                previous,
-                next,
-            },
-        })
-
         // Generate a list of tags
         if (edge.node.frontmatter.tags) {
             edge.node.frontmatter.tags.forEach(tag => {
@@ -147,6 +132,25 @@ exports.createPages = async ({ graphql, actions }) => {
                 context: { category }
             });
         });
+
+
+        const previous = index === 0 ? null : postsEdges[index - 1].node
+        const next =
+            index === postsEdges.length - 1 ? null : postsEdges[index + 1].node
+
+        createPage({
+            type: "Post",
+            match: "/blog/:slug",
+            path: `/blog/${edge.node.fields.slug}`,
+            component: postTemplate,
+            context: {
+                slug: edge.node.fields.slug,
+                previous,
+                next,
+            },
+        })
+
+   
     })
 }
 
