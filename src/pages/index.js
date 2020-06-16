@@ -80,7 +80,6 @@ const RenderBody = ({ meta }) => (
         <SEO />
 
         <Hero>
-            <>
                 <h1>
                     I’m your new Gatsby starter. <br />
                     I’m here to help you showcase your{" "}
@@ -91,7 +90,6 @@ const RenderBody = ({ meta }) => (
                     with
                     <Link to="/">Netlify</Link>. 하하하
                 </h1>
-            </>
         </Hero>
     </>
 )

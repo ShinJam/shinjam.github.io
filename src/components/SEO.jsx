@@ -35,6 +35,8 @@ const SEO = ({ postNode, slug }) => {
             ? postMeta.description
             : postNode.excerpt
         image = postMeta.cover
+            ? postMeta.cover 
+            : config.siteLogo 
         postURL = urljoin(
             config.siteUrl,
             config.pathPrefix,
