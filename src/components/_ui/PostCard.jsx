@@ -5,6 +5,7 @@ import colors from "styles/colors"
 import PropTypes from "prop-types"
 
 const PostCardContainer = styled(Link)`
+    position: relative;
     border: 1px solid ${colors.grey200};
     padding: 2em 1.5em 1.25em 1.5em;
     border-radius: 3px;
@@ -85,8 +86,19 @@ const PostCardAction = styled("div")`
     }
 `
 
-const PostCard = ({ author, category, date, title, description, slug }) => (
+const Drafts = styled("div")`
+    position: absolute;
+    top: 0;
+    text-align: center;
+    right: 0;
+    left: 0;
+    color: white;
+    background: black;
+`
+
+const PostCard = ({ author, category, date, title, description, slug, drafts }) => (
     <PostCardContainer className="BlogPostCard" to={`/blog/${slug}`}>
+        {drafts && <Drafts>DRAFTS</Drafts>}
         <PostCategory>{category}</PostCategory>
         <PostTitle>{title}</PostTitle>
         <PostDescription>{description}</PostDescription>

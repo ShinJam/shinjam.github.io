@@ -20,6 +20,8 @@ const Container = Styled("div")`
 `
 
 const PostGrid = ({ posts, meta }) => {
+    const re = /\b\/_draft\//
+
     return (
         <Container>
             {posts.map((post, i) => (
@@ -31,6 +33,7 @@ const PostGrid = ({ posts, meta }) => {
                     date={post.node.fields.date}
                     description={post.node.excerpt}
                     slug={post.node.fields.slug}
+                    drafts={re.test(post.node.fileAbsolutePath) ? true : false}
                 />
             ))}
         </Container>

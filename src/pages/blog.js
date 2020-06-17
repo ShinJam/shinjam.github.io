@@ -42,6 +42,7 @@ export const query = graphql`
             sort: { fields: [frontmatter___date], order: DESC }) {
             edges {
                 node {
+                    fileAbsolutePath
                     fields {
                         slug
                         date
