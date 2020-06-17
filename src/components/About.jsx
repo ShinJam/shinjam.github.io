@@ -141,7 +141,7 @@ export default () => {
                 </p>
                 <AboutActions>
                     <a
-                        href="mailto:marguerite.roth@gmail.com"
+                        href="/about"
                         target="_blank"
                         rel="noopener noreferrer"
                     >
