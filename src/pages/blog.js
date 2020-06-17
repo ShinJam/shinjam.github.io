@@ -4,31 +4,19 @@ import { Helmet } from "react-helmet"
 import { graphql } from "gatsby"
 import Layout from "components/Layout"
 import PostGrid from "components/PostGrid"
-import PostCard from "components/_ui/PostCard"
 import SEO from "components/SEO"
 
 const Blog = ({ posts, meta }) => (
     <>
         <Helmet
             title="Blog" 
-            titleTemplate={`%s | Gemini Devlog`}/>
+            titleTemplate={`%s | Gemini Devlog`} />
         <SEO />
         
         <Layout pageTitle="Blog">
-            <PostGrid>
-                {posts.map((post, i) => (
-                    <PostCard
-                        key={i}
-                        author={meta.author}
-                        category={post.node.frontmatter.category}
-                        title={post.node.frontmatter.title}
-                        date={post.node.fields.date}
-                        description={post.node.excerpt}
-                        slug={post.node.fields.slug}
-                    />
-                ))}
-            </PostGrid>
-
+            <PostGrid 
+                posts={posts} 
+                meta={meta} />
         </Layout>
     </>
 )

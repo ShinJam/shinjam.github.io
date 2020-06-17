@@ -11,7 +11,8 @@ const Category = ({ posts, category, meta }) => (
     <>
         <Helmet
             title={`${category}`}
-            titleTemplate={`%s | category | Gemini Devlog`} />
+            titleTemplate={`%s | category | Gemini Devlog`}
+        />
         <SEO />
 
         <Layout pageTitle={category}>

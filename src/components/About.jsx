@@ -4,7 +4,6 @@ import styled from "@emotion/styled"
 import dimensions from "styles/dimensions"
 import Button from "components/_ui/Button"
 
-
 const AboutContainer = styled("div")`
     padding-top: 1em;
     display: grid;
@@ -86,19 +85,19 @@ const AboutBio = styled("div")`
 `
 
 const AboutActions = styled("div")`
-  padding-top: 1em;
-  padding-bottom: 3em;
+    padding-top: 1em;
+    padding-bottom: 3em;
 
-  @media (max-width: ${dimensions.maxwidthMobile}px) {
-    padding: 0;
-    grid-column: 1 / -1;
-    grid-row: 1;
-  }
+    @media (max-width: ${dimensions.maxwidthMobile}px) {
+        padding: 0;
+        grid-column: 1 / -1;
+        grid-row: 1;
+    }
 `
 
 export default () => {
     const data = useStaticQuery(graphql`
-		query About {
+        query About {
             site {
                 siteMetadata {
                     socialLinks {
@@ -108,8 +107,8 @@ export default () => {
                     }
                 }
             }
-		}
-	`)
+        }
+    `)
     const socialLinks = data.site.siteMetadata.socialLinks
 
     return (
@@ -118,9 +117,11 @@ export default () => {
                 {socialLinks.map((social, i) => (
                     <AboutLink
                         key={i}
-                        href={social.label === 'Email'
-                            ? 'mailto:' + social.url
-                            : social.url}
+                        href={
+                            social.label === "Email"
+                                ? "mailto:" + social.url
+                                : social.url
+                        }
                         target="_blank"
                         rel="noopener noreferrer"
                     >
@@ -132,19 +133,17 @@ export default () => {
             <AboutBio>
                 <h3>Shin Jae Min</h3>
                 <p>
-                    탐구하고 도전을 좋아하는 꿈나무 개발자 입니다.
-                    Back-end와 Python에 관심이 많습니다!
+                    탐구하고 도전을 좋아하는 꿈나무 개발자 입니다. Back-end와
+                    Python에 관심이 많습니다!
                 </p>
                 <p>
-                    블로그 이름은 Gemini 입니다. 지속적으로 발전 시키고 있으며 저의 성장과 함께할 친구 입니다 :) <br />
-                    Gatsby로 만들었으며 Prist, Advanced, jbee 블로그를 참고 했습니다.
+                    블로그 이름은 Gemini 입니다. 지속적으로 발전 시키고 있으며
+                    저의 성장과 함께할 친구 입니다 :) <br />
+                    Gatsby로 만들었으며 Prist, Advanced, jbee 블로그를 참고
+                    했습니다.
                 </p>
                 <AboutActions>
-                    <a
-                        href="/about"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                    >
+                    <a href="/about" target="_blank" rel="noopener noreferrer">
                         <Button className="Button--secondary">Show more</Button>
                     </a>
                 </AboutActions>

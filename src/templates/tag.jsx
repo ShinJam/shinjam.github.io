@@ -9,9 +9,7 @@ import SEO from "components/SEO"
 
 const Tag = ({ posts, tag, meta }) => (
     <>
-        <Helmet
-            title={`${tag}`}
-            titleTemplate={`%s | tag | Gemini Devlog`} />
+        <Helmet title={`${tag}`} titleTemplate={`%s | tag | Gemini Devlog`} />
         <SEO />
 
         <Layout pageTitle={tag}>

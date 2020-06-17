@@ -1,6 +1,7 @@
 import React from "react"
 import Styled from "@emotion/styled"
 import dimensions from "styles/dimensions"
+import PostCard from "components/_ui/PostCard"
 
 const Container = Styled("div")`
     display: grid;
@@ -18,8 +19,22 @@ const Container = Styled("div")`
     }
 `
 
-const PostGrid = ({ children }) => {
-    return <Container>{children}</Container>
+const PostGrid = ({ posts, meta }) => {
+    return (
+        <Container>
+            {posts.map((post, i) => (
+                <PostCard
+                    key={i}
+                    author={meta.author}
+                    category={post.node.frontmatter.category}
+                    title={post.node.frontmatter.title}
+                    date={post.node.fields.date}
+                    description={post.node.excerpt}
+                    slug={post.node.fields.slug}
+                />
+            ))}
+        </Container>
+    )
 }
 
 export default PostGrid

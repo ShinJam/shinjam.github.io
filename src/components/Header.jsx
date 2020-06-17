@@ -83,14 +83,10 @@ const Header = () => (
                 <Logo />
             </StyledLink>
             <HeaderLinks>
-                <Link 
-                    activeClassName="Link--is-active" 
-                    to="/blog">
+                <Link activeClassName="Link--is-active" to="/blog">
                     Blog
                 </Link>
-                <Link
-                    activeClassName="Link--is-active"
-                    to="/Archive">
+                <Link activeClassName="Link--is-active" to="/Archive">
                     Archive
                 </Link>
             </HeaderLinks>
