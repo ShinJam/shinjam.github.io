@@ -2,6 +2,7 @@ import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 import styled from "@emotion/styled"
 import dimensions from "styles/dimensions"
+import Button from "components/_ui/Button"
 
 
 const AboutContainer = styled("div")`
@@ -84,6 +85,17 @@ const AboutBio = styled("div")`
     }
 `
 
+const AboutActions = styled("div")`
+  padding-top: 1em;
+  padding-bottom: 3em;
+
+  @media (max-width: ${dimensions.maxwidthMobile}px) {
+    padding: 0;
+    grid-column: 1 / -1;
+    grid-row: 1;
+  }
+`
+
 export default () => {
     const data = useStaticQuery(graphql`
 		query About {
@@ -120,33 +132,22 @@ export default () => {
             <AboutBio>
                 <h3>Shin Jae Min</h3>
                 <p>
-                    탐구하고 도전을 좋아하는 꿈나무 개발자 입니다 :)
+                    탐구하고 도전을 좋아하는 꿈나무 개발자 입니다.
                     Back-end와 Python에 관심이 많습니다!
                 </p>
-                <h3>Experience</h3>
-                <h4>Hunet</h4>
-                <table>
-                    <thead>
-                        <tr>
-                            <th align="right"></th>
-                            <th></th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td align="right"><strong>period</strong></td>
-                            <td>18.12 ~ 19.07</td>
-                        </tr>
-                        <tr>
-                            <td align="right"><strong>position</strong></td>
-                            <td>Front-end / 퍼블리셔</td>
-                        </tr>
-                        <tr>
-                            <td align="right"><strong>projects</strong></td>
-                            <td>Hunet Prime, News letter, B2B custom site</td>
-                        </tr>
-                    </tbody>
-                </table>
+                <p>
+                    블로그 이름은 Gemini 입니다. 지속적으로 발전 시키고 있으며 저의 성장과 함께할 친구 입니다 :) <br />
+                    Gatsby로 만들었으며 Prist, Advanced, jbee 블로그를 참고 했습니다.
+                </p>
+                <AboutActions>
+                    <a
+                        href="mailto:marguerite.roth@gmail.com"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        <Button className="Button--secondary">Show more</Button>
+                    </a>
+                </AboutActions>
             </AboutBio>
         </AboutContainer>
     )
