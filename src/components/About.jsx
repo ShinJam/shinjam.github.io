@@ -7,7 +7,7 @@ import Button from "components/_ui/Button"
 const AboutContainer = styled("div")`
     padding-top: 1em;
     display: grid;
-    grid-template-columns: 8em 1fr;
+    grid-template-columns: 1fr 8em;
     grid-gap: 2em;
 
     @media (max-width: ${dimensions.maxwidthTablet}px) {
@@ -23,7 +23,6 @@ const AboutContainer = styled("div")`
 
 const AboutLinkContainer = styled("div")`
     padding-top: 2.5em;
-    padding-left: 1em;
     display: flex;
     flex-direction: column;
 
@@ -38,7 +37,6 @@ const AboutLink = styled("a")`
     line-height: 1.9;
     text-decoration: none;
     color: currentColor;
-    padding-left: 1em;
 
     span {
         margin-left: 1em;
@@ -58,6 +56,8 @@ const AboutLink = styled("a")`
 `
 
 const AboutBio = styled("div")`
+    padding-left: 1.5em;
+
     h3 {
         margin: 0;
     }
@@ -111,23 +111,6 @@ export default () => {
 
     return (
         <AboutContainer>
-            <AboutLinkContainer>
-                {socialLinks.map((social, i) => (
-                    <AboutLink
-                        key={i}
-                        href={
-                            social.label === "Email"
-                                ? "mailto:" + social.url
-                                : social.url
-                        }
-                        target="_blank"
-                        rel="noopener noreferrer"
-                    >
-                        {social.label}
-                        <span>&#8594;</span>
-                    </AboutLink>
-                ))}
-            </AboutLinkContainer>
             <AboutBio>
                 <h3>Shin Jae Min</h3>
                 <p>
@@ -146,6 +129,23 @@ export default () => {
                     </a>
                 </AboutActions>
             </AboutBio>
+            <AboutLinkContainer>
+                {socialLinks.map((social, i) => (
+                    <AboutLink
+                        key={i}
+                        href={
+                            social.label === "Email"
+                                ? "mailto:" + social.url
+                                : social.url
+                        }
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        {social.label}
+                        <span>&#8594;</span>
+                    </AboutLink>
+                ))}
+            </AboutLinkContainer>
         </AboutContainer>
     )
 }
