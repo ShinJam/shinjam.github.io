@@ -28,10 +28,6 @@ const LayoutContainer = styled.div`
         padding-left: ${dimensions.paddingHorizontalMobile}em;
         padding-right: ${dimensions.paddingHorizontalMobile}em;
     }
-
-    .Layout__content {
-        padding-bottom: 5em;
-    }
 `
 
 const PageTitle = styled("h1")`
@@ -53,7 +49,7 @@ const Layout = ({ children, pageTitle }) => (
             <LayoutContainer className="Layout">
                 <Global styles={[globalStyles, typeStyles]} />
                 <Header />
-                <main className="Layout__content">
+                <main>
                     {pageTitle && <PageTitle>{pageTitle}</PageTitle>}
                     {children}
                 </main>

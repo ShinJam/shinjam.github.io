@@ -1,5 +1,6 @@
 import React from "react"
 import styled from "@emotion/styled"
+import dimensions from "styles/dimensions"
 import colors from "styles/colors"
 
 const FooterContainer = styled("div")`
@@ -13,6 +14,10 @@ const FooterContainer = styled("div")`
 
     svg {
         max-width: 50px;
+    }
+
+    @media (max-width: ${dimensions.maxwidthMobile}px) {
+        padding-top: 1em;
     }
 `
 

@@ -2,9 +2,10 @@ import React from "react"
 import PropTypes from "prop-types"
 import { Helmet } from "react-helmet"
 import { graphql } from "gatsby"
+import SEO from "components/SEO"
 import Layout from "components/Layout"
 import PostGrid from "components/PostGrid"
-import SEO from "components/SEO"
+import Mouse from "components/_ui/Mouse"
 
 const Blog = ({ posts, meta }) => (
     <>
@@ -17,6 +18,7 @@ const Blog = ({ posts, meta }) => (
             <PostGrid 
                 posts={posts} 
                 meta={meta} />
+            <Mouse />
         </Layout>
     </>
 )
