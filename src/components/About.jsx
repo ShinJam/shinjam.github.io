@@ -22,8 +22,8 @@ const AboutContainer = styled("div")`
 `
 
 const AboutLinkContainer = styled("div")`
-    padding-top: 1em;
-    padding-bottom: 3em;
+    padding-top: 2.5em;
+    padding-left: 1em;
     display: flex;
     flex-direction: column;
 
@@ -58,8 +58,6 @@ const AboutLink = styled("a")`
 `
 
 const AboutBio = styled("div")`
-    padding-bottom: 3em;
-
     h3 {
         margin: 0;
     }
