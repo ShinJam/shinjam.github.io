@@ -96,7 +96,15 @@ const Drafts = styled("div")`
     background: black;
 `
 
-const PostCard = ({ author, category, date, title, description, slug, drafts }) => (
+const PostCard = ({
+    author,
+    category,
+    date,
+    title,
+    description,
+    slug,
+    drafts,
+}) => (
     <PostCardContainer className="BlogPostCard" to={`/blog/${slug}`}>
         {drafts && <Drafts>DRAFTS</Drafts>}
         <PostCategory>{category}</PostCategory>
