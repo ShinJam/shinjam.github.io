@@ -22,27 +22,29 @@ const config = {
     // userAvatar: "https://api.adorable.io/avatars/150/test.png", // User avatar to display in the author segment.
     userDescription: "Wanna be a great developer!", // User description to display in the author segment.
     // Links to social profiles/projects you want to display in the author segment/navigation bar.
-    socialLinks: [
-        {
-            label: "GitHub",
-            url: "https://github.com/shinjam",
-            iconClassName: "fa fa-github",
-        },
-        {
-            label: "LinkedIn",
-            url: "https://www.linkedin.com/in/shin-jam-3145891aa",
-            iconClassName: "fa fa-linkedin",
-        },
-        {
-            label: "Email",
-            url: "nevvjann@gmail.com",
-            iconClassName: "fa fa-envelope",
-        },
-    ],
-    copyright: `Copyright © 2020. ${this.Author}`, // Copyright string for the footer of the website and RSS feed.
     themeColor: "#8565fc", // Used for setting manifest and progress theme colors.
     backgroundColor: "#e0e0e0", // Used for setting manifest background color.
 }
+
+config.copyright = `Copyright © 2020. ${config.author}`, // Copyright string for the footer of the website and RSS feed.
+
+config.socialLinks = [
+    {
+        label: "GitHub",
+        url: "https://github.com/shinjam",
+        iconClassName: "fa fa-github",
+    },
+    {
+        label: "LinkedIn",
+        url: "https://www.linkedin.com/in/shin-jam-3145891aa",
+        iconClassName: "fa fa-linkedin",
+    },
+    {
+        label: "Email",
+        url: `${config.email}`,
+        iconClassName: "fa fa-envelope",
+    },
+]
 
 config.rssMetadata = {
     site_url: config.siteUrl,
