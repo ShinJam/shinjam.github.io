@@ -1,4 +1,4 @@
-import React, { useMemo } from 'react'
+import React, { useMemo } from "react"
 import Styled from "@emotion/styled"
 import dimensions from "styles/dimensions"
 import PostCard from "components/_ui/PostCard"
@@ -22,7 +22,8 @@ const Container = Styled("div")`
 const PostGrid = ({ posts, meta, count }) => {
     const re = /\b\/_draft\//
     const refinedPosts = useMemo(() =>
-        posts.slice(0, count * meta.postsPerPage))
+        posts.slice(0, count * meta.postsPerPage)
+    )
 
     return (
         <Container>

@@ -27,25 +27,24 @@ const config = {
     backgroundColor: "#e0e0e0", // Used for setting manifest background color.
 }
 
-config.copyright = `Copyright © 2020. ${config.author}`, // Copyright string for the footer of the website and RSS feed.
-
-config.socialLinks = [
-    {
-        label: "GitHub",
-        url: "https://github.com/shinjam",
-        iconClassName: "fa fa-github",
-    },
-    {
-        label: "LinkedIn",
-        url: "https://www.linkedin.com/in/shin-jam-3145891aa",
-        iconClassName: "fa fa-linkedin",
-    },
-    {
-        label: "Email",
-        url: `${config.email}`,
-        iconClassName: "fa fa-envelope",
-    },
-]
+;(config.copyright = `Copyright © 2020. ${config.author}`), // Copyright string for the footer of the website and RSS feed.
+    (config.socialLinks = [
+        {
+            label: "GitHub",
+            url: "https://github.com/shinjam",
+            iconClassName: "fa fa-github",
+        },
+        {
+            label: "LinkedIn",
+            url: "https://www.linkedin.com/in/shin-jam-3145891aa",
+            iconClassName: "fa fa-linkedin",
+        },
+        {
+            label: "Email",
+            url: `${config.email}`,
+            iconClassName: "fa fa-envelope",
+        },
+    ])
 
 config.rssMetadata = {
     site_url: config.siteUrl,

@@ -1,8 +1,17 @@
-import React from "react"
+import React, { forwardRef } from 'react'
 import styled from "@emotion/styled"
 import dimensions from "styles/dimensions"
 
-const MouseImg = styled("div")`
+const Container = styled("div")`
+    position: relative;
+    display: flex;
+    justify-content: center;
+    with: 100%;
+    margin-top: 3em;
+    padding-bottom: 1em;
+`
+
+const Mouse = styled("div")`
     position: relative;
     width: 40px;
     height: 70px;
@@ -54,19 +63,19 @@ const MouseImg = styled("div")`
         }
     }
 `
-const Container = styled("div")`
-    position: relative;
-    display: flex;
-    justify-content: center;
-    with: 100%;
-    margin-top: 3em;
-    padding-bottom: 1em;
-`
 
-const Mouse = () => (
-    <Container>
-        <MouseImg />
+// const ShowMore = () => <Mouse />
+
+// const ShowMore = (props, ref) => (
+//     <Container ref={ref}>
+//         <Mouse />
+//     </Container>
+// )
+
+const ShowMore = forwardRef((props, ref)=> (
+    <Container ref={ref}>
+        <Mouse />
     </Container>
-)
+))
 
-export default Mouse
+export default ShowMore

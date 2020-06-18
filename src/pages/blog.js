@@ -5,41 +5,55 @@ import { graphql } from "gatsby"
 import SEO from "components/SEO"
 import Layout from "components/Layout"
 import PostGrid from "components/PostGrid"
-import Mouse from "components/_ui/Mouse"
+import ShowMore from "components/_ui/ShowMore"
+import useIntersect from "utils/useIntersect"
 
-const Blog = ({ posts, meta, count }) => (
-    <>
-        <Helmet
-            title="Blog" 
-            titleTemplate={`%s | Gemini Devlog`} />
-        <SEO />
-        
-        <Layout pageTitle="Blog">
-            <PostGrid 
-                posts={posts} 
-                meta={meta}
-                count={count} />
-            <Mouse />
-        </Layout>
-    </>
-)
+
+const Blog = ({ posts, meta }) => {
+    const [count, setCount] = useState(1)
+    const [ref, entry] = useIntersect({
+        threshold: 1
+    })
+    const doesNeedMore = () =>
+        posts.length > count * meta.postsPerPage
+
+    useEffect(() => {
+        if (entry.isIntersecting && doesNeedMore()) {
+            setCount(prev => prev + 1)
+        }
+    }, [entry])
+
+    return (
+        <>
+            <Helmet
+                title="Blog"
+                titleTemplate={`%s | Gemini Devlog`} />
+            <SEO />
+
+            <Layout pageTitle="Blog">
+                <PostGrid
+                    posts={posts}
+                    meta={meta}
+                    count={count} />
+                {doesNeedMore() &&
+                    <ShowMore ref={ref} />}
+            </Layout>
+        </>
+    )
+}
 
 export default ({ data }) => {
     const posts = data.allMarkdownRemark.edges
     const meta = data.site.siteMetadata
 
-    const [count, setCount] = useState(1)
-
-
     if (!posts) return null
 
-    return <Blog posts={posts} meta={meta} count={count}/>
+    return <Blog posts={posts} meta={meta} />
 }
 
 Blog.propTypes = {
     posts: PropTypes.array.isRequired,
     meta: PropTypes.object.isRequired,
-    count: PropTypes.number.isRequired,
 }
 
 export const query = graphql`
