@@ -8,6 +8,7 @@ const config = {
     siteUrl: "https://shinjam.me", // Domain of your website without pathPrefix.
     pathPrefix: "/", // Prefixes all links. For cases when deployed to example.github.io/gatsby-advanced-starter/.
     description: "Learning development, interested in backend, python", // Website description used for RSS feeds/meta description tag.
+    postsPerPage: 3,
     rss: "/rss.xml", // Path to the RSS file.
     rssTitle: "Shinjam's DevLog RSS feed", // Title of the RSS feed
     // FBAppID: "1825356251115265", // FB Application ID for using app insights

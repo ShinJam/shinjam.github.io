@@ -129,4 +129,5 @@ PostCard.propTypes = {
     title: PropTypes.string.isRequired,
     description: PropTypes.string.isRequired,
     slug: PropTypes.string.isRequired,
+    drafts: PropTypes.bool.isRequired,
 }

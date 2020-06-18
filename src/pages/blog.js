@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useState, useEffect, useRef } from 'react'
 import PropTypes from "prop-types"
 import { Helmet } from "react-helmet"
 import { graphql } from "gatsby"
@@ -7,7 +7,7 @@ import Layout from "components/Layout"
 import PostGrid from "components/PostGrid"
 import Mouse from "components/_ui/Mouse"
 
-const Blog = ({ posts, meta }) => (
+const Blog = ({ posts, meta, count }) => (
     <>
         <Helmet
             title="Blog" 
@@ -17,7 +17,8 @@ const Blog = ({ posts, meta }) => (
         <Layout pageTitle="Blog">
             <PostGrid 
                 posts={posts} 
-                meta={meta} />
+                meta={meta}
+                count={count} />
             <Mouse />
         </Layout>
     </>
@@ -27,14 +28,18 @@ export default ({ data }) => {
     const posts = data.allMarkdownRemark.edges
     const meta = data.site.siteMetadata
 
+    const [count, setCount] = useState(1)
+
+
     if (!posts) return null
 
-    return <Blog posts={posts} meta={meta} />
+    return <Blog posts={posts} meta={meta} count={count}/>
 }
 
 Blog.propTypes = {
     posts: PropTypes.array.isRequired,
     meta: PropTypes.object.isRequired,
+    count: PropTypes.number.isRequired,
 }
 
 export const query = graphql`
@@ -72,6 +77,7 @@ export const query = graphql`
                 title
                 description
                 author
+                postsPerPage
             }
         }
     }
