@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react'
+import React, { useState, useEffect } from 'react'
 import PropTypes from "prop-types"
 import { Helmet } from "react-helmet"
 import { graphql } from "gatsby"
@@ -60,7 +60,8 @@ export const query = graphql`
     {
         allMarkdownRemark(
             limit: 1000
-            sort: { fields: [frontmatter___date], order: DESC }) {
+            sort: { fields: [frontmatter___date], order: DESC }
+            filter: { frontmatter: {category: {ne: "TIL"}}}) {
             edges {
                 node {
                     fileAbsolutePath

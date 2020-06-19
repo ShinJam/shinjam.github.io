@@ -1,37 +1,47 @@
-import React from "react"
+import React, { useState, useEffect } from 'react'
 import PropTypes from "prop-types"
 import { Helmet } from "react-helmet"
 import { graphql } from "gatsby"
+import SEO from "components/SEO"
 import Layout from "components/Layout"
 import PostGrid from "components/PostGrid"
-import PostCard from "components/_ui/PostCard"
-import SEO from "components/SEO"
+import ShowMore from "components/_ui/ShowMore"
+import useIntersect from "utils/useIntersect"
 
-const Category = ({ posts, category, meta }) => (
-    <>
-        <Helmet
-            title={`${category}`}
-            titleTemplate={`%s | category | Gemini Devlog`}
-        />
-        <SEO />
+const Category = ({ posts, category, meta }) => {
+    const [count, setCount] = useState(1)
+    const [ref, entry] = useIntersect({
+        threshold: 1
+    })
+    const doesNeedMore = () =>
+        posts.length > count * meta.postsPerPage
 
-        <Layout pageTitle={category}>
-            <PostGrid>
-                {posts.map((post, i) => (
-                    <PostCard
-                        key={i}
-                        author={meta.author}
-                        category={post.node.frontmatter.category}
-                        title={post.node.frontmatter.title}
-                        date={post.node.fields.date}
-                        description={post.node.excerpt}
-                        slug={post.node.fields.slug}
-                    />
-                ))}
-            </PostGrid>
-        </Layout>
-    </>
-)
+    useEffect(() => {
+        if (entry.isIntersecting && doesNeedMore()) {
+            setCount(prev => prev + 1)
+        }
+    }, [entry])
+
+
+    return (
+        <>
+            <Helmet
+                title={`${category}`}
+                titleTemplate={`%s | category | Gemini Devlog`}
+            />
+            <SEO />
+
+            <Layout pageTitle={category}>
+                <PostGrid
+                    posts={posts}
+                    meta={meta}
+                    count={count} />
+                {doesNeedMore() &&
+                    <ShowMore ref={ref} />}
+            </Layout>
+        </>
+    )
+}
 
 export default ({ data, pageContext }) => {
     const posts = data.allMarkdownRemark.edges
@@ -87,6 +97,7 @@ export const query = graphql`
                 title
                 description
                 author
+                postsPerPage
             }
         }
     }
