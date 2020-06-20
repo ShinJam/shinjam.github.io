@@ -16,20 +16,12 @@ const Hero = styled("div")`
     margin-bottom: 1em;
     max-width: 830px;
 
-    @media (max-width: ${dimensions.maxwidthMobile}px) {
-        margin-bottom: 3em;
-    }
-
     h1 {
         margin-bottom: 1em;
         font-weight: 100;
         line-height: 1.7em;
         font-size: 2.2em;
 
-        @media (max-width: ${dimensions.maxwidthMobile}px) {
-            line-height: 1.3em;
-            font-size: 1.9em;
-        }
 
         span {
             text-decoration: none;
@@ -79,6 +71,15 @@ const Hero = styled("div")`
             }
         }
     }
+
+    @media (max-width: ${dimensions.maxwidthMobile}px) {
+        margin-bottom: 3em;
+        padding: 0;
+        h1 {
+            line-height: 1.3em;
+            font-size: 1.9em;
+        }
+    }
 `
 
 const Section = styled("div")`
@@ -87,7 +88,7 @@ const Section = styled("div")`
     flex-direction: column;
 
     @media(max-width:${dimensions.maxwidthTablet}px) {
-        margin-bottom: 4em;
+        margin-bottom: 1em;
     }
 
     &:last-of-type {
@@ -116,7 +117,7 @@ const RenderBody = ({ meta }) => (
 
         <Section>
             <h2 className="font-balsamiq">📚 About</h2>
-            <About test="helo" />
+            <About />
         </Section>
 
         <Section>

@@ -1,4 +1,8 @@
 import React from "react"
+import { useStaticQuery, graphql } from "gatsby"
+import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons"
+import { faEnvelope } from "@fortawesome/free-solid-svg-icons"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import styled from "@emotion/styled"
 import dimensions from "styles/dimensions"
 import colors from "styles/colors"
@@ -51,18 +55,70 @@ const FooterAuthor = styled("a")`
     }
 `
 
+const SocialIcons = styled("div")`
+    display: flex;
+    a{
+        color: currentColor;
+    }
+    a:nth-of-type(2){
+        margin: 0 1em;
+    }
+
+`
+
 const FooterSpooch = styled("img")`
     max-width: 33px;
     margin-bottom: 0.25em;
 `
 
-const Footer = () => (
-    <FooterContainer>
-        <FooterAuthor href="/">
-            {/* <FooterSpooch className="FooterSpooch" src="logos/logo-192.png" /> */}
-            © 2020. Shinjam, xoxo rimim
-        </FooterAuthor>
-    </FooterContainer>
-)
+export default () => {
+    const data = useStaticQuery(graphql`
+        query Footer {
+            site {
+                siteMetadata {
+                    socialLinks {
+                        label
+                        url
+                        iconClassName
+                    }
+                }
+            }
+        }
+    `)
 
-export default Footer
+    const socialLinks = data.site.siteMetadata.socialLinks
+
+    return (
+        <FooterContainer>
+            <SocialIcons>
+                {socialLinks.map((social, i) => {
+                    let icon
+
+                    if (social.label === "Email") icon = faEnvelope
+                    else if (social.label === "GitHub") icon = faGithub
+                    else if (social.label === "LinkedIn") icon = faLinkedin
+
+                    return (
+                        <a
+                            key={i}
+                            href={
+                                social.label === "Email"
+                                    ? "mailto:" + social.url
+                                    : social.url
+                            }
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            <FontAwesomeIcon icon={icon} size="2x" />
+                        </a>
+                    )
+                })}
+            </SocialIcons>
+
+            <FooterAuthor href="/">
+                {/* <FooterSpooch className="FooterSpooch" src="logos/logo-192.png" /> */}
+                © 2020. Shinjam, xoxo rimim
+            </FooterAuthor>
+        </FooterContainer>
+    )
+}

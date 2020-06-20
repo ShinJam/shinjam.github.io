@@ -2,6 +2,7 @@ import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 import styled from "@emotion/styled"
 import _ from "lodash"
+import dimensions from "styles/dimensions"
 import colors from "styles/colors"
 
 const Container = styled("ul")`
@@ -29,6 +30,15 @@ const Container = styled("ul")`
         a:hover {
             background-color: ${colors.primary};
             color: white;
+        }
+    }
+
+    @media (max-width: ${dimensions.maxwidthMobile}px) {
+        li {
+            margin: 0 7px 7px 0;
+            a {
+                padding: 2px 10px;
+            }
         }
     }
 `
