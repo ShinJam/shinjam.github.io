@@ -71,6 +71,32 @@ const PostBody = styled("div")`
         }
     }
 
+    a {
+        text-decoration: none;
+        color: #0687f0;
+        font-weight: bold;
+    }
+
+    p > code[class*=language-] {
+        font-weight: bold;
+        padding: .11em .3em;
+        margin: 0 .1em;
+        border-radius: .3em;
+        white-space: normal;
+        background: #fffbfe;
+        color: #da3a6a;
+        border: 1.2px solid #da3a6a;
+    }
+
+    blockquote {
+        margin-left: 0px;
+        padding: 5px 20px;
+        display: block;
+        margin-right: 0px;
+        border-left: 5px solid ${colors.primary};
+        background-color: ${colors.primary+'10'}
+      }
+
     // prismJS custom style
     ${codeStyles}
 `
