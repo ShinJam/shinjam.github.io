@@ -1,143 +1,105 @@
-@import url("https://fonts.googleapis.com/css2?family=Balsamiq+Sans&display=swap");
-
 /*
  * Noto Sans KR
  */
-
-// @font-face {
-//     font-family: "Noto Sans KR";
-//     font-weight: 100;
-//     font-style: normal;
-//     src: url("/fonts/NotoSans-Thin.eot?") format("eot"),
-//         url("/fonts/NotoSans-Thin.otf") format("opentype"),
-//         url("/fonts/NotoSans-Thin.woff") format("woff"),
-//         url("/fonts/NotoSans-Thin.woff2") format("woff2");
-//         unicode-range: U+0020-U+007E,U+1100-U+11F9,U+3000-U+303F,U+3131-U+318E,U+327F-U+327F,U+AC00-U+D7A3,U+FF01-U+FF60; 
-// }
 
 @font-face {
     font-family: "Noto Sans KR";
     font-weight: 200;
     font-style: normal;
-    src: url("/fonts/NotoSans-Light.eot?") format("eot"),
-        url("/fonts/NotoSans-Light.otf") format("opentype"),
-        url("/fonts/NotoSans-Light.woff") format("woff"),
-        url("/fonts/NotoSans-Light.woff2") format("woff2");
-        unicode-range: U+0020-U+007E,U+1100-U+11F9,U+3000-U+303F,U+3131-U+318E,U+327F-U+327F,U+AC00-U+D7A3,U+FF01-U+FF60; 
+    src: url(/fonts/NotoSansKR/NotoSans-Light.eot?) format("eot"),
+        url(/fonts/NotoSansKR/NotoSans-Light.otf) format("opentype"),
+        url(/fonts/NotoSansKR/NotoSans-Light.woff) format("woff"),
+        url(/fonts/NotoSansKR/NotoSans-Light.woff2) format("woff2");
+    unicode-range: U+AC00-D7A3;
 }
-
-// @font-face {
-//     font-family: "Noto Sans KR";
-//     font-weight: 300;
-//     font-style: normal;
-//     src: url("/fonts/NotoSans-DemiLight.eot?") format("eot"),
-//         url("/fonts/NotoSans-DemiLight.otf") format("opentype"),
-//         url("/fonts/NotoSans-DemiLight.woff") format("woff"),
-//         url("/fonts/NotoSans-DemiLight.woff2") format("woff2");
-//         unicode-range: U+0020-U+007E,U+1100-U+11F9,U+3000-U+303F,U+3131-U+318E,U+327F-U+327F,U+AC00-U+D7A3,U+FF01-U+FF60; 
-// }
 
 @font-face {
     font-family: "Noto Sans KR";
     font-weight: 400;
     font-style: normal;
-    src: url("/fonts/NotoSans-Regular.eot?") format("eot"),
-        url("/fonts/NotoSans-Regular.otf") format("opentype"),
-        url("/fonts/NotoSans-Regular.woff") format("woff"),
-        url("/fonts/NotoSans-Regular.woff2") format("woff2");
+    src: url(/fonts/NotoSansKR/NotoSans-Regular.eot?) format("eot"),
+        url(/fonts/NotoSansKR/NotoSans-Regular.otf) format("opentype"),
+        url(/fonts/NotoSansKR/NotoSans-Regular.woff) format("woff"),
+        url(/fonts/NotoSansKR/NotoSans-Regular.woff2) format("woff2");
+    unicode-range: U+AC00-D7A3;
 }
-
-// @font-face {
-//     font-family: "Noto Sans KR";
-//     font-weight: 500;
-//     font-style: normal;
-//     src: url("/fonts/NotoSans-Medium.eot?") format("eot"),
-//         url("/fonts/NotoSans-Medium.otf") format("opentype"),
-//         url("/fonts/NotoSans-Medium.woff") format("woff"),
-//         url("/fonts/NotoSans-Medium.woff2") format("woff2");
-//         unicode-range: U+0020-U+007E,U+1100-U+11F9,U+3000-U+303F,U+3131-U+318E,U+327F-U+327F,U+AC00-U+D7A3,U+FF01-U+FF60; 
-// }
 
 @font-face {
     font-family: "Noto Sans KR";
     font-weight: 700;
     font-style: normal;
-    src: url("/fonts/NotoSans-Bold.eot?") format("eot"),
-        url("/fonts/NotoSans-Bold.otf") format("opentype"),
-        url("/fonts/NotoSans-Bold.woff") format("woff"),
-        url("/fonts/NotoSans-Bold.woff2") format("woff2");
+    src: url(/fonts/NotoSansKR/NotoSans-Bold.eot?) format("eot"),
+        url(/fonts/NotoSansKR/NotoSans-Bold.otf) format("opentype"),
+        url(/fonts/NotoSansKR/NotoSans-Bold.woff) format("woff"),
+        url(/fonts/NotoSansKR/NotoSans-Bold.woff2) format("woff2");
+    unicode-range: U+AC00-D7A3;
 }
-
-// @font-face {
-//     font-family: "Noto Sans KR";
-//     font-weight: 900;
-//     font-style: normal;
-//     src: url("/fonts/NotoSans-Black.eot?") format("eot"),
-//         url("/fonts/NotoSans-Black.otf") format("opentype"),
-//         url("/fonts/NotoSans-Black.woff") format("woff"),
-//         url("/fonts/NotoSans-Black.woff2") format("woff2");
-//         unicode-range: U+0020-U+007E,U+1100-U+11F9,U+3000-U+303F,U+3131-U+318E,U+327F-U+327F,U+AC00-U+D7A3,U+FF01-U+FF60; 
-// }
 
 /*
  * Roboto
  */
+
 @font-face {
     font-family: "Roboto";
     font-style: normal;
     font-weight: 100;
-    src: url(/fonts/Roboto-Thin.woff2) format("woff2"),
-        url(/fonts/Roboto-Thin.woff) format("woff"),
-        url(/fonts/Roboto-Thin.otf) format("opentype");
-        unicode-range: U+0041-005A, U+0061-007E, U+0030-0039;
+    src: url(/fonts/Roboto/Roboto-Thin.woff2) format("woff2"),
+        url(/fonts/Roboto/Roboto-Thin.woff) format("woff"),
+        url(/fonts/Roboto/Roboto-Thin.otf) format("opentype");
+    unicode-range: U+0041-005A, U+0061-007E, U+0030-0039;
 }
-
-// @font-face {
-//     font-family: 'Roboto';
-//     font-style: normal;
-//     font-weight: 300;
-//     src: url(/fonts/Roboto-Light.woff2) format('woff2'),
-//         url(/fonts/Roboto-Light.woff) format('woff'),
-//         url(/fonts/Roboto-Light.otf) format('opentype');
-// }
 
 @font-face {
     font-family: "Roboto";
     font-style: normal;
     font-weight: 400;
-    src: url(/fonts/Roboto-Regular.woff2) format("woff2"),
-        url(/fonts/Roboto-Regular.woff) format("woff"),
-        url(/fonts/Roboto-Regular.otf) format("opentype");
-        unicode-range: U+0041-005A, U+0061-007E, U+0030-0039;
+    src: url(/fonts/Roboto/Roboto-Regular.woff2) format("woff2"),
+        url(/fonts/Roboto/Roboto-Regular.woff) format("woff"),
+        url(/fonts/Roboto/Roboto-Regular.otf) format("opentype");
+    unicode-range: U+0041-005A, U+0061-007E, U+0030-0039;
 }
-
-// @font-face {
-//     font-family: 'Roboto';
-//     font-style: normal;
-//     font-weight: 500;
-//     src: url(/fonts/Roboto-Medium.woff2) format('woff2'),
-//         url(/fonts/Roboto-Medium.woff) format('woff'),
-//         url(/fonts/Roboto-Medium.otf) format('opentype');
-// }
 
 @font-face {
     font-family: "Roboto";
     font-style: normal;
     font-weight: 700;
-    src: url(/fonts/Roboto-Bold.woff2) format("woff2"),
-        url(/fonts/Roboto-Bold.woff) format("woff"),
-        url(/fonts/Roboto-Bold.otf) format("opentype");
-        unicode-range: U+0041-005A, U+0061-007E, U+0030-0039;
+    src: url(/fonts/Roboto/Roboto-Bold.woff2) format("woff2"),
+        url(/fonts/Roboto/Roboto-Bold.woff) format("woff"),
+        url(/fonts/Roboto/Roboto-Bold.otf) format("opentype");
+    unicode-range: U+0041-005A, U+0061-007E, U+0030-0039;
 }
 
 /*
  * Balsamiq Sans
  */
+
 @font-face {
     font-family: "Balsamiq Sans";
     font-style: normal;
     font-weight: 400;
-    src: url(/fonts/BalsamiqSans-Regular.ttf) format("truetype");
+    src: url(/fonts/BalsamiqSans/BalsamiqSans-Regular.ttf) format("truetype");
+}
+
+/*
+ * Fira Code
+ */
+
+@font-face {
+    font-family: "Fira Code";
+    src: url(/fonts/FiraCode/woff2/FiraCode-Regular.woff2) format("woff2"),
+        url(/fonts/FiraCode/woff/FiraCode-Regular.woff) format("woff");
+    font-weight: 400;
+    font-style: normal;
+    unicode-range: U+0020-002F, U+003A-0040, U+005B-0060, U+007B-007E;
+}
+
+@font-face {
+    font-family: "Fira Code";
+    src: url(/fonts/FiraCode/woff2/FiraCode-Medium.woff2) format("woff2"),
+        url(/fonts/FiraCode/woff/FiraCode-Medium.woff) format("woff");
+    font-weight: 500;
+    font-style: normal;
+    unicode-range: U+0020-002F, U+003A-0040, U+005B-0060, U+007B-007E;
 }
 
 html {

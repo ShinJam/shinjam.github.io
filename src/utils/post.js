@@ -3,9 +3,13 @@ import moment from "moment"
 import config from "../../data/SiteConfig"
 
 export const getImagePath = (imageURI) => {
-    if ( typeof imageURI === 'string' )
+    if (typeof imageURI === "string")
         return urljoin(config.siteUrl, config.pathPrefix, imageURI)
-    return urljoin(config.siteUrl, config.pathPrefix, imageURI.childImageSharp.fluid.src)
+    return urljoin(
+        config.siteUrl,
+        config.pathPrefix,
+        imageURI.childImageSharp.fluid.src
+    )
 }
 
 export const getPublicationDate = (postNode) => {

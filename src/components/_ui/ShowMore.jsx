@@ -1,4 +1,4 @@
-import React, { forwardRef } from 'react'
+import React, { forwardRef } from "react"
 import styled from "@emotion/styled"
 import dimensions from "styles/dimensions"
 
@@ -72,7 +72,7 @@ const Mouse = styled("div")`
 //     </Container>
 // )
 
-const ShowMore = forwardRef((props, ref)=> (
+const ShowMore = forwardRef((props, ref) => (
     <Container ref={ref}>
         <Mouse />
     </Container>

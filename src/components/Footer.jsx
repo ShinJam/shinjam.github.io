@@ -57,13 +57,12 @@ const FooterAuthor = styled("a")`
 
 const SocialIcons = styled("div")`
     display: flex;
-    a{
+    a {
         color: currentColor;
     }
-    a:nth-of-type(2){
+    a:nth-of-type(2) {
         margin: 0 1em;
     }
-
 `
 
 const FooterSpooch = styled("img")`

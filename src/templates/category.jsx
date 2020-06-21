@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect } from "react"
 import PropTypes from "prop-types"
 import { Helmet } from "react-helmet"
 import { graphql } from "gatsby"
@@ -11,17 +11,15 @@ import useIntersect from "utils/useIntersect"
 const Category = ({ posts, category, meta }) => {
     const [count, setCount] = useState(1)
     const [ref, entry] = useIntersect({
-        threshold: 1
+        threshold: 1,
     })
-    const doesNeedMore = () =>
-        posts.length > count * meta.postsPerPage
+    const doesNeedMore = () => posts.length > count * meta.postsPerPage
 
     useEffect(() => {
         if (entry.isIntersecting && doesNeedMore()) {
-            setCount(prev => prev + 1)
+            setCount((prev) => prev + 1)
         }
     }, [entry])
-
 
     return (
         <>
@@ -32,12 +30,8 @@ const Category = ({ posts, category, meta }) => {
             <SEO />
 
             <Layout pageTitle={category}>
-                <PostGrid
-                    posts={posts}
-                    meta={meta}
-                    count={count} />
-                {doesNeedMore() &&
-                    <ShowMore ref={ref} />}
+                <PostGrid posts={posts} meta={meta} count={count} />
+                {doesNeedMore() && <ShowMore ref={ref} />}
             </Layout>
         </>
     )

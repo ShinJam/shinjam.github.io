@@ -10,7 +10,6 @@ const AboutContainer = styled("div")`
     grid-template-columns: 1fr 8em;
     grid-gap: 2em;
 
-
     @media (max-width: ${dimensions.maxwidthMobile}px) {
         display: flex;
         flex-direction: column;
@@ -81,24 +80,23 @@ const AboutBio = styled("div")`
 const AboutActions = styled("div")`
     padding-top: 1em;
     padding-bottom: 3em;
-
 `
 
 export default () => {
     const data = useStaticQuery(graphql`
-    query About {
-        site {
-            siteMetadata {
-                socialLinks {
-                    label
-                    url
-                    iconClassName
+        query About {
+            site {
+                siteMetadata {
+                    socialLinks {
+                        label
+                        url
+                        iconClassName
+                    }
                 }
             }
         }
-    }
-`)
-const socialLinks = data.site.siteMetadata.socialLinks
+    `)
+    const socialLinks = data.site.siteMetadata.socialLinks
 
     return (
         <AboutContainer>
@@ -121,24 +119,21 @@ const socialLinks = data.site.siteMetadata.socialLinks
                 </AboutActions>
             </AboutBio>
             <AboutLinkContainer>
-                {socialLinks.map((social, i) =>
-                    (
-                        <AboutLink
-                            key={i}
-                            href={
-                                social.label === "Email"
-                                    ? "mailto:" + social.url
-                                    : social.url
-                            }
-                            target="_blank"
-                            rel="noopener noreferrer"
-                        >
-                            {social.label}
-                            <span>&#8594;</span>
-
-                        </AboutLink>
-                    )
-                )}
+                {socialLinks.map((social, i) => (
+                    <AboutLink
+                        key={i}
+                        href={
+                            social.label === "Email"
+                                ? "mailto:" + social.url
+                                : social.url
+                        }
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        {social.label}
+                        <span>&#8594;</span>
+                    </AboutLink>
+                ))}
             </AboutLinkContainer>
         </AboutContainer>
     )

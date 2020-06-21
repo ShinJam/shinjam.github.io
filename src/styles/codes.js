@@ -8,6 +8,11 @@ const codeStyles = css`
         overflow: auto;
     }
 
+    .gatsby-highlight code[class*="language-"] {
+        font-family: "Fira Code", "Consolas", "Monaco", "Andale Mono",
+            "Ubuntu Mono", monospace;
+    }
+
     .gatsby-highlight pre[class*="language-"].line-numbers {
         padding: 0 0 0 2.8em;
         display: inline-block;

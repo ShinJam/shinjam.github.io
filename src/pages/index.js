@@ -5,7 +5,7 @@ import { graphql } from "gatsby"
 import styled from "@emotion/styled"
 import colors from "styles/colors"
 import dimensions from "styles/dimensions"
-import About from "components/About";
+import About from "components/About"
 import Layout from "components/Layout"
 import SEO from "components/SEO"
 import Tags from "components/Tags"
@@ -21,7 +21,6 @@ const Hero = styled("div")`
         font-weight: 100;
         line-height: 1.7em;
         font-size: 2.2em;
-
 
         span {
             text-decoration: none;
@@ -87,7 +86,7 @@ const Section = styled("div")`
     display: flex;
     flex-direction: column;
 
-    @media(max-width:${dimensions.maxwidthTablet}px) {
+    @media (max-width: ${dimensions.maxwidthTablet}px) {
         margin-bottom: 1em;
     }
 
@@ -98,14 +97,12 @@ const Section = styled("div")`
 
 const RenderBody = ({ meta }) => (
     <>
-        <Helmet
-            title={meta.title}
-            titleTemplate={`%s | Gemini Devlog`} />
+        <Helmet title={meta.title} titleTemplate={`%s | Gemini Devlog`} />
         <SEO />
 
         <Hero className="font-balsamiq">
             <h1>
-                Hello 👋 This is <span>Gemini</span> Dev Blog 
+                Hello 👋 This is <span>Gemini</span> Dev Blog
                 <br />
                 To showcase my <span>Studies</span> and anything else!
                 <br />
@@ -148,7 +145,7 @@ export const query = graphql`
             siteMetadata {
                 title
                 description
-                author                
+                author
             }
         }
     }

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect } from "react"
 import PropTypes from "prop-types"
 import { Helmet } from "react-helmet"
 import { graphql } from "gatsby"
@@ -8,35 +8,27 @@ import PostGrid from "components/PostGrid"
 import ShowMore from "components/_ui/ShowMore"
 import useIntersect from "utils/useIntersect"
 
-
 const Blog = ({ posts, meta }) => {
     const [count, setCount] = useState(1)
     const [ref, entry] = useIntersect({
-        threshold: 1
+        threshold: 1,
     })
-    const doesNeedMore = () =>
-        posts.length > count * meta.postsPerPage
+    const doesNeedMore = () => posts.length > count * meta.postsPerPage
 
     useEffect(() => {
         if (entry.isIntersecting && doesNeedMore()) {
-            setCount(prev => prev + 1)
+            setCount((prev) => prev + 1)
         }
     }, [entry])
 
     return (
         <>
-            <Helmet
-                title="Blog"
-                titleTemplate={`%s | Gemini Devlog`} />
+            <Helmet title="Blog" titleTemplate={`%s | Gemini Devlog`} />
             <SEO />
 
             <Layout pageTitle="Blog">
-                <PostGrid
-                    posts={posts}
-                    meta={meta}
-                    count={count} />
-                {doesNeedMore() &&
-                    <ShowMore ref={ref} />}
+                <PostGrid posts={posts} meta={meta} count={count} />
+                {doesNeedMore() && <ShowMore ref={ref} />}
             </Layout>
         </>
     )
@@ -61,7 +53,8 @@ export const query = graphql`
         allMarkdownRemark(
             limit: 1000
             sort: { fields: [frontmatter___date], order: DESC }
-            filter: { frontmatter: {category: {ne: "TIL"}}}) {
+            filter: { frontmatter: { category: { ne: "TIL" } } }
+        ) {
             edges {
                 node {
                     fileAbsolutePath

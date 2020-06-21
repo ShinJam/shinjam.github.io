@@ -97,42 +97,41 @@ exports.createPages = async ({ graphql, actions }) => {
         return 0
     })
 
-    const tagSet = new Set();
-    const categorySet = new Set();
+    const tagSet = new Set()
+    const categorySet = new Set()
 
     const postTemplate = require.resolve("./src/templates/post.jsx")
-    const tagTemplate = path.resolve("src/templates/tag.jsx");
-    const categoryTemplate = path.resolve("src/templates/category.jsx");
+    const tagTemplate = path.resolve("src/templates/tag.jsx")
+    const categoryTemplate = path.resolve("src/templates/category.jsx")
 
     postsEdges.forEach((edge, index) => {
         // Generate a list of tags
         if (edge.node.frontmatter.tags) {
-            edge.node.frontmatter.tags.forEach(tag => {
-                tagSet.add(tag);
-            });
+            edge.node.frontmatter.tags.forEach((tag) => {
+                tagSet.add(tag)
+            })
         }
         //  Create tag pages
-        tagSet.forEach(tag => {
+        tagSet.forEach((tag) => {
             createPage({
                 path: `/tags/${_.kebabCase(tag)}/`,
                 component: tagTemplate,
-                context: { tag }
-            });
-        });
+                context: { tag },
+            })
+        })
 
         // Generate a list of categories
         if (edge.node.frontmatter.category) {
-            categorySet.add(edge.node.frontmatter.category);
+            categorySet.add(edge.node.frontmatter.category)
         }
         // Create category pages
-        categorySet.forEach(category => {
+        categorySet.forEach((category) => {
             createPage({
                 path: `/categories/${_.kebabCase(category)}/`,
                 component: categoryTemplate,
-                context: { category }
-            });
-        });
-
+                context: { category },
+            })
+        })
 
         const previous = index === 0 ? null : postsEdges[index - 1].node
         const next =
@@ -149,8 +148,6 @@ exports.createPages = async ({ graphql, actions }) => {
                 next,
             },
         })
-
-   
     })
 }
 

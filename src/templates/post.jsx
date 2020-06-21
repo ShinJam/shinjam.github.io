@@ -77,11 +77,11 @@ const PostBody = styled("div")`
         font-weight: bold;
     }
 
-    p > code[class*=language-] {
+    p > code[class*="language-"] {
         font-weight: bold;
-        padding: .11em .3em;
-        margin: 0 .1em;
-        border-radius: .3em;
+        padding: 0.11em 0.3em;
+        margin: 0 0.1em;
+        border-radius: 0.3em;
         white-space: normal;
         background: #fffbfe;
         color: #da3a6a;
@@ -94,8 +94,8 @@ const PostBody = styled("div")`
         display: block;
         margin-right: 0px;
         border-left: 5px solid ${colors.primary};
-        background-color: ${colors.primary+'10'}
-      }
+        background-color: ${colors.primary + "10"};
+    }
 
     // prismJS custom style
     ${codeStyles}
