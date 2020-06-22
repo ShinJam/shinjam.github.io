@@ -8,7 +8,8 @@ const codeStyles = css`
         overflow: auto;
     }
 
-    .gatsby-highlight code[class*="language-"] {
+
+    .gatsby-highlight code[class*="language-"], pre[class*="language-"] {
         font-family: "Fira Code", "Consolas", "Monaco", "Andale Mono",
             "Ubuntu Mono", monospace;
     }

@@ -79,6 +79,7 @@ const PostCardAction = styled("div")`
     margin-top: auto;
 
     span {
+        vertical-align: middle;
         margin-left: 1em;
         transform: translateX(-8px);
         display: inline-block;
