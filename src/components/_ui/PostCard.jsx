@@ -77,9 +77,9 @@ const PostCardAction = styled("div")`
     color: currentColor;
     transition: all 150ms ease-in-out;
     margin-top: auto;
+    vertical-align: middle;
 
     span {
-        vertical-align: middle;
         margin-left: 1em;
         transform: translateX(-8px);
         display: inline-block;
