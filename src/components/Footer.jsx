@@ -28,6 +28,7 @@ const FooterAuthor = styled("a")`
     font-size: 0.75em;
     color: ${colors.grey700};
     display: flex;
+    flex: 1 0;
     flex-direction: column;
     align-items: center;
     text-decoration: none;
@@ -56,6 +57,7 @@ const FooterAuthor = styled("a")`
 
 const SocialIcons = styled("div")`
     display: flex;
+    flex: 1 0;
     a {
         color: currentColor;
     }
