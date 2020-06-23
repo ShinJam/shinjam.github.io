@@ -75,10 +75,12 @@ const PostBody = styled("div")`
         }
     }
 
-    a {
+    p > a {
         text-decoration: none;
-        color: #0687f0;
-        font-weight: bold;
+        // color: #0687f0;
+        // font-weight: bold;
+        color: #960d20;
+        border-bottom: 1px dotted #960d20;
     }
 
     p {
@@ -105,6 +107,15 @@ const PostBody = styled("div")`
         border-left: 5px solid ${colors.primary};
         background-color: ${colors.primary + "10"};
     }
+
+    p > u {
+        text-decoration: none;
+        background: linear-gradient(transparent 70%, #fddf66 70%, #fddf66 90%, transparent 90%, transparent 100%);
+    }
+    strong {
+        color: #4a779c;
+    }
+
 
     // prismJS custom style
     ${codeStyles}
