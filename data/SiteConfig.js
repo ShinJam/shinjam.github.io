@@ -49,13 +49,13 @@ const config = {
 config.rssMetadata = {
     site_url: config.siteUrl,
     feed_url: urljoin(config.siteUrl, config.pathPrefix, config.rss),
-    title: config.Title,
+    title: config.title,
     description: config.description,
     image_url: `${urljoin(
         config.siteUrl,
         config.pathPrefix
     )}/logos/logo-512.png`,
-    copyright: this.copyright,
+    copyright: config.copyright,
 }
 
 // Validate

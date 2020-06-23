@@ -111,22 +111,20 @@ module.exports = {
                     ret.generator = "Shinjam's DevLog"
                     return ret
                 },
-                query: `
-        {
-          site {
-            siteMetadata {
-              rssMetadata {
-                site_url
-                feed_url
-                title
-                description
-                image_url
-                copyright
-              }
-            }
-          }
-        }
-      `,
+                query: `{
+                            site {
+                                siteMetadata {
+                                    rssMetadata {
+                                        site_url
+                                        feed_url
+                                        title
+                                        description
+                                        image_url
+                                        copyright
+                                    }
+                                }
+                            }
+                        }`,
                 feeds: [
                     {
                         serialize(ctx) {
@@ -150,32 +148,30 @@ module.exports = {
                                 })
                             )
                         },
-                        query: `
-            {
-              allMarkdownRemark(
-                limit: 1000,
-                sort: { order: DESC, fields: [fields___date] },
-              ) {
-                edges {
-                  node {
-                    excerpt
-                    html
-                    timeToRead
-                    fields {
-                      slug
-                      date
-                    }
-                    frontmatter {
-                      title    
-                      date
-                      category
-                      tags
-                    }
-                  }
-                }
-              }
-            }
-          `,
+                        query: `{
+                                    allMarkdownRemark(
+                                        limit: 1000,
+                                        sort: { order: DESC, fields: [fields___date] },
+                                    ) {
+                                        edges {
+                                        node {
+                                            excerpt
+                                            html
+                                            timeToRead
+                                            fields {
+                                                slug
+                                                date
+                                            }
+                                            frontmatter {
+                                                title    
+                                                date
+                                                category
+                                                tags
+                                            }
+                                        }
+                                        }
+                                    }
+                                }`,
                         output: config.rss,
                         title: config.rssTitle,
                     },
