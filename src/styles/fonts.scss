@@ -1,0 +1,113 @@
+/*
+ * Noto Sans KR
+ */
+
+@font-face {
+    font-family: "Noto Sans KR";
+    font-weight: 200;
+    font-style: normal;
+    src: url(/fonts/NotoSansKR/NotoSans-Light.eot?) format("eot"),
+        url(/fonts/NotoSansKR/NotoSans-Light.otf) format("opentype"),
+        url(/fonts/NotoSansKR/NotoSans-Light.woff) format("woff"),
+        url(/fonts/NotoSansKR/NotoSans-Light.woff2) format("woff2");
+    unicode-range: U+AC00-D7A3;
+}
+
+@font-face {
+    font-family: "Noto Sans KR";
+    font-weight: 400;
+    font-style: normal;
+    src: url(/fonts/NotoSansKR/NotoSans-Regular.eot?) format("eot"),
+        url(/fonts/NotoSansKR/NotoSans-Regular.otf) format("opentype"),
+        url(/fonts/NotoSansKR/NotoSans-Regular.woff) format("woff"),
+        url(/fonts/NotoSansKR/NotoSans-Regular.woff2) format("woff2");
+    unicode-range: U+AC00-D7A3;
+}
+
+@font-face {
+    font-family: "Noto Sans KR";
+    font-weight: 700;
+    font-style: normal;
+    src: url(/fonts/NotoSansKR/NotoSans-Bold.eot?) format("eot"),
+        url(/fonts/NotoSansKR/NotoSans-Bold.otf) format("opentype"),
+        url(/fonts/NotoSansKR/NotoSans-Bold.woff) format("woff"),
+        url(/fonts/NotoSansKR/NotoSans-Bold.woff2) format("woff2");
+    unicode-range: U+AC00-D7A3;
+}
+
+/*
+ * Roboto
+ */
+
+@font-face {
+    font-family: "Roboto";
+    font-style: normal;
+    font-weight: 100;
+    src: url(/fonts/Roboto/Roboto-Thin.woff2) format("woff2"),
+        url(/fonts/Roboto/Roboto-Thin.woff) format("woff"),
+        url(/fonts/Roboto/Roboto-Thin.otf) format("opentype");
+    unicode-range: U+0041-005A, U+0061-007E, U+0030-0039;
+}
+
+@font-face {
+    font-family: "Roboto";
+    font-style: normal;
+    font-weight: 400;
+    src: url(/fonts/Roboto/Roboto-Regular.woff2) format("woff2"),
+        url(/fonts/Roboto/Roboto-Regular.woff) format("woff"),
+        url(/fonts/Roboto/Roboto-Regular.otf) format("opentype");
+    unicode-range: U+0041-005A, U+0061-007E, U+0030-0039;
+}
+
+@font-face {
+    font-family: "Roboto";
+    font-style: normal;
+    font-weight: 700;
+    src: url(/fonts/Roboto/Roboto-Bold.woff2) format("woff2"),
+        url(/fonts/Roboto/Roboto-Bold.woff) format("woff"),
+        url(/fonts/Roboto/Roboto-Bold.otf) format("opentype");
+    unicode-range: U+0041-005A, U+0061-007E, U+0030-0039;
+}
+
+/*
+ * Balsamiq Sans
+ */
+
+@font-face {
+    font-family: "Balsamiq Sans";
+    font-style: normal;
+    font-weight: 400;
+    src: url(/fonts/BalsamiqSans/BalsamiqSans-Regular.ttf) format("truetype");
+}
+
+/*
+ * Fira Code
+ */
+
+@font-face {
+    font-family: "Fira Code";
+    src: url(/fonts/FiraCode/woff2/FiraCode-Regular.woff2) format("woff2"),
+        url(/fonts/FiraCode/woff/FiraCode-Regular.woff) format("woff");
+    font-weight: 400;
+    font-style: normal;
+    unicode-range: U+0020-002F, U+003A-0040, U+005B-0060, U+007B-007E;
+}
+
+@font-face {
+    font-family: "Fira Code";
+    src: url(/fonts/FiraCode/woff2/FiraCode-Medium.woff2) format("woff2"),
+        url(/fonts/FiraCode/woff/FiraCode-Medium.woff) format("woff");
+    font-weight: 500;
+    font-style: normal;
+    unicode-range: U+0020-002F, U+003A-0040, U+005B-0060, U+007B-007E;
+}
+
+html {
+    font-family: "Roboto", "Noto Sans KR", sans-serif;
+}
+
+@supports (font-variation-settings: normal) {
+    html {
+        font-family: "Roboto", "Noto Sans KR", sans-serif;
+    }
+}
