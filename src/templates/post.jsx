@@ -75,12 +75,16 @@ const PostBody = styled("div")`
         }
     }
 
-    p > a {
+    a {
         text-decoration: none;
         // color: #0687f0;
         // font-weight: bold;
         color: #960d20;
         border-bottom: 1px dotted #960d20;
+    }
+
+    a[class~="anchor"] {
+        border: 0;
     }
 
     p {

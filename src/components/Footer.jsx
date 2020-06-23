@@ -8,7 +8,6 @@ import dimensions from "styles/dimensions"
 import colors from "styles/colors"
 
 const FooterContainer = styled("div")`
-    justify-self: self-end;
     margin-top: auto;
     padding-top: 3.75em;
     padding-bottom: 3em;
