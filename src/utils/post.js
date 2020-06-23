@@ -8,7 +8,7 @@ export const getImagePath = (imageURI) => {
     return urljoin(
         config.siteUrl,
         config.pathPrefix,
-        imageURI.childImageSharp.fluid.src
+        imageURI.childImageSharp.fixed.src
     )
 }
 

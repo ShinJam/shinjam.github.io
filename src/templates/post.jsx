@@ -18,6 +18,10 @@ const PostHeroContainer = styled.div`
     display: flex;
     flex-direction: column;
     margin-bottom: 3em;
+
+    .cover-img {
+        margin: 0 auto;
+    }
 `
 
 const PostHeroAnnotation = styled("div")`
@@ -75,6 +79,11 @@ const PostBody = styled("div")`
         text-decoration: none;
         color: #0687f0;
         font-weight: bold;
+    }
+
+    p {
+        font-size: 1.1em;
+        line-height: 2;
     }
 
     p > code[class*="language-"] {
@@ -139,8 +148,8 @@ const Post = ({ post, pageContext, location, meta }) => {
                 {post.frontmatter.cover && (
                     <PostHeroContainer>
                         <Img
-                            fluid={post.frontmatter.cover.childImageSharp.fluid}
-                            className="img"
+                            fixed={post.frontmatter.cover.childImageSharp.fixed}
+                            className="cover-img"
                         />
                         {post.frontmatter.coverAnnotation && (
                             <PostHeroAnnotation>
@@ -188,8 +197,8 @@ export const query = graphql`
                 title
                 cover {
                     childImageSharp {
-                        fluid(maxWidth: 680) {
-                            ...GatsbyImageSharpFluid
+                        fixed(width: 680, height: 300) {
+                            ...GatsbyImageSharpFixed
                         }
                     }
                 }
