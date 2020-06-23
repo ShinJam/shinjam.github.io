@@ -110,12 +110,17 @@ const PostBody = styled("div")`
 
     p > u {
         text-decoration: none;
-        background: linear-gradient(transparent 70%, #fddf66 70%, #fddf66 90%, transparent 90%, transparent 100%);
+        background: linear-gradient(
+            transparent 70%,
+            #fddf66 70%,
+            #fddf66 90%,
+            transparent 90%,
+            transparent 100%
+        );
     }
     strong {
         color: #4a779c;
     }
-
 
     // prismJS custom style
     ${codeStyles}

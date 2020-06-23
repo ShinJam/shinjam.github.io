@@ -58,8 +58,10 @@ export default ({ children }) => {
 
     const tags = new Set()
     const postsNodes = data.allMarkdownRemark.nodes
+    const re = /\b\/_draft\//
+
     postsNodes.forEach((node, index) => {
-        if (node.frontmatter.tags) {
+        if (node.frontmatter.tags && !re.test(node.fileAbsolutePath)) {
             node.frontmatter.tags.forEach((tag) => {
                 tags.add(tag)
             })
