@@ -69,8 +69,10 @@ gatsby 블로그 *충분조건*이라면 다음과 같습니다.
 # Build는 Netlify
 
 Netlfy를 사용하면서 gatsby 블로그 만족도가 완성된다.
-<p style="text-align: center">빌드, 배포, 운영을 도와주는 통합 플랫폼 </p>
-사용이 편리하고 무료로 훌륭한 기능을 제공해준다. (깃 커밋하면 build, CDN, DNS, 자동 갱신 HTTPS, CMS 등)  
+
+<p style="text-align: center">빌드, 배포, 운영을 도와주는 통합 플랫폼 </p>  
+
+사용이 편리하고 무료로 훌륭한 기능을 제공해준다. (깃 커밋하면 build, CDN, DNS, 자동 갱신 HTTPS, CMS 등)
 gatsby build하는 시간은 생각보다 수초가 걸리는데 블로그 글만 작성하고 git에 push 해주면 된다!
 
 # To be continue

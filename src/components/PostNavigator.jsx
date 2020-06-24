@@ -1,6 +1,7 @@
 import React from "react"
 import PropTypes from "prop-types"
 import styled from "@emotion/styled"
+import dimensions from "styles/dimensions"
 import PostNavBtn from "components/_ui/PostNavBtn"
 
 const PostNavigatorBox = styled("div")`
@@ -13,6 +14,15 @@ const PostNavigatorBox = styled("div")`
     grid-template-rows: auto;
     grid-template-areas: "previous next";
     grid-template-columns: 1fr 1fr;
+
+    @media (max-width: ${dimensions.maxwidthMobile}px) {
+        grid-row-gap: 1em;
+        grid-template-areas:
+            "previous"
+            "next";
+        grid-template-rows: 1fr;
+        grid-template-columns: none;
+    }
 `
 
 const PostNavigator = ({ previous, next }) => (

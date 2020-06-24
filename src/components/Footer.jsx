@@ -8,7 +8,6 @@ import dimensions from "styles/dimensions"
 import colors from "styles/colors"
 
 const FooterContainer = styled("div")`
-    justify-self: self-end;
     margin-top: auto;
     padding-top: 3.75em;
     padding-bottom: 3em;
@@ -29,6 +28,7 @@ const FooterAuthor = styled("a")`
     font-size: 0.75em;
     color: ${colors.grey700};
     display: flex;
+    flex: 1 0;
     flex-direction: column;
     align-items: center;
     text-decoration: none;
@@ -57,6 +57,7 @@ const FooterAuthor = styled("a")`
 
 const SocialIcons = styled("div")`
     display: flex;
+    flex: 1 0;
     a {
         color: currentColor;
     }
