@@ -4,7 +4,7 @@ const codeStyles = css`
     .gatsby-highlight {
         background-color: #1d1f21;
         border-radius: 0.3em;
-        margin: 0;
+        margin: 0.5em 0;
         overflow: auto;
     }
 
@@ -12,6 +12,10 @@ const codeStyles = css`
     pre[class*="language-"] {
         font-family: "Fira Code", "Consolas", "Monaco", "Andale Mono",
             "Ubuntu Mono", monospace;
+    }
+
+    .gatsby-highlight pre[class*="language-"] {
+        margin: 0;
     }
 
     .gatsby-highlight pre[class*="language-"].line-numbers {
