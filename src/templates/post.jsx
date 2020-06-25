@@ -20,7 +20,9 @@ const PostHeroContainer = styled.div`
     margin-bottom: 3em;
 
     .cover-img {
-        margin: 0 auto;
+        max-width: 680px;
+        left: 50%;
+        transform: translateX(-50%);
     }
 `
 
@@ -168,7 +170,7 @@ const Post = ({ post, pageContext, location, meta }) => {
                 {post.frontmatter.cover && (
                     <PostHeroContainer>
                         <Img
-                            fixed={post.frontmatter.cover.childImageSharp.fixed}
+                            fluid={post.frontmatter.cover.childImageSharp.fluid}
                             className="cover-img"
                         />
                         {post.frontmatter.coverAnnotation && (
@@ -217,8 +219,8 @@ export const query = graphql`
                 title
                 cover {
                     childImageSharp {
-                        fixed(width: 680, height: 300) {
-                            ...GatsbyImageSharpFixed
+                        fluid(maxWidth: 680, maxHeight: 300) {
+                            ...GatsbyImageSharpFluid
                         }
                     }
                 }
