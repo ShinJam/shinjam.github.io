@@ -23,7 +23,6 @@ tags:
 - 코딜리티
 
 # 문제 해결 과정
-> *출처 : [수빈님 블로그](https://subinium.github.io/Algorithm/docs/chapter00/2)*
 
 1. 문제를 읽고 이해한다.
     - 조건 파악
