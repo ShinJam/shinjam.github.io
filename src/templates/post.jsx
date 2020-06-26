@@ -95,6 +95,10 @@ const PostBody = styled("div")`
         line-height: 2;
     }
 
+    li > p {
+        margin: .5em 0;
+    }
+
     p > code[class*="language-"] {
         font-weight: bold;
         padding: 0.11em 0.3em;
@@ -147,10 +151,9 @@ const PostBody = styled("div")`
     }
 
     th {
-        color: #ffffff;
-        background: #39a2fb;
         font-weight: 700;
         padding: .5em 1em;
+        border-bottom: 1px solid black;
     }
 
     tr {
