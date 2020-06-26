@@ -75,7 +75,7 @@ O(n)로 단순 덧셈 연산 함수에서 n == 10,000,000 (천만) 일때 2초�
 
 **공간복잡도**
 파이썬 객체가 차지하는 공간은 Anaconda 배포판의 64비트 Python 3.6에서 sys.getsizeof로 측정하면 다음과 같습니다. 
-![object-size](./obejct-size.png)
+![object-size](object-size.png)
 
 백준 "[수 정렬하기 3](https://www.acmicpc.net/problem/10989)"을 예로 살펴보면  
 제한 메모리가 8mb, 주어지는 N의 크기는 10,000,000입니다. 
