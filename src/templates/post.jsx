@@ -142,18 +142,14 @@ const PostBody = styled("div")`
 
     // table style
     table {
-        box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1),
-            0px 10px 20px rgba(0, 0, 0, 0.01), 0px 20px 20px rgba(0, 0, 0, 0.01),
-            0px 30px 20px rgba(0, 0, 0, 0.01);
         font-size: 14px;
         border-spacing: 0;
-        margin: 0 auto;
     }
 
     th {
         font-weight: 700;
         padding: .5em 1em;
-        border-bottom: 1px solid black;
+        background-color: ${colors.primary + "10"};
     }
 
     tr {
