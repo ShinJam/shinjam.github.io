@@ -64,7 +64,7 @@ tags:
 - 주어진 제한 메모리 확인
 - 선택한 알고리즘의 공간 복잡도
 
-그렇다면, 안전한지 판단 기준이 필요합니다.
+그렇다면, 안전한지 판단 기준이 필요합니다.  
 **시간복잡도**
 $$
  N! \gt X^N \gt N^X \gt \color{blue} N \color{black} \gt \sqrt{\smash[b]{y}} \gt \log{N} \gt 1
