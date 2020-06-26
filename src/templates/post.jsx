@@ -106,13 +106,20 @@ const PostBody = styled("div")`
         border: 1.2px solid #da3a6a;
     }
 
-    blockquote {
+    blockquote:nth-of-type(1) {
         margin-left: 0px;
         padding: 5px 20px;
         display: block;
         margin-right: 0px;
         border-left: 5px solid ${colors.primary};
         background-color: ${colors.primary + "10"};
+    }
+    
+    blockquote {
+        display: block;
+        padding-left: 1em;
+        margin: 0;
+        border-left: 5px solid ${colors.grey400};
     }
 
     p > u {
