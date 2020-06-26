@@ -3,6 +3,7 @@ import PropTypes from "prop-types"
 import { Helmet } from "react-helmet"
 import { graphql } from "gatsby"
 import styled from "@emotion/styled"
+import dimensions from "styles/dimensions"
 import colors from "styles/colors"
 import codeStyles from "styles/codes"
 import Layout from "components/Layout"
@@ -127,6 +128,90 @@ const PostBody = styled("div")`
     strong {
         color: #4a779c;
     }
+
+    // table style
+    table {
+        box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1),
+            0px 10px 20px rgba(0, 0, 0, 0.01), 0px 20px 20px rgba(0, 0, 0, 0.01),
+            0px 30px 20px rgba(0, 0, 0, 0.01);
+        font-size: 14px;
+        border-spacing: 0;
+        margin: 0 auto;
+    }
+
+    th {
+        color: #ffffff;
+        background: #39a2fb;
+        font-weight: 700;
+        padding: .5em 1em;
+    }
+
+    tr {
+        background: #fff;
+    }
+
+    tr:hover {
+        background: #f4f4f4;
+    }
+
+    td {
+        word-wrap: break-word;
+        border-bottom: 1px solid #ccc;
+        padding: .5em 1em;
+    }
+
+    // @media (max-width: ${dimensions.maxwidthMobile}px) {
+    //     table,
+    //     thead,
+    //     tbody,
+    //     th,
+    //     td,
+    //     tr {
+    //         display: block;
+    //     }
+
+    //     thead tr {
+    //         position: absolute;
+    //         top: -9999px;
+    //         left: -9999px;
+    //     }
+
+    //     table {
+    //         box-shadow: none;
+    //     }
+
+    //     tr {
+    //         margin: 0 0 1rem 0;
+    //         box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.12),
+    //             0 1px 2px 0 rgba(0, 0, 0, 0.24);
+    //         border-top: 5px solid #39a2fb;
+    //         border-radius: 7px;
+    //         padding-right: 5px;
+    //     }
+
+    //     tr:hover {
+    //         background: #fff;
+    //     }
+
+    //     td {
+    //         border: none;
+    //         position: relative;
+    //         padding-left: 50%;
+    //         text-align: right;
+    //     }
+
+    //     td:before {
+    //         position: absolute;
+    //         top: 5px;
+    //         left: 10px;
+    //         width: 45%;
+    //         padding-right: 10px;
+    //         white-space: nowrap;
+    //         content: attr(data-title);
+    //         font-weight: bold;
+    //         text-align: left;
+    //     }
+    // }
 
     // prismJS custom style
     ${codeStyles}
