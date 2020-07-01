@@ -136,8 +136,13 @@ const PostBody = styled("div")`
             transparent 100%
         );
     }
+
     strong {
         color: #4a779c;
+    }
+
+    summary {
+        cursor: pointer;
     }
 
     // table style
