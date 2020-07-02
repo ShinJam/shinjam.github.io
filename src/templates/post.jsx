@@ -99,9 +99,10 @@ const PostBody = styled("div")`
         margin: .5em 0;
     }
 
-    p > code[class*="language-"] {
+    code[class*="language-text"] {
+        font-size: .9em;
         font-weight: bold;
-        padding: 0.11em 0.3em;
+        padding: 0.05em 0.3em 0.13em 0.3em;
         margin: 0 0.1em;
         border-radius: 0.3em;
         white-space: normal;
