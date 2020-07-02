@@ -11,8 +11,9 @@ tags:
 
 # 상황 
 
-- store, user, favorite 모델이 있다.
-- store와 user사이에 M2M throgh 모델로 favorite가 있다.
+![erd](erd.png)
+
+- store와 user사이에 M2M throgh로 favorite 모델
 
 
 # Challenge
