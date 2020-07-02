@@ -12,4 +12,5 @@ tags:
     - supervisor
 ---
 
-> docker, aws을 활용한 배포 방법 입니다.
+> docker, aws을 활용한 배포를 정리 했습니다. 
+

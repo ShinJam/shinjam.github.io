@@ -13,7 +13,7 @@ tags:
 
 > [poetry](https://python-poetry.org/docs/)로 dependencies를 관리 합니다.
 
-<details><summary><b>Show Sample</b></summary>
+<details><summary><b>Show list</b></summary>
 
 ***[tool.poetry.dependencies]***
 - python = "^3.7"
