@@ -18,8 +18,12 @@ const codeStyles = css`
         margin: 0;
     }
 
+    .gatsby-highlight .token.class-name {
+        text-decoration: none;
+    }
+
     .gatsby-highlight pre[class*="language-"].line-numbers {
-        padding: 0 0 0 2.8em;
+        padding: 0 0 2em 2.8em;
         display: inline-block;
         overflow: auto;
         overflow-x: hidden;
