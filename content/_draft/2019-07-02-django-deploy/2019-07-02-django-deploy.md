@@ -1,6 +1,6 @@
 ---
 title: django 배포하기
-date: 2019-07-02
+date: 2020-07-02
 category: Development
 tags:
     - aws
