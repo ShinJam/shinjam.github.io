@@ -55,6 +55,8 @@ tags:
 
 # 쓰임
 
+## 재사용 (`eval(repr(obj)) == obj`)
+
 `datetime` 사용시 <b>유저</b>에게는 <b>시간 표시</b>, <b>개발자</b>에게는 <b>객체 표시</b> 하여 **재사용**이 가능하다.
 
 ```python
@@ -81,6 +83,22 @@ datetime.datetime(2020, 7, 24, 14, 27, 13, 480069)
 2020-07-24 14:27:13.480069
 ```
 
+## 디버깅, 로깅
+
+```python
+try:
+    x=10/0
+except ( FloatingPointError, ZeroDivisionError ) as err:
+    print(err)
+division by zero
+
+try:
+    x=10/0
+except ( FloatingPointError, ZeroDivisionError ) as err:
+    repr(err)
+"ZeroDivisionError('division by zero',)"
+```
+
 <p style='text-align: center; font-size: 1.5em'>
     <u>"repr = 개발 관점 / str = 유저 관점"에 따른 객체 표현</u>
 </p>
@@ -91,3 +109,4 @@ datetime.datetime(2020, 7, 24, 14, 27, 13, 480069)
 - [stackoverflow](https://stackoverflow.com/questions/1436703/difference-between-str-and-repr)
 - [박성환님블로그](https://shoark7.github.io/programming/python/difference-between-__repr__-vs-__str__)
 - [c10106](https://c10106.tistory.com/1598)
+- [python.omics](http://python.omics.wiki/strings/str-vs-repr)
