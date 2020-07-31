@@ -7,7 +7,7 @@ tags:
     - 완전탐색
 ---
 
-# [카카오 인턴] 경주로 건설 | [문제 4번](https://programmers.co.kr/learn/courses/30/lessons/6725)
+# [카카오 인턴] 경주로 건설 | [문제 4번](https://programmers.co.kr/learn/courses/30/lessons/67259)
 
 ### 분류
 `완전탐색`
