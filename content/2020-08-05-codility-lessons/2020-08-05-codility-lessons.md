@@ -6,7 +6,7 @@ tags:
     - 코딜리디
 ---
 
-# [Codility lessons] BinaryGap | [문제 5번](https://app.codility.com/programmers/lessons/1-iterations/)
+# [Codility lessons] BinaryGap | [문제 1번](https://app.codility.com/programmers/lessons/1-iterations/)
 
 ### 분류
 `구현`
