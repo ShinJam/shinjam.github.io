@@ -5,6 +5,7 @@ category: Algorithm
 tags:
     - 코딩테스트
     - 완전탐색
+    - 방향
 ---
 
 # [카카오 인턴] 경주로 건설 | [문제 4번](https://programmers.co.kr/learn/courses/30/lessons/67259)
