@@ -23,7 +23,7 @@ const codeStyles = css`
     }
 
     .gatsby-highlight pre[class*="language-"].line-numbers {
-        padding: 0 0 2em 2.8em;
+        padding: 0 0 0 2.8em;
         display: inline-block;
         overflow: auto;
         overflow-x: hidden;
