@@ -33,6 +33,8 @@ python에서의 포장은 container(list, tuple, str, dictionary 등)이다.
 
 # 에시
 ## Packing
+요소들을 대입하여 특정 container에 담기
+
 ### 1. 대입
 
 ```bash
@@ -52,6 +54,8 @@ python에서의 포장은 container(list, tuple, str, dictionary 등)이다.
 ```
 
 ## Unpacking
+container앞에 붙어 container 안의 요소 꺼내기
+
 ### 3. 제일 많이 사용하는 케이스
 
 ```bash
