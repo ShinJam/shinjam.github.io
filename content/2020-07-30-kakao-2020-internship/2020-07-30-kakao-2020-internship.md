@@ -19,7 +19,7 @@ N x N 배열 $ 3 {\le} N {\le} 25 $
 ### 출력
 가장 적은 비용
 
-### Sol
+### Sol1
 
 ```python
 from collections import deque
@@ -68,6 +68,45 @@ def solution(board):
         ret = bfs(v, N, board )
         answer.append(ret)
     return min(answer)
+```
+
+### Sol2
+
+```python
+from collections import deque
+# 비용 계산
+def cal_cost(v, nv, cost):
+    cost += 100 if not (v - nv)%2 else 600
+    return cost
+    
+# 경로 탐색 (bfs)
+def search(board, N):
+    # DP that MIN cost of each point
+    visited = [[0] * N for _ in range(N)]
+    # East, South, West, North
+    dx, dy = [1, 0, -1 , 0], [0 , 1 , 0, -1]
+    # Initial direction : East, South
+    queue = deque([[0, 0, 0, 0],[0, 0, 1, 0]]) # x, y, Direction, cost
+    while queue:
+        x, y, vector, cost = queue.popleft()
+
+        # 동서남북 탐색
+        for v in range(4):
+            nx, ny, nc = x + dx[v], y + dy[v], cal_cost(vector, v, cost)
+            # board가 1(벽), N넘을 때, 
+            if not all(0 <= p < N for p in [nx, ny]) or board[ny][nx]:
+                continue
+            # 방문 안했거나 기존 비용이 더 작으면 통과
+            if not visited[ny][nx] or visited[ny][nx] >= nc:
+                visited[ny][nx] = nc
+                queue.append([nx, ny, v, nc])
+                            
+    return visited[N - 1][N - 1]
+    
+
+def solution(board):
+    ret = search(board, len(board))
+    return ret
 ```
 
 ### Notes
