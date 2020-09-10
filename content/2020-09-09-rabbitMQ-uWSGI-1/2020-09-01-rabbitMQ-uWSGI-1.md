@@ -1,6 +1,6 @@
 ---
 title: rabbitMQ로 채팅 구현하기 1
-date: 2020-06-24
+date: 2020-09-01
 cover: ./RabbitMQ.jpeg
 category: Development
 tags:
@@ -12,9 +12,8 @@ tags:
     - DRF
 ---
 
-> rabbiMQ, uWSGI, vue, django를 사용하여 채팅을 구현하는 방법입니다.
+> 초기 설정 방법 및 실행 방법 입니다.
 
-*[github.com/danidee10/Chatire](https://github.com/danidee10/Chatire)를 많이 참고했습니다.*
 
 # 준비
 
@@ -115,3 +114,8 @@ $ npm run dev
 4. [rabbitMQ로 채팅 구현하기 4](/blog/rabbit-mq로-채팅-구현하기-4)
 5. [rabbitMQ로 채팅 구현하기 5](/blog/rabbit-mq로-채팅-구현하기-5)
 6. [rabbitMQ로 채팅 구현하기 6](/blog/rabbit-mq로-채팅-구현하기-6)
+
+---
+
+## Reference
+- [github.com/danidee10/Chatire](https://github.com/danidee10/Chatire)
