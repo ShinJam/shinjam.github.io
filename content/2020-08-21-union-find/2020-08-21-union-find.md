@@ -76,33 +76,26 @@ def find(x):
 ## 백준 [친구 네트워크](https://www.acmicpc.net/problem/4195)
 
 ```python
-def find(x):
-    if not x in parent:
-        parent[x], number[x] = x, 1
-    if x != parent[x]:
-        parent[x] = find(parent[x])
-    return parent[x]
+import sys
+input = sys.stdin.readline
 
+def find(x):
+    if x not in root:
+        root[x], root_cnt[x] = x, 1
+    if x != root[x]:
+        root[x] = find(root[x])
+    return root[x]
 
 def union(x, y):
-    x, y = find(x), find(y)
-    if x != y:
-        parent[y] = x
-        number[x] += number[y]
+    X, Y = find(x), find(y)
+    if X != Y:
+        root[Y] = X
+        root_cnt[X] += root_cnt[Y]
+    return X
 
-        
-N = int(input())
-
-for _ in range(N):
-    global parent, number
-    parent, number = {}, {}
-
-    F = int(input())
-
-    for _ in range(F):
-        X, Y = input().split()
-
-        union(X, Y)
-
-        print(number[find(X)])
+for _ in range(int(input())):
+    root, root_cnt = dict(), dict()
+    for _ in range(int(input())):
+        x, y = input().split()
+        print(root_cnt[union(x, y)])
 ```
