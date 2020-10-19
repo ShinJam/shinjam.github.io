@@ -93,3 +93,4 @@ O(n)이고 단순 연산에서 N == 1,000,000 일 때 약 0.2초, N == 10,000,00
 - [수빈님 블로그](https://subinium.github.io/Algorithm/docs/chapter00/2)
 - [discuss](https://discuss.codechef.com/t/how-many-approx-loops-are-allowed-in-1-sec-lime-limit/375/3)
 - [공간복잡도](https://c10106.tistory.com/4557)
+- [시간복잡도](https://joont92.github.io/algorithm,data-structure/%EC%8B%9C%EA%B0%84-%EB%B3%B5%EC%9E%A1%EB%8F%84/)
